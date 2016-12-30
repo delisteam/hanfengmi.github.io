@@ -3,6 +3,14 @@
 <head>
 	<meta charset="UTF-8" />
 	<title>myWeb</title>
+	<script type="text/javascript">
+		(function(){
+			var html = document.documentElement;
+			var hWidth = document.documentElement.clientWidth;
+			html.style.fontSize = hWidth/15 + "px";
+			console.log(document.documentElement.clientWidth);
+		})();
+	</script>
 	<style type="text/css">
 		@font-face {
 			font-family:f-gm;
@@ -19,7 +27,8 @@
 		body {
 			margin:0;
 			background-image:linear-gradient(136deg, #ff9e7f 0%, #ffc86d 100%);
-			perspective:600px;
+			perspective:1600px;
+			font-size:0.16rem;
 		}
 		a {
 			text-decoration: none;
@@ -43,7 +52,7 @@
 			-overflow: hidden;
 		}
 		.Hheader {
-			height:51px;
+			height:0.40rem;
 			width:100%;
 			border-bottom:1px solid rgba(255,255,255,0.3);
 			position:relative;
@@ -57,11 +66,11 @@
 		.logo {
 			display: inline-block;
 			height:100%;
-			width:74px;
+			width:0.578rem;
 			text-align:center;
 			cursor:pointer;
 			border-right:1px solid rgba(255,255,255,0.3);
-			font:25px/51px GOTHAM-LIGHT;
+			font:0.195rem/0.398rem GOTHAM-LIGHT;
 			transition:.25s;
 		}
 		.logo:hover {
@@ -80,21 +89,21 @@
 		}
 		.takeIn {
 			position:absolute;
-			width:800px;
-			height:600px;
-			top:200px;
-			left:-300px;
+			width:6.25rem;
+			height:4.688rem;
+			top:1.56rem;
+			left:-2.34rem;
 			opacity:0;
 			transition:.5s;
 			background: #fff;
 		}
 		.close-login {
 			position:absolute;
-			right:20px;
-			top:20px;
-			width:50px;
-			height:50px;
-			font:35px/50px arial;
+			right:0.156rem;
+			top:0.156rem;
+			width:0.39rem;
+			height:0.39rem;
+			font:0.27rem/0.39rem arial;
 			color:#000;
 			text-align: center;
 			transition: .5s;
@@ -105,13 +114,13 @@
 		.Hlist {
 			display: inline-block;
 			color:#fff;
-			margin-left: 30px;
+			margin-left: 0.234rem;
 			height: 100%;
-   			line-height: 52px;
-   			padding-left: 10px;
-   			padding-right: 10px;
+   			line-height: 0.406rem;
+   			padding-left: 0.078rem;
+   			padding-right: 0.078rem;
    			cursor: pointer;
-   			font-size: 15px;
+   			font-size: 0.117rem;
 		}
 		.Hright {
 			position:absolute;
@@ -121,11 +130,11 @@
 		}
 		.searchBtn {
 			float:left;
-			width:74px;
+			width:0.578rem;
 			height:100%;
 			border-left:1px solid rgba(255,255,255,0.3);
 			border-right:1px solid rgba(255,255,255,0.3);
-			font:20px/50px GOTHAM-LIGHT;
+			font:0.156rem/0.39rem GOTHAM-LIGHT;
 			text-align:center;
 			transition:.25s;
 		}
@@ -135,11 +144,11 @@
 		}
 		.Hlogin {
 			float:left;
-			width: 110px;
+			width: 0.859rem;
 			height:100%;
 		    text-align: center;
 		    cursor: pointer;
-		    line-height: 50px;
+		    line-height: 0.39rem;
 		    border-right:1px solid rgba(255,255,255,0.3);
 		}
 		.Hlogin a {
@@ -163,7 +172,7 @@
 			width:100%;
 			height:100%;
 			text-align:center;
-			line-height: 50px;
+			line-height: 0.4rem;
 			transition:.25s;
 		}
 		.Hbuy a:hover{
@@ -172,19 +181,19 @@
 		}
 		.Hpart {
 			position:absolute;
-			right:35px;
-			top:80px;
+			right:0.273rem;
+			top:0.625rem;
 			z-index: 5;
 		}
 		.Hpart a {
 			display: inline-block;
 			box-sizing: border-box;
-			height:30px;
+			height:0.234rem;
 			border: 1px solid #FFF;
 			border-radius: 3px;
-			font:14px/10px GOTHAM-MEDIUM;
+			font:0.109rem/0.078rem GOTHAM-MEDIUM;
 			font-family:f-gb;
-			padding:10px 20px;
+			padding:0.078rem 0.156rem;
 			transition:.25s;
 		}
 		.free:hover {
@@ -204,19 +213,19 @@
 			width:100px;
 		    position: absolute;
 		    top:45%;
-		    left:100px;
+		    left:0.78rem;
 		    font-family:f-gb;
 		    z-index:5;
 		}
 		.Hpagen {
-			height: 100px;
-			width:100px;
+			height: 0.78rem;
+			width:0.78rem;
 		    position: absolute;
 		    overflow: hidden;
 		}
 		.nowPage {
 			position:absolute;
-			width:750px;
+			width:900px;
 			left:0;
 			cursor:pointer;
 			transition:.5s;
@@ -224,9 +233,9 @@
 		.nowPage span {
 			width:130px;
 			display: inline-block;
-			padding-right:50px;
-			font-size:110px;
-			line-height: 100px;
+			margin-right:50px;
+			font-size:0.859rem;
+			line-height: 0.78rem;
 			color:#fff;
 			transition:.25s;
 		}
@@ -235,17 +244,17 @@
 		}
 		.allPage {
 			position:absolute;
-			left:70px;
-			height:83px;
+			left:0.547rem;
+			height:0.65rem;
 			border-left:4px solid rgba(250,250,250,.3);
 		}
 		.allPage span {
 			position: absolute;
 		    opacity: 0.5;
 		    color: #fff;
-		    font-size: 30px;
-		    left: 10px;
-		    bottom: -6px;
+		    font-size: 0.234rem;
+		    left: 0.078rem;
+		    bottom: -0.046rem;
 		}
 		#cont {
 			position:absolute;
@@ -264,14 +273,14 @@
 		.Hcont {
 			font-family: f-gb;
 			position: relative;
-			top:300px;
-		    width: 400px;
-		    height: 300px;
+			top:2.34rem;
+		    width: 3.125rem;
+		    height: 2.34rem;
 		    margin:0 auto;
-		    font-size:30px;
+		    font-size:0.234rem;
 		    text-align:center;
-		    line-height: 90px;
-		    margin-bottom:325px;
+		    line-height: 0.703rem;
+		    margin-bottom:2.539rem;
 		    box-sizing: border-box;
 		    transform: rotateY(0deg) rotateX(5deg);
 		    transform-style: preserve-3d;
@@ -281,12 +290,12 @@
 		}
 		.Hcont p {
 		    margin: auto;
-		    margin-top: 60px;
+		    margin-top: 0.4687rem;
 		    text-align: center;
-		    width: 300px;
+		    width: 2.34rem;
 		    color: white;
-		    font-size: 18px;
-		    line-height: 20px;
+		    font-size: 0.14rem;
+		    line-height: 0.156rem;
 		    font-family: f-sfr;
 		    transform: translateZ(20px);
 		}
@@ -298,31 +307,31 @@
 		}
 		.two-inner {
 			position:relative;
-			top:300px;
-			width:640px;
-			height:400px;
+			top:2.34rem;
+			width:5rem;
+			height:3.125rem;
 			-border:1px solid #000;
 			margin:0 auto;
 			text-align:center;
 		}
 		.two-inner h2 {
-			font:bold 50px/60px arial;
+			font:bold 0.39rem/0.469rem arial;
 			font-family:f-gb;
 		}
 		.two-inner input {
-			margin:100px 0 100px 10px;
-			width:500px;
-			height:40px;
-			font:30px/40px arial;
+			margin:0.78rem 0 0.78rem 0.078rem;
+			width:3.9rem;
+			height:0.3125rem;
+			font:0.234rem/0.3125rem arial;
 		}
 		.two-inner a {
 			display: inline-block;
-			width:60px;
-			height:60px;
+			width:0.469rem;
+			height:0.469rem;
 			border-radius: 50%;
 			border:1px solid #fff;
 			margin-left:10px;
-			font:30px/60px arial;
+			font:0.234rem/0.468rem arial;
 			font-family: f-gb;
 			transition:.3s;
 		}
@@ -335,8 +344,8 @@
 			border:1px solid #000;
 			border-top:none;
 			width:78%;
-			left:37px;
-			top:206px;
+			left:0.289rem;
+			top:1.6rem;
 			height:0;
 			overflow: hidden;
 			background: #fff;
@@ -344,19 +353,19 @@
 			text-align:left;
 		}
 		.list li {
-			font:20px/25px arial;
+			font:0.156rem/0.195rem arial;
 			padding:5px 5px;
 		}
 		.list a {
 			color:#000;
 			width:100%;
-			height:25px;
-			font:24px/25px arial;
+			height:0.195rem;
+			font:0.188rem/0.195rem arial;
 		}
 		.Hbtn {
-			width: 170px;
-    		height: 58px;
-    		margin:30px auto;
+			width: 1.33rem;
+    		height: 0.453rem;
+    		margin:0.234rem auto;
     		position: relative;
     		transform: translateZ(40px);
 		}
@@ -368,13 +377,13 @@
 			background: #fff;
 		    border-radius: 3px;
 		    color: #353535;
-		    font-size: 14px;
-		    line-height: 58px;
+		    font-size: 0.109rem;
+		    line-height: 0.453rem;
 		    cursor: pointer;
 		}
 		.Hbtn span {
-			width: 40px;
-		    height: 30px;
+			width: 0.3125rem;
+		    height: 0.234rem;
 		    top:15px;
 		    border-radius: 100%;
 		    background-color: #000;
@@ -398,20 +407,20 @@
 		}
 		.yema {
 			position:absolute;
-			width:1000px;
-			height:300px;
+			width:7.9rem;
+			height:2.34rem;
 			background: #fff;
 			top:50%;
-			margin-top:-150px;
+			margin-top:-1.172rem;
 			z-index: 888;
-			left:-800px;
+			left:-6.25rem;
 			opacity: 0;
 			transition:.5s;
 		}
 		.yema-num span {
 			float:left;
-			font:200px/300px arial;
-			margin:0 30px;
+			font:1.5625rem/2.34rem arial;
+			margin:0 0.234rem;
 			font-family:f-gb;
 			cursor: pointer;
 			transition:.25s;
@@ -426,45 +435,45 @@
 			position:relative;
 			float:left;
 			margin:10px 0;
-			height:280px;
-			width:284px;
+			height:2.187rem;
+			width:2.219rem;
 			border-left:4px solid rgba(0,0,0,.4);
 			z-index: 999;
 		}
 		
 		/*===============引入=====================*/
 		.cMove {
-			width:260px;
-			height:46px;
+			width:2.03rem;
+			height:0.359rem;
 			position:absolute;
-			bottom:30px;
-			left:16px;
+			bottom:0.234rem;
+			left:0.125rem;
 			z-index: 999;
 		}
 		.y-move {
 			position:absolute;
-			width:40px;
-			height:40px;
+			width:0.3125rem;
+			height:0.3125rem;
 			cursor: pointer;
 			border-radius: 50%;
 			border:1px solid #000;
-			font:20px/40px GOTHAM-LIGHT;
+			font:0.156rem/0.3125rem GOTHAM-LIGHT;
 			text-align:center;
 			color:#fff;
 		}
 		.y-wait {
 			position:absolute;
 			right:0;
-			width:40px;
-			height:40px;
+			width:0.3125rem;
+			height:0.3125rem;
 			border:1px solid #000;
 			border-radius: 50%;
 			text-align: center;
 		}
 		.inner {
 			display: inline-block;
-			width:34px;
-			height:34px;
+			width:0.266rem;
+			height:0.266rem;
 			border-radius: 50%;
 			margin-top:3px;
 			background:rgba(0,0,0,.5);
@@ -473,35 +482,35 @@
 		.y-li {
 			position: absolute;
 			color:#000;
-			left:26px;
-			top:16px;
+			left:0.2rem;
+			top:0.125rem;
 		}
 		.y-li li{
-			width:6px;
-			height:6px;
+			width:0.047rem;
+			height:0.047rem;
 			float:left;
 			margin:0 5px 0;
 			background:#000;
 			border-radius: 50%;
 		}
 		.y-li li:nth-of-type(1) {
-			margin-left:30px;
+			margin-left:0.234rem;
 		}
 		/*=======================================*/
 		.H-down {
 			position:absolute;
 			bottom:0;
-			width:80px;
-			height:150px;
+			width:0.625rem;
+			height:1.172rem;
 		}
 		.H-reol {
-			width:80px;
-			height:80px;
+			width:0.625rem;
+			height:0.625rem;
 			border-radius: 50%;
 			box-sizing: border-box;
 			border:2px solid rgba(250,250,250,.6);
 			cursor: pointer;
-			font:40px/80px GOTHAM-LIGHT;
+			font:0.3125rem/0.625rem GOTHAM-LIGHT;
 			font-family: f-gb;
 			color:#fff;
 			text-align: center;
@@ -510,9 +519,9 @@
 		.H-down span {
 			position:absolute;
 			bottom:0;
-			left:35px;
+			left:0.273rem;
 			width:3px;
-			height:50px;
+			height:0.39rem;
 			background:rgba(250,250,250,.6);
 		}
 		.inner-btn {
@@ -521,13 +530,13 @@
 		}
 		.inner-btn li {
 			float:left;
-			width:120px;
-			height:120px;
+			width:0.9375rem;
+			height:0.9375rem;
 			margin:10px;
 			box-sizing: border-box;
 			cursor: pointer;
 			transition: .25s;
-			font:30px/120px arial;
+			font:0.234rem/0.9375rem arial;
 			text-align:center;
 			color:#fff;
 		}
@@ -541,21 +550,21 @@
 		.down-hide {
 			position:absolute;
 			bottom:0;
-			width:80px;
-			height:150px;
+			width:0.625rem;
+			height:1.172rem;
 			overflow: hidden;
 			
 		}
 		.threePart {
-			width:600px;
-			height:450px;
+			width:4.6875rem;
+			height:3.516rem;
 		}
 		.mnanimate {
 			float:left;
-			width:200px;
-			height:150px;
+			width:1.5625rem;
+			height:1.17rem;
 			background: #f84f4f;
-			border-radius: 100px 136px 149px 100px/68px 100px 86px 118px;
+			border-radius: 0.78rem 1.0625rem 1.164rem 0.78rem/0.53rem 0.78rem 0.672rem 0.922rem;
 			transition: .5s;
 			cursor:none;
 		}
@@ -565,6 +574,18 @@
 		}
 		.mnanimate:hover {
 			border-radius: 5px;
+		}
+		.all-list {
+			transform-style: preserve-3d;
+			position:absolute;
+			left:60px;
+		}
+		.all-list li {
+			width:1.56rem;
+			height:30px;
+			border:2px solid #fff;
+			background: #fff;
+			padding-left:5px;
 		}
 	</style>
 </head>
@@ -593,6 +614,19 @@
 				</div>
 			</div>
 		</header>
+		<div class="all-list">
+			<ul class="list-ul">
+				<li>acdation abdoction all</li>
+				<li>I cant move</li>
+				<li>this this GengTai li</li>
+				<li>this this Zhengfengs</li>
+				<li>this this Hua yan</li>
+				<li>that is Zhanglaos</li>
+				<li>Where is Zhanglaos</li>
+				<li>come with me</li>
+				<li>we are familay</li>
+			</ul>
+		</div>
 		<div class="login">
 			<div class="takeIn">
 				<a href="javascropt:;" class="close-login">X</a>
@@ -723,7 +757,7 @@
 					'linear-gradient(136deg, #8ec8e1 0%, #8ee1b9 100%)'
 				];
 		reset();
-		
+		console.log(document.documentElement.clientWidth);
 		$('.Hlogin').click(function(){
 			var seeW = document.documentElement.clientWidth;
 			$('.login').show();
@@ -1036,6 +1070,54 @@
 		$('.mnbaid').blur(function(){
 			$('#ul').css('height',0);
 		});
+		
+		var ul = wrap.querySelector('.list-ul');
+		var a = $('.Hlist')[0];
+		var eleTake = null;
+		var timer = 0;
+		for(var i=0;i<ul.children.length;i++){
+			css(ul.children[i],"rotateY",'90');
+			css(ul.children[i],"opacity",'0');
+		}
+		var isTab = true;
+		a.onclick = ashijian;
+		function ashijian(){
+			a.onclick = null;
+			if(isTab){
+				come(ul.children[0]);
+			}else{
+				clearTimeout(timer);
+				for(var i=0;i<ul.children.length;i++){
+					if(css(ul.children[i],'opacity') != 0){
+						eleTake = ul.children[i];
+					}
+				}
+				out(eleTake);
+			}
+			isTab = !isTab;
+			setTimeout(function(){
+				a.onclick = ashijian;
+			},1000);
+		}
+		function come(ele){
+			mTween(ele,{opacity:100,rotateY:0},300,'linear');
+			timer = setTimeout(function(){
+				if(ele.nextElementSibling){
+					come(ele.nextElementSibling);
+				}
+			},100);
+			
+			console.log(1);
+		}
+		function out(ele){
+			mTween(ele,{opacity:0,rotateY:90},300,'linear');
+			setTimeout(function(){
+				if(ele.previousElementSibling){
+					out(ele.previousElementSibling);
+				}
+			},100);
+			console.log(2);
+		}
 	})();
 </script>
 </html>
