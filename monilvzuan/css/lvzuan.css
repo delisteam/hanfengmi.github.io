@@ -1,0 +1,1602 @@
+@charset="utf-8";
+body,
+p,
+h3 {
+	margin:0;
+}
+a {
+	text-decoration:none;
+}
+body {
+	position:relative;
+}
+ul {
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+li {
+	padding:0;
+}
+img {
+	border:none;
+	vertical-align:top;
+}
+.clearfix {
+	zoom:1;
+}
+.clearfix:after {
+	content:"";
+	display:block;
+	clear:both;
+}
+.wrap {
+	position:relative;
+	width:980px;
+	margin:0 auto;
+}
+
+.TopHeader {
+	width:100%;
+	height:80px;
+	background:#333;
+	color:#fff;
+	overflow:hidden;
+	min-width:1022px;
+}
+/* 首页导航*/
+.wrap .logo {
+	float:left;
+	width:145px;
+	height:40px;
+	line-height:600px;
+	margin-top:20px;
+	margin-right:37px;
+	background:url(../img/logo.png) no-repeat;
+
+}
+.wrap .homepageNav {
+	float:left;
+	height:80px;
+	padding-right:37px;
+	border-right:1px solid #494949;
+}
+.wrap .homepageNav .active {
+	background:#090909;
+	border-bottom-color:#9de25e;
+	color:#a5ee61;
+}
+.wrap .homepageNav a {
+	float:left;
+	font:14px/74px "微软雅黑";
+	color:#bdbdbd;
+	padding:1px 12px 2px;
+	border-bottom:3px solid #333;
+}
+.homepageNav a:hover {
+	background:#090909;
+	border-bottom-color:#9de25e;
+	color:#a5ee61;
+}
+.wrap .login {
+	float:left;
+	font:12px/80px "宋体";
+	padding-left:34px;
+}
+.wrap .login a {
+	color:#42a41b;
+}
+.wrap .login a:hover {
+	color:#555555;
+	text-decoration:underline;
+}
+/* end 首页导航*/
+/* 图片切换*/
+.imgchange {
+	height:300px;
+	background:#1d235d;
+	border-bottom:1px solid #e1e1e1;
+	min-width:1022px;
+}
+.imgchange img {
+	height:300px;
+	width:980px;
+}
+.changebtn {
+	position:absolute;
+	bottom:0;
+	left:411px;
+	width:158px;
+	height:29px;
+}
+.changebtn .opacity {
+	position:absolute;
+	width:158px;
+	height:29px;
+	background:url(../img/smallIcon.gif) no-repeat 0 0;
+	opacity:.4;
+	filter:alpha(opacity=40);
+}
+.changebtn a {
+	position:absolute;
+	width:12px;
+	height:12px;
+	top:9px;
+	background:url(../img/smallIcon.png) no-repeat 0 -39px;
+	overflow:hidden;
+}
+.changebtn .a1 {
+	left:23px;
+}
+.changebtn .a2 {
+	left:48px;
+}
+.changebtn .a3 {
+	left:73px;
+}
+.changebtn .a4 {
+	left:98px;
+}
+.changebtn .a5 {
+	left:123px;
+}
+.changebtn a:hover {
+	background:url(../img/smallIcon.gif) no-repeat 0 -61px;
+}
+/* end图片切换*/
+
+/* 如何开通*/
+.whatHow {
+	border-bottom:1px solid #e1e1e1;
+}
+.wrap .what {
+	float:left;
+	width:149px;
+	height:44px;
+	padding:17px 88px;
+	border-left:1px solid #e1e1e1;
+	border-right:1px solid #e1e1e1;
+	line-height:999px;
+	overflow:hidden;
+	background:url(../img/what.png) no-repeat 88px 17px;
+}
+.wrap .features {
+	float:left;
+	width:149px;
+	height:42px;
+	padding:17px 88px 19px;
+	line-height:999px;
+	overflow:hidden;
+	border-right:1px solid #e1e1e1;
+	background:url(../img/feature.png) no-repeat 88px 17px;
+}
+.wrap .how {
+	float:left;
+	width:129px;
+	height:44px;
+	padding:17px 109px 17px 88px;
+	line-height:999px;
+	overflow:hidden;
+	border-right:1px solid #e1e1e1;
+	background:url(../img/how.png) no-repeat 88px 17px;
+}
+/* end 如何开通*/
+/* 什么是绿钻*/
+.lvzuan {
+	background:#e9e9e9;
+}
+.lvzuan .whatLvzuan {
+	position:relative;
+	height:877px;
+	width:1022px;
+	margin:0 auto;
+	background:url(../img/whatbg.png) no-repeat;
+}
+.whatLvzuan .h3 {
+	position:absolute;
+	width:116px;
+	height:56px;
+	top:105px;
+	left:454px;
+	line-height:999px;
+	overflow:hidden;
+	background:url(../img/whatlvzuan.png) no-repeat;
+}
+.whatLvzuan .lvzuanp {
+	position:absolute;
+	width:380px;
+	height:78px;
+	top:162px;
+	left:324px;
+	font:14px/26px "微软雅黑";
+	color:#888888;
+	text-align:center;
+}
+.whatLvzuan .centerbg {
+	position:absolute;
+	width:703px;
+	height:352px;
+	top:328px;
+	left:208px;
+	background:url(../img/centerbg.png) no-repeat;
+}
+.whatLvzuan .one {
+	position:absolute;
+	width:85px;
+	height:85px;
+	top:220px;
+	left:143px;
+	background:url(../img/smallIcon.png) no-repeat 0 -84px;
+}
+.whatLvzuan .two {
+	position:absolute;
+	width:116px;
+	height:116px;
+	top:395px;
+	left:11px;
+	background:url(../img/smallIcon.png) no-repeat 0 -176px;
+}
+.whatLvzuan .three {
+	position:absolute;
+	width:137px;
+	height:137px;
+	top:627px;
+	left:61px;
+	background:url(../img/smallIcon.png) no-repeat 0 -299px;
+}
+.whatLvzuan .four {
+	position:absolute;
+	width:69px;
+	height:68px;
+	top:620px;
+	left:457px;
+	background:url(../img/smallIcon.png) no-repeat 0 -446px;
+}
+.whatLvzuan .five {
+	position:absolute;
+	width:94px;
+	height:95px;
+	top:660px;
+	right:194px;
+	background:url(../img/smallIcon.png) no-repeat 0 -524px;
+}
+.whatLvzuan .six {
+	position:absolute;
+	width:118px;
+	height:117px;
+	top:571px;
+	right:0;
+	background:url(../img/smallIcon.png) no-repeat 0 -629px;
+}
+.whatLvzuan .seven {
+	position:absolute;
+	width:45px;
+	height:46px;
+	top:461px;
+	right:111px;
+	background:url(../img/smallIcon.png) no-repeat 0 -760px;
+}
+.whatLvzuan .eight {
+	position:absolute;
+	width:60px;
+	height:60px;
+	top:427px;
+	right:222px;
+	background:url(../img/smallIcon.png) no-repeat -65px -756px;
+}
+.whatLvzuan .nine {
+	position:absolute;
+	width:42px;
+	height:42px;
+	top:316px;
+	right:263px;
+	background:url(../img/smallIcon.png) no-repeat -102px -463px;
+}
+.whatLvzuan .ten {
+	position:absolute;
+	width:110px;
+	height:111px;
+	top:222px;
+	right:58px;
+	background:url(../img/smallIcon.png) no-repeat 0 -834px;
+}
+/* end 什么是绿钻*/
+/* 音乐特权*/
+.music {
+	height:706px;
+	background:url(../img/musicbg.png);
+}
+.Privilege {
+	position:relative;
+	width:1022px;
+	margin:0 auto;
+}
+.Privilege .PrivilegeH3 {
+	position:absolute;
+	width:238px;
+	height:100px;
+	top:160px;
+	left:24px;
+	line-height:999px;
+	overflow:hidden;
+	background:url(../img/sprite_title.png) no-repeat 0 0;
+}
+.Privilege .PrivilegeP {
+	position:absolute;
+	width:244px;
+	height:192px;
+	top:291px;
+	left:24px;
+	font:14px/24px arial,"微软雅黑";
+	color:#888888;
+}
+.Privilege .PrivilegeA {
+	position:absolute;
+	width:164px;
+	height:14px;
+	top:508px;
+	left:24px;
+	font:14px/14px "微软雅黑";
+	text-decoration:underline;
+	color:#666666;
+}
+.Privilege .CD {
+	position:absolute;
+	width:116px;
+	height:116px;
+	top:53px;
+	right:370px;
+	background:url(../img/smallIcon.png) no-repeat -245px 0;
+}
+.Privilege .yun {
+	position:absolute;
+	width:116px;
+	height:116px;
+	top:190px;
+	right:467px;
+	background:url(../img/smallIcon.png) no-repeat -245px -140px;
+}
+.Privilege .bgmusic {
+	position:absolute;
+	width:116px;
+	height:116px;
+	top:357px;
+	right:469px;
+	background:url(../img/smallIcon.png) no-repeat -245px -281px;
+}
+.Privilege .choose {
+	position:absolute;
+	width:116px;
+	height:116px;
+	top:508px;
+	right:379px;
+	background:url(../img/smallIcon.png) no-repeat -245px -424px;
+}
+.Privilege .music_cd {
+	position:absolute;
+	width:341px;
+	height:341px;
+	top:168px;
+	right:33px;
+	background:url(../img/music_cd.png) no-repeat;
+}
+.Privilege .music_cd_c {
+	position:absolute;
+	width:115px;
+	height:175px;
+	top:93px;
+	right:26px;
+	background:url(../img/music_cd_c.png) no-repeat;
+}
+.Privilege .Privilegebg {
+	position:absolute;
+	width:455px;
+	height:486px;
+	top:200px;
+	right:0;
+	background:url(../img/Privilegebg.png) no-repeat;
+}
+/* end 音乐特权*/
+/* 演唱会特权*/
+.VocalConcert {
+	background:#eae8e9;
+}
+.VocalConcert .concert {
+	position:relative;
+	width:1022px;
+	height:687px;
+	margin:0 auto;
+	background:url(../img/concertbg.png) no-repeat;
+}
+.VocalConcert .concertH3 {
+	position:absolute;
+	width:297px;
+	height:100px;
+	top:147px;
+	right:14px;
+	line-height:999px;
+	overflow:hidden;
+	background:url(../img/sprite_title.png) no-repeat 0 -103px;
+}
+.VocalConcert .concertP {
+	position:absolute;
+	width:297px;
+	height:168px;
+	font:14px/24px "微软雅黑";
+	top:278px;
+	right:14px;
+	color:#888;
+}
+.VocalConcert .concertA {
+	position:absolute;
+	font:14px/14px "微软雅黑";
+	top:471px;
+	right:137px;
+	width:178px;
+	height:14px;
+	color:#666;
+	text-decoration:underline;
+}
+.VocalConcert .QB {
+	position:absolute;
+	top:288px;
+	left:477px;
+	width:110px;
+	height:110px;
+	background:url(../img/smallIcon.png) no-repeat -245px -550px;
+}
+.VocalConcert .SALE {
+	position:absolute;
+	top:361px;
+	left:47px;
+	width:127px;
+	height:127px;
+	background:url(../img/smallIcon.png) no-repeat -245px -671px;
+}
+.VocalConcert .Free {
+	position:absolute;
+	bottom:0;
+	left:0;
+	width:203px;
+	height:203px;
+	background:url(../img/smallIcon.png) no-repeat -420px 0;
+}
+/*  end 演唱会特权*/
+/* 游戏特权*/
+.Gamemusic {
+	background:url(../img/musicbg.png);
+}
+.Gamemusic .game {
+	position:relative;
+	height:707px;
+	width:1022px;
+	margin:0 auto;
+	background:url(../img/gamebg.png) no-repeat ;
+}
+.Gamemusic .gemeH3 {
+	position:absolute;
+	top:218px;
+	left:23px;
+	width:240px;
+	height:100px;
+	line-height:999px;
+	overflow:hidden;
+	background:url(../img/sprite_title.png) no-repeat 0 -205px;
+}
+.Gamemusic .gemeP {
+	position: absolute;
+	width: 240px;
+	height: 72px;
+	font: 14px/24px "微软雅黑";
+	top: 349px;
+	left: 24px;
+	color: #888;
+}
+.Gamemusic .gemeA {
+	position: absolute;
+	font: 14px/14px "微软雅黑";
+	top: 445px;
+	left: 24px;
+	width: 164px;
+	height: 14px;
+	color: #666;
+	text-decoration: underline;
+}
+.Gamemusic .Recommend {
+	position: absolute;
+	top: 201px;
+	right: 515px;
+	width: 132px;
+	height: 132px;
+	background:url(../img/smallIcon.png) no-repeat -420px -219px;
+}
+.Gamemusic .Package {
+	position: absolute;
+	top: 117px;
+	right: 269px;
+	width: 158px;
+	height: 158px;
+	background:url(../img/smallIcon.png) no-repeat -420px -369px;
+}
+.Gamemusic .Newgame {
+	position: absolute;
+	top: 211px;
+	right: 51px;
+	width: 132px;
+	height: 132px;
+	background:url(../img/smallIcon.png) no-repeat -420px -539px;
+}
+.Gamemusic .gamebgbg {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 641px;
+	height: 305px;
+	background:url(../img/gamebgbg.png) no-repeat;
+}
+/* end 游戏特权*/
+/*  身份特权*/
+.Identity {
+	background:url(../img/Honorable.png) no-repeat center 0;
+	background-color:#f9f9f9;
+	min-width:1000px;
+}
+.Identity .Honorable {
+	position:relative;
+	width:1000px;
+	height:705px;
+	margin:0 auto;
+	
+}
+.Identity .HonorableH3 {
+	position: absolute;
+	top: 227px;
+	left: 0;
+	width: 242px;
+	height: 101px;
+	line-height: 999px;
+	overflow: hidden;
+	background: url(../img/sprite_title.png) no-repeat 0 -408px;
+}
+.Identity .HonorableP {
+position: absolute;
+width: 260px;
+height: 120px;
+font: 14px/24px "微软雅黑";
+top: 359px;
+left: 0;
+color: #888;
+}
+.Identity .HonorableSee {
+	position: absolute;
+	top: 160px;
+	right: 60px;
+	width: 96px;
+	height: 96px;
+	background: url(../img/smallIcon.png) no-repeat -420px -690px;
+}
+.Identity .noAdvertisement {
+	position: absolute;
+	top: 200px;
+	right: 470px;
+	width: 126px;
+	height: 126px;
+	background: url(../img/smallIcon.png) no-repeat -420px -801px;
+}
+.Identity .newEdition {
+	position: absolute;
+	top: 400px;
+	right: 140px;
+	width: 96px;
+	height: 96px;
+	background: url(../img/smallIcon.png) no-repeat -575px -904px;
+}
+.Identity .exclusive {
+	position: absolute;
+	bottom: 20px;
+	right: 360px;
+	width: 170px;
+	height: 170px;
+	background: url(../img/smallIcon.png) no-repeat -630px -690px;
+}
+.Identity .Honorablebg {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 715px;
+	height: 282px;
+	background: url(../img/chaorenbg.png) no-repeat;
+}
+/* end 游戏特权*/
+/* 如何开通*/
+.open {
+	background:#eae9e9;
+} 
+.open .opened{
+	position:relative;
+	width:1022px;
+	height:679px;
+	margin:0 auto;
+	background:url(../img/opened.png) no-repeat;
+}
+.open .openedH3 {
+	position: absolute;
+	top: 92px;
+	left: 326px;
+	width: 394px;
+	height: 94px;
+	line-height: 999px;
+	overflow: hidden;
+	background: url(../img/sprite_title.png) no-repeat 0 -513px;
+}
+.open .p1 {
+	position: absolute;
+	top: 357px;
+	left: 92px;
+	width: 208px;
+	height: 38px;
+	font:16px/19px "微软雅黑";
+	color:#888;
+}
+.open .p2 {
+	position: absolute;
+	top: 357px;
+	left: 435px;
+	width: 200px;
+	height: 38px;
+	font:16px/19px "微软雅黑";
+	color:#888;
+}
+.open .p2 a {
+	display:inline-block;
+	font:12px/14px "微软雅黑";
+	color:#666;
+	margin-top:2px;
+}
+.open .p3 {
+	position: absolute;
+	top: 357px;
+	left: 785px;
+	width: 200px;
+	height: 19px;
+	font:16px/19px "微软雅黑";
+	color:#888;
+}
+.open .pay {
+	position: absolute;
+	top:518px;
+	left:382px;
+	width:259px;
+	height:60px;
+	line-height:999px;
+	overflow:hidden;
+	background:url(../img/openlv.png) no-repeat;
+}
+.question {
+	position:relative;
+	font:12px/22px arial,"宋体";
+	color:#787878;
+	padding-left:25px;
+	padding-bottom:21px;
+}
+.question h3 {
+	font:12px/18px "宋体";
+	color:#4e4f4e;
+	padding-bottom:10px;
+}
+.question .Qactive {
+	position:absolute;
+	width:15px;
+	height:14px;
+	top:0;
+	left:0;
+	background:url(../img/smallIcon.png) no-repeat -721px -118px;
+}
+.question ul {
+	list-style: disc;
+	padding-left:30px;
+}
+.question a {
+	color:#42a41b;
+}
+.question a:hover {
+	text-decoration:underline;
+}
+/* end 如何开通*/
+/* 底部导航*/
+.footerNav {
+	background:#f5f5f5;
+	border-top:1px solid #dcdcdc;
+	border-bottom:1px solid #dcdcdc;
+	min-width:1011px;
+}
+.footerNav .threefooter {
+	height:60px;
+	width:1011px;
+	margin:0 auto;
+	padding:20px 0 0 11px ;
+}
+.threefooter .QQmusic{
+	float:left;
+	height:40px;
+	width:333px;
+	padding-left:39px;
+	border-right:1px solid #d8d8d8;
+}
+.QQmusic .left {
+	float:left;
+	width:143px;
+	background:url(../img/smallIcon.png) no-repeat -179px -878px;
+}
+.left .leftA {
+	display:inline-block;
+	font:14px/20px "微软雅黑";
+	margin-right:11px;
+	padding-left:25px;
+	color:#4d4d4d;
+}
+.left .leftA:hover {
+	color:#42a41b;
+	text-decoration:underline;
+}
+.left .leftSpan {
+	display:inline-block;
+	font:12px/18px "宋体";
+	padding-left:25px;
+	color:#8b8b8b;
+}
+.QQmusic .now {
+	float:left;
+	width:94px;
+	height:28px;
+	margin-left:49px;
+	margin-top:6px;
+	line-height:999px;
+	overflow:hidden;
+	background:url(../img/nowbg.png) no-repeat;
+}
+.QQmusic .overflow {
+	white-space:nowrap;
+}
+.threefooter .Goodmusic{
+	float:left;
+	padding-left:48px;
+	font:12px/40px "宋体";
+}
+.Goodmusic .left {
+	float:left;
+	color:#8b8b8b;
+}
+.Goodmusic .right {
+	float:left;
+	width:122px;
+	height:40px;
+	line-height:999px;
+	overflow:hidden;
+	margin-left:16px;
+	background:url(../img/right.png) no-repeat;
+}
+/* end 底部导航*/
+/*底部*/
+.guanyu {
+	font-size:12px;
+	line-height:26px;
+	font-family:arial,"宋体";
+	padding:30px 0 30px;
+	color:#888;
+	text-align:center;
+}
+.guanyu a {
+	color:#888;
+}
+.guanyu a:hover {
+	color:#42a41b;
+	text-decoration:underline;
+}
+.top a {
+	margin:0 8px;
+}
+.bottom a {
+	padding:0 4px;
+}
+/* end 底部*/
+/*第二页面—音乐特权*/
+.Mimgchange {
+	background:none;
+	border:none;
+}
+/*两个特权*/
+.wrap .Mtwo {
+	position:relative;
+	margin-top:20px;
+	height:78px;
+	background:url(../img/Mtwo.png) no-repeat;
+}
+.Mtwo .Ma1 {
+	position:absolute;
+	top:0;
+	left:0;
+	width:490px;
+	height:78px;
+	background:url(../img/Ma1.png) no-repeat;
+}
+.Mtwo .Ma2 {
+	position:absolute;
+	top:0;
+	right:0;
+	width:490px;
+	height:78px;
+	background:url(../img/Mtwo.png) no-repeat -490px 0;
+}
+.Mtwo .Ma2:hover {
+	width:980px;
+	background:url(../img/Mtwo.png) no-repeat 0 -200px;
+}
+/*end 两个特权*/
+/*音质*/
+.wrap .fiveli {
+	padding:2px 0 21px 0;
+}
+.fiveli li {
+	padding-top:30px;
+	overflow:hidden;
+}
+.yinzhiH {
+	height:27px;
+	width:449px;
+	background:url(../img/music.png) no-repeat 0 -81px;
+}
+.fiveli .h3 {
+	float:left;
+	font:bold 24px/24px "宋体";
+	padding:3px 10px 0 15px;
+	color:#000;
+	border-left:5px solid #ffa1bc;
+	display:none;
+}
+.fiveli .yinzhiP {
+	float:left;
+	font:19px/19px "宋体";
+	padding-top:8px;
+	color:#464646;
+	display:none;
+}
+.YinContent {
+	font:12px/18px arial,"宋体";
+	padding-top:21px;
+	color:#919191;
+	padding-bottom:40px;
+	border-bottom:1px solid #dfdfdf;
+}
+.YinContentL {
+	float:left;
+	width:530px;
+	padding-left:22px;
+}
+.pp {
+	float:left;
+	width:383px;
+	padding-left:7px;
+}
+.pp .changeimg {
+	display:inline-block;
+	height:9px;
+	width:15px;
+	line-height:60px;
+	overflow:hidden;
+	vertical-align:middle;
+	background:url(../img/sprite_icon.png) no-repeat 0 -63px;
+}
+.pp .changeimg2 {
+	display:inline-block;
+	height:9px;
+	width:15px;
+	line-height:60px;
+	overflow:hidden;
+	vertical-align:middle;
+	background:url(../img/sprite_icon.png) no-repeat 0 -73px;
+}
+.YSQ .PSQ {
+	float:left;
+	font:16px/24px '\5FAE\8F6F\96C5\9ED1';
+	color:#ff7e02;
+}
+.YinContentL .YHD {
+	padding-top:10px;
+}
+.YHD .PHQ {
+	float:left;
+	font:16px/24px '\5FAE\8F6F\96C5\9ED1';
+	color:#359f23;
+}
+.YinContent .difP {
+	font:14px/40px "微软雅黑";
+	color:#494949;
+}
+.YinContentR {
+	float:right;
+	width:394px;
+	padding-right:34px;
+}
+.YinContentR .Yintop {
+	overflow:hidden;
+}
+.Yintop a {
+	display:inline-block;
+	padding-left:12px;
+	margin-right:15px;
+	background:url(../img/music.png) no-repeat -295px 0;
+}
+.Yintop .SQA {
+	color:#ff8521;
+}
+.Yintop .HDA {
+	color:#41a205;
+}
+.Yintop .normalA {
+	color:#4e4e4e;
+}
+.Yintop .normalA:hover {
+	color:#42a41b;
+}
+.Yinbottom {
+	padding-top:14px;
+}
+/*end 音质*/
+/* 音乐云*/
+.yinyueyun {
+	border-bottom:1px solid #ddd;
+}
+.yinyueyun .yunH {
+	height: 27px;
+	width: 449px;
+	background: url(../img/music.png) no-repeat 0 -109px;
+}
+.threeUse {
+	margin-right:-185px;
+}
+.threeUse li {
+	padding:0;
+}
+.threeUse .UseFirst {
+	float:left;
+	margin:33px 168px 34px 73px;
+	width:114px;
+	height:165px;
+	text-align:center;
+}
+.UseFirst .ThreeA1bg {
+	display:block;
+	width:114px;
+	height:89px;
+	background:url(../img/sprite_music_icon.png) no-repeat -2px -16px;
+}
+.UseFirst .ThreeA2bg {
+	display:block;
+	width:114px;
+	height:89px;
+	background:url(../img/sprite_music_icon.png) no-repeat -122px -16px;
+}
+.UseFirst .ThreeA3bg {
+	display:block;
+	width:114px;
+	height:89px;
+	background:url(../img/sprite_music_icon.png) no-repeat -243px -16px;
+}
+.UseFirst .click {
+	display:block;
+	margin-top:17px;
+	font:14px/14px "微软雅黑";
+	color:#464445;
+}
+.UseFirst .click:hover {
+	color:#42a41b;
+	text-decoration:underline;
+}
+.UseFirst span {
+	display:block;
+	font:12px/18px "宋体";
+	color:#9f9f9f;
+	padding-top:9px;
+}
+ /*end 音乐云*/
+/*空间*/
+.kongjian {
+	border-bottom: 1px solid #ddd
+}
+.kongjian .kongjianH {
+	height: 27px;
+	width: 449px;
+	background: url(../img/music.png) no-repeat 0 -137px;
+}
+.UseFirst .KJadd {
+	width:100px;
+	height:98px;
+}
+.kongjian .KJclick {
+	display:block;
+	font:16px/32px "微软雅黑";
+	padding:2px 25px 0 24px;
+	background:#f6f6f6;
+	border:1px solid #e2e1dd;
+	border-radius:5px;
+	margin-top:12px;
+}
+.kongjian .KJclick{
+	color:#4f4c47;
+}
+.kongjian .KJadd1 {
+	display:block;
+	width:100px;
+	height:98px;
+	margin:0 auto;
+	background:url(../img/sprite_music_icon.png) no-repeat -8px -133px;
+}
+.kongjian .KJadd2 {
+	display:block;
+	width:100px;
+	height:98px;
+	margin:0 auto;
+	background:url(../img/sprite_music_icon.png) no-repeat -127px -133px;
+}
+.kongjian .KJadd3 {
+	display:block;
+	width:100px;
+	height:98px;
+	margin:0 auto;
+	background:url(../img/sprite_music_icon.png) no-repeat -249px -133px;
+}
+.kongjian .UseFirstKJ {
+	float: left;
+	padding: 42px 121px 34px 50px;
+	width: 179px;
+	height: 172px;
+	text-align: center;
+}
+.UseFirstKJ span {
+	display:inline-block;
+	font:12px/18px "宋体";
+	padding-top:9px;
+	color:#a0a0a0;
+}
+/* end 空间*/
+/* 点送音乐*/
+.diansong {
+	border-bottom: 1px solid #ddd;
+}
+.diansong .diansongH {
+	height: 27px;
+	width: 449px;
+	background: url(../img/music.png) no-repeat 0 -165px;
+}
+.diansong .UseFirst {
+	height:180px;
+}
+.UseFirst .diansongimg1 {
+	display:block;
+	width:114px;
+	height:106px;
+	background:url(../img/sprite_music_icon.png) no-repeat -2px -241px;
+}
+.UseFirst .diansongimg2 {
+	display:block;
+	width:114px;
+	height:106px;
+	background:url(../img/sprite_music_icon.png) no-repeat -122px -241px;
+}
+.UseFirst .diansongimg3 {
+	display:block;
+	width:114px;
+	height:106px;
+	background:url(../img/sprite_music_icon.png) no-repeat -243px -241px;
+}
+/* end 点送音乐*/
+/* 下载*/
+.Mdownload .MdownloadH {
+	height: 27px;
+	width: 449px;
+	background: url(../img/music.png) no-repeat 0 -193px;
+}
+.Mdownload {
+	position:relative;
+	padding-bottom:31px;
+	height:150px;
+	border-bottom:1px solid #ddd;
+}
+.downloadbg {
+	position:absolute;
+	width:97px;
+	height:93px;
+	left:93px;
+	top:72px;
+	background:url(../img/sprite_music_icon.png) no-repeat -11px -365px;
+}
+.downloadP {
+	position:absolute;
+	width:520px;
+	height:68px;
+	top:91px;
+	left:219px;
+	font:12px/16px "宋体";
+	color:#9f9f9f;
+}
+.downloadP a {
+	font:14px/32px "微软雅黑";
+	color:#4d4946;
+}
+.downloadP a:hover {
+	color: #42a41b;
+	text-decoration: underline;
+}
+/* end 下载*/
+/*end 第二页面—音乐特权*/
+
+
+/* 第三页面—游戏特权*/
+.Game {
+	border:none;
+	background:none;
+}
+.Gameheader {
+	width:978px;
+	height:58px;
+	overflow:hidden;
+	border:1px solid #e2e1ef;
+	margin-top:20px;
+}
+.Gleft {
+	float:left;
+	line-height:999px;
+	width:296px;
+	height:58px;
+	background:url(../img/youxi.gif) no-repeat;
+}
+.Gright {
+	float:right;
+	width:194px;
+	height:47px;
+	margin-top:4px;
+	margin-right:12px;
+	line-height:999px;
+	background:url(../img/youxi.gif) no-repeat right 0;
+}
+.Gametwo {
+	padding-bottom:18px;
+}
+.tuijianHeader {
+	height:24px;
+	line-height:99px;
+	overflow:hidden;
+	background:url(../img/youxi.gif) no-repeat left -59px;
+	margin-top:20px;
+	margin-bottom:20px;
+}
+.GameConten .Gameimg {
+	float:left;
+	width:363px;
+}
+.Gametwo .GameA {
+	display:block;
+	width:30px;
+	font:bold 12px/30px "宋体";
+	color:#4e4e4e;
+}
+.Gametwo .GameA:hover {
+	color:#42a41b;
+	text-decoration:underline;
+}
+.Gametwo span {
+	display:block;
+	font:12px/12px "宋体";
+	padding-bottom:12px;
+	color:#9e9e9e;
+}
+.Gameimg img {
+	width:363px;
+	height:264px;
+}
+.GameConten .Gameright {
+	float:right;
+	width:617px;
+}
+.Gameright li {
+	float:left;
+	width:170px;
+	padding-left:35px;
+}
+.libao {
+	height:24px;
+	line-height:99px;
+	overflow:hidden;
+	background:url(../img/youxi.gif) no-repeat left -84px;
+	margin-top:20px;
+	margin-bottom:20px;
+}
+ .normal .GameA {
+	font-weight:normal;
+}
+/* end 第三页面—游戏特权*/
+
+/* 第四页面—特权与等级*/
+.PriviligeHeader {
+	position:relative;
+	padding-bottom:20px;
+}
+.Grow {
+	font:12px/18px arial,"宋体";
+}
+.PriviH3L {
+	float:left;
+	width:327px;
+	height:50px;
+	line-height:999px;
+	overflow:hidden;
+	background:url(../img/HeaderL.png) no-repeat;
+}
+.PriviH3C {
+	float:left;
+	width:327px;
+	height:50px;
+	line-height:999px;
+	overflow:hidden;
+	background:url(../img/HeaderC.png) no-repeat;
+}
+.PriviH3R {
+	float:left;
+	width:326px;
+	height:50px;
+	line-height:999px;
+	overflow:hidden;
+	background:url(../img/HeaderR.png) no-repeat;
+}
+.trangle {
+	position:absolute;
+	width:40px;
+	height:20px;
+	top:50px;
+	left:153px;
+	background:url(../img/smallIcon.png) no-repeat -704px -483px;
+}
+.PriH3 {
+	float:left;
+	font:bold 16px/16px "微软雅黑";
+	padding-left:16px;
+	padding-right:6px;
+	color:#3b3622;
+	border-left:5px solid #95c561;
+	margin:20px 0;
+
+}
+.HeaderRight {
+	float:left;
+	color:#a0a0a0;
+	line-height:12px;
+	padding-top:4px;
+	margin-top:20px;
+}
+.Growtable td {
+	padding: 15px 20px;
+	text-align: center;
+}
+.part,
+.add,
+.jian {
+	float:left;
+}
+.part {
+	padding:14px 0;
+	background:#eeedeb;
+}
+.Gfourplace {
+	position:relative;
+}
+.part1 {
+	font-weight:bold;
+	color:#ff5d65;
+	margin-right:4px;
+	padding-left:21px;
+	padding-right:21px;
+}
+.part2 {
+	padding-left:51px;
+	padding-right:51px;
+	margin-right:20px;
+}
+.part2 span {
+	color:#ff5d65;
+}
+.add {
+	width:20px;
+	height:46px;
+	margin-right:20px;
+	background:url(../img/smallIcon.png) no-repeat -704px -556px;
+}
+.part3 {
+	font-weight:bold;
+	padding-right:11px;
+	padding-left:11px;
+	margin-right:16px;
+	color:#ff5d65;
+}
+.jian {
+	width: 20px;
+	height: 46px;
+	margin-right: 15px;
+	background: url(../img/smallIcon.png) no-repeat -704px -611px;
+}
+.part4 {
+	font-weight:bold;
+	color:#4a9a15;
+	padding-right:10px;
+	padding-left:10px;
+}
+.Gtrangle {
+	position:absolute;
+	width:15px;
+	height:8px;
+	background:url(../img/smallIcon.png) no-repeat -704px -397px;
+}
+.Gt1 {
+	left:56px;
+	bottom:-8px;
+}
+.Gt2 {
+	left:353px;
+	bottom:-8px;
+}
+.Gt3 {
+	right:249px;
+	bottom:-8px;
+}
+.Gt4 {
+	right:59px;
+	bottom:-8px;
+}
+.floatTable td {
+	padding:16px 5px 14px;
+}
+.floatTable  {
+	padding-top:20px;
+}
+.difTr {
+	vertical-align:top;
+}
+.difTd {
+	text-align:center;
+}
+.TableLeft {
+	float:left;
+}
+.Pcenter,
+.Pright {
+	float:left;
+	width:108px;
+	padding:21px 19px 389px 10px;
+	height:54px;
+	border:1px solid #d2d2d2;
+	margin-left:52px;
+}
+.Pright {
+	float:left;
+}
+.green {
+	color:#43a711;
+}
+.PriviligeP2 {
+	padding-top:24px;
+}
+.PriviligeP3 {
+	padding-top:6px;
+	padding-bottom:2px;
+}
+.partTable {
+	margin-bottom:20px;
+}
+.partTable td {
+	padding:6px 0;
+	text-align:center;
+}
+.partTable .td {
+	padding:6px 0 6px 25px;
+	text-align:left;
+	font-weight:bold;
+}
+.bggray {
+	background:#fafafa;
+}
+.diftr {
+	color:#fd8107;
+	font-weight:bold;
+}
+.partTable .titletd {
+	position:relative;
+	font-weight:bold;
+	text-align:left;
+	padding-left:25px;
+}
+.titletd .tdbg {
+	position:absolute;
+	width:3px;
+	height:3px;
+	top:17px;
+	left:11px;
+	background:#99c75b;
+}
+.titletd strong {
+	font:bold 16px/24px "微软雅黑";
+}
+.difpadding {
+	margin-bottom:30px;
+}
+.partTable .no {
+	background:url(../img/smallIcon.png) no-repeat -670px -246px;
+}
+.partTable .difNo {
+	background:url(../img/smallIcon.png) no-repeat -670px -238px;
+}
+.partTable .yes {
+	background:url(../img/smallIcon.png) no-repeat -678px -279px;
+}
+.partTable .difYes {
+	background:url(../img/smallIcon.png) no-repeat -678px -269px;
+}
+
+/* end 第四页面—特权与等级*/
+
+/* 第五页面—年费绿钻*/
+table {
+	border-collapse: collapse;
+}
+td,
+th {
+	border:1px solid #d2d2d2;
+	padding:0;
+}
+td {
+	text-align: left;
+	padding:14px 54px 12px 20px;
+}
+.yearcontent {
+	padding-bottom:30px;
+}
+.yearcontent a:hover {
+	text-decoration:underline;
+}
+.firseH {
+	font:bold 16px/16px "微软雅黑";
+	padding-left:16px;
+	border-left:5px solid #97c75a;
+	margin-top:30px;
+	margin-bottom:16px;
+}
+.firstCont li {
+	padding-bottom:20px;
+}
+.firstCont .Yleft {
+	float:left;
+	width:107px;
+	text-align:right;
+	font:bold 12px/18px "微软雅黑";
+}
+.firstCont .Yright {
+	float:left;
+	font:12px/18px arial,"宋体";
+	padding-left:10px;
+}
+.Yright table {
+	width:863px;
+}
+.red {
+	color:#ff754f;
+}
+.gray {
+	color:#9a9a9a;
+}
+.YleftP {
+	padding:16px 0 14px;
+	color:#9a9a9a;
+}
+.Ychangeimg {
+	float:left;
+	width:113px;
+	height:35px;
+	line-height:99px;
+	overflow:hidden;
+	margin-right:5px;
+	background:url(../img/Exclusive.gif) no-repeat -630px -210px;
+}
+.Ysuoyao {
+	float:left;
+	padding:18px 5px 0;
+	color:#31ae14;
+}
+.secondCont {
+	padding-bottom:8px;
+}
+.secondCont li {
+	float:left;
+	width:210px;
+	margin-right:53px;
+	padding-top:39px;
+	font:12px/40px "微软雅黑";
+	text-align:center;
+}
+.secondCont p {
+	height:147px;
+
+}
+.secondCont span {
+	display:block;
+	color:#4b4b4b;
+	padding-top:13px;
+}
+.secondCont .Ydifli {
+	width:191px;
+	margin-right:0;
+}
+.secondCont .Yp1 {
+	background:url(../img/Exclusive.gif) no-repeat 0 -40px;
+}
+.secondCont .Yp2 {
+	background:url(../img/Exclusive.gif) no-repeat -210px -40px;
+}
+.secondCont .Yp3 {
+	background:url(../img/Exclusive.gif) no-repeat -420px -40px;
+}
+.secondCont .Yp4 {
+	background:url(../img/Exclusive.gif) no-repeat -630px -40px;
+}
+.secondCont .Yp5 {
+	background:url(../img/Exclusive.gif) no-repeat 0 -242px;
+}
+.secondCont .Yp6 {
+	background:url(../img/Exclusive.gif) no-repeat -210px -242px;
+}
+.secondCont .Yp7 {
+	background:url(../img/Exclusive.gif) no-repeat -420px -242px;
+}
+.Ytable td,
+.Ytable th {
+	text-align:center;
+	padding:11px 0 9px;
+	font:12px/18px "宋体";
+}
+.Ytable th {
+	font-weight:bold;
+	color:#ff7913;
+}
+table .tdbold {
+	font-weight:bold;
+	color:#4f4c45;
+}
+.Ytable .tdA {
+	color:#3f9e1c;
+}
+/* end 第五页面—年费绿钻*/
+.quick {
+	position:fixed;
+	width:29px;
+	height:100px;
+	top:400px;
+	right:40px;
+}
+.Atop {
+	display:inline-block;
+	width:29px;
+	height:16px;
+	margin-bottom:20px;
+	background:url(../img/back.png) no-repeat ;
+}
+.message {
+	display:inline-block;
+	width:29px;
+	height:28px;
+	margin-bottom:16px;
+	background:url(../img/back.png) no-repeat 0 -37px;
+}
+.Afooter {
+	display:inline-block;
+	width:29px;
+	height:16px;
+	background:url(../img/back.png) no-repeat 0 -81px;
+}
