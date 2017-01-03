@@ -71,10 +71,10 @@
 		clearInterval(this.timer);
 		this.timer = setInterval(function(){
 			n = n+to;
-			if(n>8){
+			if(n>7){
 				to = -1;
 			}
-			if(n<-8){
+			if(n<-7){
 				to = 1;
 			}
 			_this.tipMove.style.top = n + 'px';
@@ -166,8 +166,6 @@
 	function reset(){
 		var seeH = document.documentElement.clientHeight;
 		var seeW = document.documentElement.clientWidth;
-		wrap.style.width = seeW +"px";
-		wrap.style.height = seeH +"px";
 		wrap.style.backgroundSize = `${seeW}px ${seeH}px`;
 		box.style.left = seeW/2 - (box.offsetWidth/2) + 'px';
 		box.style.top = seeH/2 - (box.offsetHeight/2) + 'px';

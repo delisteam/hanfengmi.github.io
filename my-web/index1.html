@@ -3,681 +3,22 @@
 <head>
 	<meta charset="UTF-8" />
 	<title>myWeb</title>
-	<script type="text/javascript">
-		(function(){
-			var html = document.documentElement;
-			var hWidth = document.documentElement.clientWidth;
-			html.style.fontSize = hWidth/15 + "px";
-			console.log(document.documentElement.clientWidth);
-		})();
-	</script>
-	<style type="text/css">
-		@font-face {
-			font-family:f-gm;
-			src:url(fonts/GOTHAM-MEDIUM.TTF);
-		}
-		@font-face {
-			font-family:f-gb;
-			src:url(fonts/GOTHAM-BOLD.TTF);
-		}
-		@font-face {
-			font-family:f-sfr;
-			src:url(fonts/System-San-Francisco-Display-Regular.ttf);
-		}
-		body {
-			margin:0;
-			background-image:linear-gradient(136deg, #ff9e7f 0%, #ffc86d 100%);
-			perspective:1600px;
-			font-size:0.16rem;
-		}
-		a {
-			text-decoration: none;
-			color:#fff;
-		}
-		h2,p {
-			margin:0;
-		}
-		ul {
-			padding:0;
-			margin:0;
-			list-style:none;
-		}
-		i {
-			font-style: normal;
-		}
-		#wrap {
-			position:relative;
-			font-family:f-sfr;
-			transform-style: preserve-3d;
-			-overflow: hidden;
-		}
-		.Hheader {
-			height:0.40rem;
-			width:100%;
-			border-bottom:1px solid rgba(255,255,255,0.3);
-			position:relative;
-			z-index: 999;
-		}
-		.Hleft,
-		.Hcenter,
-		.HNav {
-			display: inline-block;
-		}
-		.logo {
-			display: inline-block;
-			height:100%;
-			width:0.578rem;
-			text-align:center;
-			cursor:pointer;
-			border-right:1px solid rgba(255,255,255,0.3);
-			font:0.195rem/0.398rem GOTHAM-LIGHT;
-			transition:.25s;
-		}
-		.logo:hover {
-			background:#fff;
-			color:#000;
-		}
-		.login {
-		    top: 0;
-		    left: 0;
-		    position: absolute;
-		    width: 100%;
-		    height: 100%;
-		    background: rgba(0,0,0,.7);
-		    z-index: 999;
-		    display: none;
-		}
-		.takeIn {
-			position:absolute;
-			width:6.25rem;
-			height:4.688rem;
-			top:1.56rem;
-			left:-2.34rem;
-			opacity:0;
-			transition:.5s;
-			background: #fff;
-		}
-		.takeIn h4 {
-			margin: 49px auto;
-		    width: 200px;
-		    font: 40px/44px arial;
-		    font-family:f-sfr;
-		}
-		.close-login {
-			position:absolute;
-			right:0.156rem;
-			top:0.156rem;
-			width:0.39rem;
-			height:0.39rem;
-			font:0.27rem/0.39rem arial;
-			color:#000;
-			text-align: center;
-			transition: .5s;
-		}
-		.close-login:hover{
-			transform: rotateZ(360deg);
-		}
-		.Hlist {
-			display: inline-block;
-			color:#fff;
-			margin-left: 0.234rem;
-			height: 100%;
-   			line-height: 0.406rem;
-   			padding-left: 0.078rem;
-   			padding-right: 0.078rem;
-   			cursor: pointer;
-   			font-size: 0.117rem;
-		}
-		.Hright {
-			position:absolute;
-			right:0;
-			top:0;
-			height:100%;
-		}
-		.searchBtn {
-			float:left;
-			width:0.578rem;
-			height:100%;
-			border-left:1px solid rgba(255,255,255,0.3);
-			border-right:1px solid rgba(255,255,255,0.3);
-			font:0.156rem/0.39rem GOTHAM-LIGHT;
-			text-align:center;
-			transition:.25s;
-		}
-		.searchBtn:hover {
-			background:#fff;
-			color:#000;
-		}
-		.Hlogin {
-			float:left;
-			width: 0.859rem;
-			height:100%;
-		    text-align: center;
-		    cursor: pointer;
-		    line-height: 0.39rem;
-		    border-right:1px solid rgba(255,255,255,0.3);
-		}
-		.Hlogin a {
-			display:inline-block;
-			width: 100%;
-			height:100%;
-			transition: .25s;
-		}
-		.Hlogin a:hover {
-			background:#fff;
-			color:#000;
-		}
-		.Hbuy {
-			float:left;
-			cursor: pointer;
-			width: 75px;
-			height:100%;
-		}
-		.Hbuy a {
-			display:inline-block;
-			width:100%;
-			height:100%;
-			text-align:center;
-			line-height: 0.4rem;
-			transition:.25s;
-		}
-		.Hbuy a:hover{
-			background:#fff;
-			color:#000;
-		}
-		.Hpart {
-			position:absolute;
-			right:0.273rem;
-			top:0.625rem;
-			z-index: 5;
-		}
-		.Hpart a {
-			display: inline-block;
-			box-sizing: border-box;
-			height:0.234rem;
-			border: 1px solid #FFF;
-			border-radius: 3px;
-			font:0.109rem/0.078rem GOTHAM-MEDIUM;
-			font-family:f-gb;
-			padding:0.078rem 0.156rem;
-			transition:.25s;
-		}
-		.free:hover {
-			color:#000;
-			background: #fff;
-		}
-		.pay {
-			color:#000;
-			background: #fff;
-		}
-		.pay:hover {
-			color:#fff;
-			background: none;
-		}
-		.Hpage {
-			height: 100px;
-			width:100px;
-		    position: absolute;
-		    top:45%;
-		    left:0.78rem;
-		    font-family:f-gb;
-		    z-index:5;
-		}
-		.Hpagen {
-			height: 0.78rem;
-			width:0.78rem;
-		    position: absolute;
-		    overflow: hidden;
-		}
-		.nowPage {
-			position:absolute;
-			width:900px;
-			left:0;
-			cursor:pointer;
-			transition:.5s;
-		}
-		.nowPage span {
-			width:130px;
-			display: inline-block;
-			margin-right:50px;
-			font-size:0.859rem;
-			line-height: 0.78rem;
-			color:#fff;
-			transition:.25s;
-		}
-		.nowPage span:hover {
-			color:#000;
-		}
-		.allPage {
-			position:absolute;
-			left:0.547rem;
-			height:0.65rem;
-			border-left:4px solid rgba(250,250,250,.3);
-		}
-		.allPage span {
-			position: absolute;
-		    opacity: 0.5;
-		    color: #fff;
-		    font-size: 0.234rem;
-		    left: 0.078rem;
-		    bottom: -0.046rem;
-		}
-		#cont {
-			position:absolute;
-			height:100%;
-			width:100%;
-			left:0;
-			top:0;
-			overflow: hidden;
-		}
-		.cont-four {
-			position:relative;
-			height:400%;
-			transition: .7s;
-			top:0;
-		}
-		.Hcont {
-			font-family: f-gb;
-			position: relative;
-			top:2.34rem;
-		    width: 3.125rem;
-		    height: 2.34rem;
-		    margin:0 auto;
-		    font-size:0.234rem;
-		    text-align:center;
-		    line-height: 0.703rem;
-		    margin-bottom:2.539rem;
-		    box-sizing: border-box;
-		    transform: rotateY(0deg) rotateX(5deg);
-		    transform-style: preserve-3d;
-		}
-		.Hcont .Hh2 {
-			border: 5px solid #353535;
-		}
-		.Hcont p {
-		    margin: auto;
-		    margin-top: 0.4687rem;
-		    text-align: center;
-		    width: 2.34rem;
-		    color: white;
-		    font-size: 0.14rem;
-		    line-height: 0.156rem;
-		    font-family: f-sfr;
-		    transform: translateZ(20px);
-		}
-		.HpartF {
-			position:relative;
-			width:100%;
-			height:972px;
-			transition:.2s;
-		}
-		.two-inner {
-			position:relative;
-			top:2.34rem;
-			width:5rem;
-			height:3.125rem;
-			-border:1px solid #000;
-			margin:0 auto;
-			text-align:center;
-		}
-		.two-inner h2 {
-			font:bold 0.39rem/0.469rem arial;
-			font-family:f-gb;
-		}
-		.two-inner input {
-			margin:0.78rem 0 0.78rem 0.078rem;
-			width:3.9rem;
-			height:0.3125rem;
-			font:0.234rem/0.3125rem arial;
-		}
-		.two-inner a {
-			display: inline-block;
-			width:0.469rem;
-			height:0.469rem;
-			border-radius: 50%;
-			border:1px solid #fff;
-			margin-left:10px;
-			font:0.234rem/0.468rem arial;
-			font-family: f-gb;
-			transition:.3s;
-		}
-		.two-inner a:hover {
-			background:#fff;
-			color:darkgoldenrod;
-		}
-		.list {
-			position:absolute;
-			border:1px solid #000;
-			border-top:none;
-			width:78%;
-			left:0.289rem;
-			top:1.6rem;
-			height:0;
-			overflow: hidden;
-			background: #fff;
-			transition:.5s;
-			text-align:left;
-		}
-		.list li {
-			font:0.156rem/0.195rem arial;
-			padding:5px 5px;
-		}
-		.list a {
-			color:#000;
-			width:100%;
-			height:0.195rem;
-			font:0.188rem/0.195rem arial;
-		}
-		.Hbtn {
-			width: 1.33rem;
-    		height: 0.453rem;
-    		margin:0.234rem auto;
-    		position: relative;
-    		transform: translateZ(40px);
-		}
-		.Hbtn a {
-			position: absolute;
-			left:0;
-			width:100%;
-			height:100%;
-			background: #fff;
-		    border-radius: 3px;
-		    color: #353535;
-		    font-size: 0.109rem;
-		    line-height: 0.453rem;
-		    cursor: pointer;
-		}
-		.Hbtn span {
-			width: 0.3125rem;
-		    height: 0.234rem;
-		    top:15px;
-		    border-radius: 100%;
-		    background-color: #000;
-		    position: absolute;
-		}
-		.Hbtn .left {
-			left:0;
-		}
-		.Hbtn .right {
-			right:0;
-		}
-		.changeP {
-			top:0;
-			left:0;
-			position:absolute;
-			width:100%;
-			height:100%;
-			background:rgba(0,0,0,.5);
-			display: none;
-			z-index: 999;
-		}
-		.yema {
-			position:absolute;
-			width:7.9rem;
-			height:2.34rem;
-			background: #fff;
-			top:50%;
-			margin-top:-1.172rem;
-			z-index: 888;
-			left:-6.25rem;
-			opacity: 0;
-			transition:.5s;
-		}
-		.yema-num span {
-			float:left;
-			font:1.5625rem/2.34rem arial;
-			margin:0 0.234rem;
-			font-family:f-gb;
-			cursor: pointer;
-			transition:.25s;
-		}
-		.yema-num .active {
-			color:darkgoldenrod;
-		}
-		.yema-num span:hover{
-			color:darkgoldenrod;
-		}
-		.page-back {
-			position:relative;
-			float:left;
-			margin:10px 0;
-			height:2.187rem;
-			width:2.219rem;
-			border-left:4px solid rgba(0,0,0,.4);
-			z-index: 999;
-		}
-		
-		/*===============引入=====================*/
-		.cMove {
-			width:2.03rem;
-			height:0.359rem;
-			position:absolute;
-			bottom:0.234rem;
-			left:0.125rem;
-			z-index: 999;
-		}
-		.y-move {
-			position:absolute;
-			width:0.3125rem;
-			height:0.3125rem;
-			cursor: pointer;
-			border-radius: 50%;
-			border:1px solid #000;
-			font:0.156rem/0.3125rem GOTHAM-LIGHT;
-			text-align:center;
-			color:#fff;
-		}
-		.y-wait {
-			position:absolute;
-			right:0;
-			width:0.3125rem;
-			height:0.3125rem;
-			border:1px solid #000;
-			border-radius: 50%;
-			text-align: center;
-		}
-		.inner {
-			display: inline-block;
-			width:0.266rem;
-			height:0.266rem;
-			border-radius: 50%;
-			margin-top:3px;
-			background:rgba(0,0,0,.5);
-			
-		}
-		.y-li {
-			position: absolute;
-			color:#000;
-			left:0.2rem;
-			top:0.125rem;
-		}
-		.y-li li{
-			width:0.047rem;
-			height:0.047rem;
-			float:left;
-			margin:0 5px 0;
-			background:#000;
-			border-radius: 50%;
-		}
-		.y-li li:nth-of-type(1) {
-			margin-left:0.234rem;
-		}
-		/*=======================================*/
-		.H-down {
-			position:absolute;
-			bottom:0;
-			width:0.625rem;
-			height:1.172rem;
-		}
-		.H-reol {
-			width:0.625rem;
-			height:0.625rem;
-			border-radius: 50%;
-			box-sizing: border-box;
-			border:2px solid rgba(250,250,250,.6);
-			cursor: pointer;
-			font:0.3125rem/0.625rem GOTHAM-LIGHT;
-			font-family: f-gb;
-			color:#fff;
-			text-align: center;
-			transform: rotateZ(180deg);
-		}
-		.H-down span {
-			position:absolute;
-			bottom:0;
-			left:0.273rem;
-			width:3px;
-			height:0.39rem;
-			background:rgba(250,250,250,.6);
-		}
-		.inner-btn {
-			width:100%;
-			height:100%;
-		}
-		.inner-btn li {
-			float:left;
-			position:relative;
-			width:0.9375rem;
-			height:0.9375rem;
-			margin:10px;
-			box-sizing: border-box;
-			cursor: pointer;
-			transition: .25s;
-			font:0.234rem/0.9375rem arial;
-			text-align:center;
-			color:#fff;
-		}
-		.inner-btn h3 {
-			padding:0;
-			margin:0;
-			position:absolute;
-			font:12px/14px arial;
-			bottom:0.078rem;
-			margin-left:0.3125rem;
-		}
-		.inner-btn li:hover {
-			transform: scale(1.5);
-			background: #fff;
-			border-radius: 20px;
-			color:#000;
-			box-shadow: -4px 4px 5px 3px rgba(0,0,0,.3);
-		}
-		.down-hide {
-			position:absolute;
-			bottom:0;
-			width:0.625rem;
-			height:1.172rem;
-			overflow: hidden;
-			
-		}
-		.threePart {
-			width:4.6875rem;
-			height:3.516rem;
-		}
-		.mnanimate {
-			float:left;
-			width:1.5625rem;
-			height:1.17rem;
-			background: #f84f4f;
-			border-radius: 0.78rem 1.0625rem 1.164rem 0.78rem/0.53rem 0.78rem 0.672rem 0.922rem;
-			transition: .5s;
-			cursor:none;
-		}
-		.threePart .p2 {
-			border-radius: 69px 189px 156px 100px/17px 109px 74px 144px;
-			background: #febc49;
-		}
-		.mnanimate:hover {
-			border-radius: 5px;
-		}
-		.all-list {
-			transform-style: preserve-3d;
-			position:absolute;
-			left:60px;
-		}
-		.all-list li {
-			width:1.56rem;
-			height:30px;
-			border:2px solid #fff;
-			background: #fff;
-			padding-left:5px;
-		}
-		#svg-unlock {
-    		height: 29%;
-		    z-index: 6;
-		    bottom: -40px;
-		    right: 0px;
-		    opacity: 1;
-		    position:fixed;
-		    transition:.5s;
-		}
-		#svg-wave {
-			fill: #fff;
-			position:fixed;
-			bottom: -40px;
-		    right: 0px;
-		}
-		.animation-to-section {
-			transition:.5s;
-		}
-		#Boxbg {
-			position:absolute;
-			bottom:0;
-			left:60px;
-		}
-		.loginD {
-			width:250px;
-			margin:0 auto;
-			text-align: center;
-			
-		}
-		.loginD div {
-			margin-bottom:20px;
-			position: relative;
-		}
-		.loginD .v1 {
-			border:none;
-			border-bottom:2px solid pink;
-			outline: none;
-			width:100%;
-			height:30px;
-			font:24px/26px arial;
-			font-family:f-sfr;
-		}
-		.loginD span {
-			position: absolute;
-			bottom:0;
-			font:26px/28px arial;
-			font-family:f-sfr;
-			transition:.4s;
-		}
-		.loginNow {
-			width:80px;
-			height:80px;
-			border-radius: 50%;
-			background:deeppink;
-			cursor: pointer;
-			outline: none;
-			font:30px/80px arial;
-			color:#fff;
-			font-family:f-sfr;
-		}
-	</style>
+	<link rel="stylesheet" href="css/index.css" />
 </head>
 <body>
 	<div id="wrap">
 		<header class="Hheader">
 			<div class="Hleft">
-				<a href="javascript:;" class="logo">M</a>
+				<a href="#1" class="logo">M</a>
 			</div>
 			<div class="Hcenter">
 				<div class="HNav">
 					<span class="Hlist">一堆列表吧</span>
 				</div>
-				<a href="javascript:;" class="Hlist">EXCLUSIVE PRODUCT</a>
-				<a href="javascript:;" class="Hlist">DEALS PRODUCT</a>
-				<a href="javascript:;" class="Hlist">FREEBIES</a>
-				<a href="javascript:;" class="Hlist">BECOME SELLER</a>
+				<a href="404.html" class="Hlist">EXCLUSIVE PRODUCT</a>
+				<a href="404.html" class="Hlist">DEALS PRODUCT</a>
+				<a href="404.html" class="Hlist">FREEBIES</a>
+				<a href="404.html" class="Hlist">BECOME SELLER</a>
 			</div>
 			<div class="Hright">
 				<a href="javascript:;" class="searchBtn">Find</a>
@@ -714,8 +55,8 @@
 			</div>
 		</div>
 		<div class="Hpart">
-			<a href="javascript:;" class="free">FREE SAMPLE</a>
-			<a href="javascript:;" class="pay">BUY NOW $38</a>
+			<a href="404.html" class="free">FREE SAMPLE</a>
+			<a href="404.html" class="pay">BUY NOW $38</a>
 		</div>
 		<div class="Hpage">
 			<div class="Hpagen">
@@ -937,8 +278,6 @@
 							<li></li>
 							<li></li>
 							<li></li>
-							<li></li>
-							<li></li>
 						</ul>
 						<div class="y-move">→</div>
 						<div class="y-wait">
@@ -955,7 +294,7 @@
 			</div>
 		</div>
 		
-		<svg id="svg-wave" width="415" height="91%" xmlns="http://www.w3.org/2000/svg">
+		<svg id="svg-wave" width="415" height="100%" xmlns="http://www.w3.org/2000/svg">
 			<path d="M 379.08 0.21 C 374.98 20.78 379.1 370.1 379.08 385.71 C 378.99 499.21 303.187 524.365 157.196 588.958 C 65.9778 637.177 1.62244 720.012 0 849.8 C 93.19 850.27 349.57 849.8 420 849.8 C 420 596.6 420 253.41 420 0.21 C 420 0.21 402.71 0.21 379.08 0.21 Z M 379.08 0.21">
 			    <animate class="animation-to-section" begin="0" dur="10s" repeatCount="indefinite" attributeName="d"></animate>
 				<!--<animate class="animation-to-section" begin="0" dur="10s" repeatCount="indefinite" attributeName="d" values=""></animate>
@@ -996,7 +335,7 @@
 			var seeW = document.documentElement.clientWidth;
 			$('.login').show();
 			setTimeout(function(){
-				takeIn.style.left = seeW/2 - 400 + 'px';
+				takeIn.style.left = seeW/2 - 300 + 'px';
 				takeIn.style.opacity = 1;
 			},50)
 		})
@@ -1014,8 +353,6 @@
 		function reset(){
 			var seeH = document.documentElement.clientHeight;
 			var seeW = document.documentElement.clientWidth;
-			wrap.style.width = seeW +"px";
-			wrap.style.height = seeH +"px";
 			wrap.style.backgroundSize = `${seeW}px ${seeH}px`;
 			HDown.style.left = seeW/2 - (HDown.offsetWidth/2) + 'px';
 			$('#svg-unlock').css("fill",'#7e7bd3');
@@ -1260,7 +597,7 @@
 					bottom:0
 				});
 			}
-			$('.nowPage').css('left',-(nH-1)*186);
+			$('.nowPage').css('left',-(nH-1)*185);
 			$('.cont-four').css('top',-(nH-1)*972+"px");
 			$('.HpartF').eq(nH-1).css('opacity',1).siblings().css('opacity',0);
 			$('.yema-num').children().eq(nH-1).addClass('active').siblings().removeClass('active');
@@ -1276,6 +613,7 @@
 		$('.mnbaid').keyup(function(){
 			var val = $('.mnbaid').val();
 			$('.goFind')[0].href = 'https://www.baidu.com/s?ie=utf-8&f=3&rsv_bp=0&rsv_idx=1&tn=baidu&wd='+val;
+			$('.goFind')[0].target = "_block";
 			$.ajax({
 				url:"https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su",
 				data:{
@@ -1295,7 +633,7 @@
 						if(e.target.nodeName === 'A'){
 							$('.mnbaid').val(e.target.innerHTML);
 							$('.goFind')[0].href='https://www.baidu.com/s?ie=utf-8&f=3&rsv_bp=0&rsv_idx=1&tn=baidu&wd='+e.target.innerHTML;
-							$('.goFind')[0].target = "_self";
+							$('.goFind')[0].target = "_block";
 						}
 					})
 					$('.goFind').click(function(){
