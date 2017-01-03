@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link href="css/css.css" rel="stylesheet"/>
+<script>
+        !function() {
+              var scale = 1;
+              var ratio = window.devicePixelRatio;
+                  scale = scale / window.devicePixelRatio;
+              var meta = document.createElement("meta");
+              meta.setAttribute("name","viewport");
+              meta.setAttribute("content","width=device-width,initial-scale = "+scale+",minimum-scale = "+scale+", maximum-scale = "+scale+", user-scalable = no");
+             document.head.appendChild(meta);
+                }();
+            var html = document.querySelector("html");
+            var width = html.getBoundingClientRect().width;
+            html.style.fontSize = width/15 + "px"
+</script>
+</head>
+    <body>
+        <header id="header">
+            <div class="input">
+              <input type="text" placeholder="9元门票疯一夏" />
+              <i></i>
+              <em></em>
+            </div>
+            <input class="submit" type="submit" value=""/>
+        </header>
+ <!--    header over-->
+        <section id="main">
+            <div class="banner">
+               <a href="#"><img src="img/banner.jpg" /></a>
+               <div class="dotlist">
+                  <a href="#"></a>
+                  <a href="#"></a>
+                  <a href="#"></a>
+                  <a href="#"></a>
+                  <a href="#"></a>
+               </div>
+            </div>
+            <nav class="nav">
+                <div class="hotel">
+                    <a href="#" class="hotelall">
+                         酒店
+                        <span>暑假送礼500元</span>
+                        <i></i>
+                        <em></em>
+                    </a>
+                    <a href="#" class="overseas">海外酒店</a>
+                    <a href="#" class="groupbuying">团购</a>
+                    <a href="#" class="specialoffer">特价酒店</a>
+                    <a href="#" class="inn">客栈·民宿</a>
+                </div>
+                <div class="airplane">
+                    <a href="#" class="plane">
+                        机票
+                        <em></em>
+                    </a>
+                    <a href="#" class="train">
+                         火车票
+                         <i></i>
+                    </a>
+                    <a href="#" class="bus">汽车票·船票</a>
+                    <a href="#" class="international">国际机票</a>
+                    <a href="#" class="car">专车·租车</a>
+                </div>
+                <div class="freetrip">
+                    <a href="#" class="trip">
+                        旅游
+                      <em></em>
+                    </a>
+                    <a href="#" class="overseas">目的地攻略</a>
+                    <a href="#" class="bus">邮轮</a>
+                    <a href="#" class="international">周边游</a>
+                    <a href="#" class="car">定制·包团</a>
+                </div>
+                <div class="viewport">
+                    <a href="#" class="view">
+                        景点<span></span>玩乐
+                      <em></em>
+                    </a>
+                    <a href="#" class="overseas">美食</a>
+                    <a href="#" class="bus">全球购·换汇</a>
+                    <a href="#" class="card">礼品卡</a>
+                    <a href="#" class="international">出境WiFi</a>
+                    <a href="#" class="car">保险·签证</a>
+                </div>
+            </nav>
+            <div class="menu">
+                <a href="#">
+                  <i class="free"></i>
+                  自由行
+                </a>
+                <a href="#">
+                  <i class="title"></i>
+                  主题游
+                </a>
+                <a href="#">
+                  <i class="oneday"></i>
+                  一日游
+                </a>
+                <a href="#" class="toptrip">
+                  <i class="top"></i>
+                  顶级游
+                </a>
+                <a href="#" class="kingofwine">
+                  <i class="wine"></i>
+                  酒店+景点
+                </a>
+                <a href="#" class="kingofwine">
+                  <i class="parenting"></i>
+                  亲子·游学
+                </a>
+                <a href="#" class="kingofwine">
+                  <i class="foreign"></i>
+                  外币兑换
+                </a>
+                <a href="#" class="More">
+                  <i class="more"></i>
+                  更多
+                </a>
+            </div>
+<!-- nine acton-->
+            <div class="nine">
+              <img src="img/nine.jpg"/>
+            </div>
+<!-- nine over-->
+<!--特卖会-->
+            <div class="sale">
+              <h3>
+                <a href="#" class="salepic">特卖会</a>
+                <a href="#" class="gift">领红包再下单 ></a>
+              </h3>
+              <div class="private">
+                  <a href="#" class="explosion">
+                      <img src="img/explosion.jpg"/>
+                      <span class="explosionword">五台山2日1晚跟团游(3<br/>钻)·千人出行拜五爷品香茶</span>
+                      <span class="price">
+                          <span class="tag">
+                              <span class="rmb">¥</span>
+                              396起
+                          </span>
+                          <span class="save">省￥32</span>
+                      </span>
+                  </a>
+                  <div class="other">
+                    <a href="#" class="othersale">
+                      <span class="moresale">
+                          <span class="thousand">千款特价</span>
+                          <span class="notmiss">走过路过不错过</span>
+                      </span>
+                      <span class="img">
+                          <img src="img/pic.png"/>
+                      </span>
+                    </a>
+                    <a href="#" class="overseatrip">
+                        <span class="moreoversea">海外精选</span>
+                        <span class="hundred">百元出境游</span>
+                        <img src="img/pic-tmh-1.png">
+                    </a>
+                    <a href="#" class="overseatrip over">
+                        <span class="moreoversea">周边玩乐</span>
+                        <span class="hundred">十元度周末</span>
+                        <img src="img/pic-tmh-2.png">
+                    </a>
+                  </div>
+              </div>
+            </div>
+<!--特卖会-->
+<!-- low action-->
+            <div class="low">
+              <h3>
+                <a href="#" class="lowprice">淘低价酒店</a>
+                <a href="#" class="gift">更多特价 ></a>
+              </h3>
+              <div class="panic">
+                 <a href="#" class="lowimg">
+                    <img src="img/low.jpg"/>
+                 </a>
+                 <div class="panichotel">
+                     <div class="end">
+                          距秒杀结束
+                        <div class="times">
+                          <span>03</span>
+                          <span class="maohao">:</span>
+                          <span>47</span>
+                          <span class="maohao">:</span>
+                          <span>13</span>
+                        </div>
+                     </div>
+                     <a href="#" class="panicword">
+                         <span class="wordleft">
+                            <span class="word">
+                               <strong>经济型</strong>
+                               城市便捷酒店（如东行 ）
+                            </span>
+                            <span class="number">
+                               <span class="six">¥ 60</span>
+                               <span class="three">¥ 133</span>
+                            </span>
+                          </span>
+                          <span class="wordright">抢</span>
+                     </a>
+                 </div>
+              </div>
+              <div class="lowlist">
+                    <a href="#">
+                        <strong>便宜10%</strong>
+                        <span>全网低价</span>
+                        <img src="img/dijia.png">
+                    </a>
+                    <a href="#">
+                        <strong>折上折</strong>
+                        <span>首单立减</span>
+                        <img src="img/zheshangzhe.png">
+                    </a>
+                    <a href="#" class="youhuiquan">
+                        <strong>优惠券专享</strong>
+                        <span>新客免费领</span>
+                        <img src="img/youhuiquan.png">
+                    </a>
+              </div>
+            </div>
+<!-- low over -->
+<!--故宫-->
+            <div class="sale">
+              <h3>
+                <a href="#" class="lowprice">门票特惠</a>
+                <a href="#" class="gift">更多景点玩乐 ></a>
+              </h3>
+              <div class="private">
+                  <a href="#" class="explosion">
+                      <img src="img/gugong.jpg"/>
+                      <span class="gugong">故宫</span>
+                      <span class="beijing">北京</span>
+                      <span class="number">
+                          <span class="six">¥ 10起</span>
+                          <span class="three">¥ 10</span>
+                      </span>
+                  </a>
+                  <div class="other">
+                    <a href="#" class="othersale special">
+                      <span class="moresale special1">
+                          <span class="thousand">景区三折起</span>
+                          <span class="notmiss">门票特权日</span>
+                      </span>
+                      <span class="img">
+                          <img src="img/sanzhe.jpg"/>
+                      </span>
+                    </a>
+                    <a href="#" class="othersale special">
+                      <span class="moresale special1">
+                          <span class="thousand">1元疯抢</span>
+                          <span class="notmiss">景点天天游</span>
+                      </span>
+                      <span class="img">
+                          <img src="img/yiyuan.jpg"/>
+                      </span>
+                    </a>
+                  </div>
+              </div>
+            </div>
+<!--故宫-->
+<!--热门活动-->
+            <div class="hotactivity">
+              <h3>
+                <a href="#" class="lowprice">热门活动</a>
+                <a href="#" class="gift">获取更多福利 ></a>
+              </h3>
+              <div class="imglist">
+                <a href="#" class="qiandao"><img src="img/qiandao.jpg"></a>
+                <a href="#" class="dishini"><img src="img/dishini.jpg"></a>
+                <a href="#" class="bishu"><img src="img/bishu.jpg"></a>
+                <a href="#" class="shengqian"><img src="img/shengqian.png"></a>
+                <a href="#" class="shuqi"><img src="img/choujiang.jpg"></a>
+              </div>
+            </div>
+<!--热门活动-->
+        </section>
+ <!--      main   -->
+       <footer id="footer">
+            <a class="active footerico">
+              <i class="ico1"></i>
+              <span>首页</span>
+            </a>
+            <a href="xingcheng.html" class="footerico">
+              <i class="ico2"></i>
+              <span>行程</span>
+            </a>
+            <a href="faxian.html" class="footerico">
+              <i class="ico3"></i>
+              <span>发现</span>
+            </a>
+            <a href="kefu.html" class="footerico">
+              <i class="ico4"></i>
+              <span class="color">客服</span>
+            </a>
+            <a href="my.html" class="footerico">
+              <i class="ico5"></i>
+              <span class="color">我的</span>
+            </a>
+       </footer>
+    </body>
+</html>
