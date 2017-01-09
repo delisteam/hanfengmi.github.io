@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<style type="text/css">
+		@font-face {
+			font-family:f-gb;
+			src:url(fonts/GOTHAM-BOLD.TTF);
+		}
+		html {
+			height:100%;
+		}
+		body {
+			height:100%;
+			margin:0;
+		}
+		p {
+			margin:0;
+		}
+		textarea {
+			padding:0;
+			margin:0;
+			resize: none;
+		}
+		#wrap {
+			height:100%;
+			background:linear-gradient(136deg, #ff7a7a 0%, #ff7ab6 100%);
+			position:relative;
+		}
+		a {
+			text-decoration: none;
+			font:bold 26px/40px arial;
+			display: inline-block;
+			width:40px;
+			margin-right:15px;
+			text-align: center;
+			color:#fff;
+		}
+		a:hover {
+			transition:1s;
+			color:blue;
+		}
+		.active{
+			color: greenyellow;
+		}	
+		#see-message {
+			width:450px;
+			height:100%;
+			position:absolute;
+			left:50px;
+			text-align: center;
+		}
+		.message-cont {
+			width:100%;
+			height:627px;
+			background: #fff;
+			overflow: hidden;
+			text-align: left;
+		}
+		.limessage {
+			width:100%;
+			height:103px;
+			box-sizing: border-box;
+			border-bottom:2px solid gray;
+			padding:0 20px 0 20px;
+		}
+		.user {
+			font:bold 22px/26px "微软雅黑";
+			font-family:f-gb;
+		}
+		.mySay {
+			text-indent:2rem;
+			margin-bottom:14px;
+		}
+		.write-message {
+			position:absolute;
+			right:100px;
+			width:400px;
+			top:100px;
+			height:300px;
+			border:1px solid #fff;
+			text-align: center;
+			padding-top:20px;
+		}
+		.message-take {
+			width:340px;
+			height:100px;
+			font:20px/24px "微软雅黑";
+			color:hotpink;
+			border-radius: 10px;
+			outline: none;
+			padding:10px;
+		}
+	</style>
+</head>
+<body>
+	<div id="wrap">
+		<div id="see-message">
+			<div class='message-cont'>
+				<div class="limessage">
+					<p class="user">asd：</p>
+					<p class="mySay">啊撒士大夫撒旦的风格的防守反击圣诞快乐是否接受对方拉啊实打实的大餐撒法基。</p>
+					<p class="replyTime">2018-09-08 16:37:60</p>
+				</div>
+			</div>
+			<div class="message-page">
+				
+			</div>
+		</div>
+		<div class="write-message">
+			<textarea class="message-take"></textarea>
+		</div>
+	</div>
+</body>
+<script src="js/mypages-1.0.js" type="text/javascript"></script>
+<script type="text/javascript">
+	pagesFn({
+		pageAll:20,
+		num:1,
+		len:7,
+		parent:'.message-page',
+		indexFn:function(num){
+			//console.log(num);
+		}
+	});
+	
+	//渲染页面内容
+	function creatDiv(){
+		
+		
+	}
+</script>
+</html>
