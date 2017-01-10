@@ -13,7 +13,8 @@
 	}
 	body{
 		margin:0;
-		height:100%
+		height:100%;
+		perspective: 200px;
 	}
 		#wrap {
 			width:100%;
@@ -21,6 +22,7 @@
 			margin:0 auto;
 			background: linear-gradient(136deg, rgb(142, 200, 225) 0%, rgb(142, 225, 185) 100%);
 			position: relative;
+			transform-style: preserve-3d;
 		}
 		h2,p{
 			margin:0;
@@ -159,8 +161,8 @@
 		}
 		
 		function move(ele){
-			mTween(ele,{top:-30},350,'linear',function(){
-				mTween(ele,{top:20},350,'linear',function(){
+			mTween(ele,{top:-30},500,'linear',function(){
+				mTween(ele,{top:20},500,'linear',function(){
 					move(ele);
 				});
 			});
@@ -181,19 +183,21 @@
 			$('.svg').children().css('top',0);
 		})
 		
-		var mX = 20;
-		var mY = 10;
+		const MX = 30;//定义常量
+		const MY = 10;
 		
 		$(document).mousemove(function(ev){
 			var sH = document.documentElement.clientHeight;
 			var sW = document.documentElement.clientWidth;
 			$('.p').css({
-				'left':PL + (ev.pageX - sW/2)/(sW/2)*mX,
-				'top':PT + (ev.pageY - sH/2)/(sH/2)*mY
+				'left':PL + (ev.pageX - sW/2)/(sW/2)*MX,
+				'top':PT + (ev.pageY - sH/2)/(sH/2)*MY
 			});
+			console.log(Math.abs((ev.pageX - sW/2)/(sW/2)));
 			$('.h2').css({
-				'left':sL + (ev.pageX - sW/2)/(sW/2)*mX*4,
-				'top':sT + (ev.pageY - sH/2)/(sH/2)*mY*4
+				'left':sL + (ev.pageX - sW/2)/(sW/2)*MX*5,
+				'top':sT + (ev.pageY - sH/2)/(sH/2)*MY*4,
+				'transform':'translateZ('+(1-Math.abs((ev.pageX - sW/2)/(sW/2)))*40+'px)'
 			});
 		})
 		

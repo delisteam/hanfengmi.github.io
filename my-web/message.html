@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<style type="text/css">
+		@font-face {
+			font-family:f-gb;
+			src:url(fonts/GOTHAM-BOLD.TTF);
+		}
+		html {
+			height:100%;
+		}
+		body {
+			height:100%;
+			margin:0;
+		}
+		p {
+			margin:0;
+		}
+		textarea {
+			padding:0;
+			margin:0;
+			resize: none;
+		}
+		#wrap {
+			height:100%;
+			background:linear-gradient(136deg, #ff7a7a 0%, #ff7ab6 100%);
+			position:relative;
+		}
+		a {
+			text-decoration: none;
+			font:bold 26px/40px arial;
+			display: inline-block;
+			width:40px;
+			margin-right:15px;
+			text-align: center;
+			color:#fff;
+		}
+		a:hover {
+			transition:1s;
+			color:blue;
+		}
+		.active{
+			color: greenyellow;
+		}	
+		#see-message {
+			width:450px;
+			height:100%;
+			position:absolute;
+			left:50px;
+			text-align: center;
+		}
+		.message-cont {
+			width:100%;
+			height:510px;
+			background: #fff;
+			overflow: hidden;
+			text-align: left;
+			margin-top:10px;
+		}
+		.limessage {
+			width:100%;
+			height:85px;
+			box-sizing: border-box;
+			border-bottom:2px solid gray;
+			padding:0 20px 0 20px;
+		}
+		.user {
+			font:bold 22px/26px "微软雅黑";
+			font-family:f-gb;
+		}
+		.mySay {
+			text-indent:2rem;
+			margin-bottom:10px;
+			margin-top:5px;
+		}
+		.write-message {
+			position:absolute;
+			right:100px;
+			width:400px;
+			top:100px;
+			height:300px;
+			border:1px solid #fff;
+			text-align: center;
+			padding-top:20px;
+		}
+		.message-take {
+			width:340px;
+			height:100px;
+			font:20px/24px "微软雅黑";
+			color:hotpink;
+			border-radius: 10px;
+			outline: none;
+			padding:10px;
+		}
+		.write {
+			display: block;
+			width:200px;
+			height:60px;
+			margin:30px auto;
+		}
+		.now {
+			float:left;
+		}
+		.replyTime a {
+			float:right;
+			color:#000;
+			font:16px/18px arial;
+			width: 10px;
+    		margin-right: 5px;
+    		padding-left:20px;
+		}
+	</style>
+</head>
+<body>
+	<div id="wrap">
+		<div id="see-message">
+			<div class='message-cont'>
+				<!--<div class="limessage">
+					<p class="user">asd：</p>
+					<p class="mySay">啊撒士大夫撒旦的风格的防守反击圣诞快乐是否接受对方拉啊实打实的大餐撒法基。</p>
+					<p class="replyTime">
+						<span class="now">2018-09-08 16:37:60</span>
+						<a href="javascript:;" class="down_icon">0</a>
+						<a href="javascript:;" class="top">0</a>
+					</p>
+				</div>-->
+			</div>
+			<div class="message-page"></div>
+		</div>
+		<div class="write-message">
+			<textarea class="message-take" placeholder="想说啥。。。。"></textarea>
+			<input type="button" value="确定留言" class="write"/>
+		</div>
+	</div>
+</body>
+<script src="js/mypages-1.0.js" type="text/javascript"></script>
+<script src="js/jquery-3.1.1.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+//	pagesFn({
+//		pageAll:20,
+//		num:1,
+//		len:7,
+//		parent:'.message-page',
+//		indexFn:function(num){
+//			//console.log(num);
+//		}
+//	});
+	
+	$page = $('.message-page');
+	$box = $('.message-cont');
+	$btn = $('.write');
+	$text = $('.message-take');
+	//有hash走hash没hash走1
+	hash = window.location.hash;
+	if(hash){
+		hash = hash.split('=')[1];
+	}else{
+		hash = 1;
+		window.location.hash = 'page=1';
+	}
+	
+	
+	//hashchange
+	window.onhashchange = function(){
+		hash = window.location.hash.split('=')[1];
+		getPage(hash);//通过hash值去请求哪组数据（第几页数据）
+		createPage(hash);//刷新新的页码
+	}
+		
+		
+	//渲染页码以及hash变化
+	createPage();
+	function createPage(){
+		$page.html('');
+		$.ajax({
+			url:'php/weibo.php',
+			data:{
+				act:'get_page_count'
+			},
+			dataType:'json',
+			success:function(json){
+				pagesFn({
+					parent:'.message-page',
+					pageAll:json.count,
+					num:hash*1,
+					len:7,
+					indexFn:function(num){
+						window.location.hash = 'page='+num;
+					}
+				});
+			}
+		});
+	}
+	//点击留言
+	$btn.on('click.add',function(){
+		var val = $text.val();
+		if(val){
+			$.ajax({
+				url:'php/weibo.php',
+				data:{
+					act:'add',
+					content:val
+				},
+				dataType:'json',
+				success:function(data){
+					if(!data.error){ //data.error === 0 说明输入的内容已经添加到数据库了
+						//如果hash为1说明当前在第一页
+						if(hash == 1){
+							getPage(1);
+							createPage(1);
+						}else{
+							window.location.hash = 'page=1';
+						}
+						
+						$text.val('');
+					}
+				}
+			});
+		}else{
+			alert('请输入内容!');
+		}
+	});
+	
+	
+	//渲染数据
+	getPage(hash);
+	function getPage(n){
+		$box.html('');
+		$.ajax({
+			url:'php/weibo.php',
+			data:{
+				act:'get',
+				page:n
+			},
+			success:function(arr){
+				arr = eval('('+arr+')');
+				$.each(arr,function(i,e){
+					$box.append(createDiv(e.content,cDate(e.time),e.id,e.acc,e.ref));
+				});
+				
+			}
+		});
+	}
+	
+	//
+	function createDiv(val,time,id,acc,ref){
+		var $div = $('<div class="limessage" pid="'+id+'">');
+		$div.html(`
+			<p class="user">asd：</p>
+			<p class="mySay">${val}</p>
+            <p class="replyTime">
+            	<span class="now">${time}</span>
+                <a href="javascript:;" class="down_icon">${ref}</a>
+				<a href="javascript:;" class="top">${acc}</a>
+            </p>
+		`);
+		console.log($div);
+		$div.on('click',function(ev){
+			//说明点赞
+			/*
+				weibo.php?act=acc&id=num			顶某一条数据
+				返回：{error:0} 
+			*/
+			if(ev.target.className === 'top'){
+//				console.log($(ev.target).closest('.reply').attr('pid'))
+				$.ajax({
+					url:'php/weibo.php',
+					data:{
+						act:'acc',
+						id:$(ev.target).closest('.limessage').attr('pid')
+					},
+					success:function(json){
+						json = eval('('+json+')');
+						if(!json.error){
+							var num = $(ev.target).text()*1;
+							num++;
+							$(ev.target).text(num);
+							alert('点赞成功!');
+						}
+					}
+				});
+			}
+			
+			/*
+				weibo.php?act=ref&id=num  踩
+				返回：{error:0}
+			*/
+			if(ev.target.className === 'down_icon'){
+				$.ajax({
+					url:'php/weibo.php',
+					data:{
+						act:'ref',
+						id:$(ev.target).closest('.limessage').attr('pid')
+					},
+					success:function(json){
+						json = eval('('+json+')');
+						if(!json.error){
+							var num = $(ev.target).text()*1;
+							num++;
+							$(ev.target).text(num);
+							alert('真讨厌!');
+						}
+					}
+				});
+			}
+		});
+		return $div;
+	}
+	
+	
+	//时间
+	function cDate(time){
+		//只要服务器时间为1970，直接*1000
+		var str = '';
+		var t = new Date(time*1000);
+		var y = t.getFullYear();
+		var mon = t.getMonth()+1;
+		var day = t.getDate();
+		var H = t.getHours();
+		var min = t.getMinutes();
+		var sen = t.getSeconds();
+		
+		str = y+'-'+toDou(mon)+'-'+toDou(day)+' '+toDou(H)+':'+toDou(min)+':'+toDou(sen);
+		
+		return str;
+	}
+	function toDou(n){
+		return n<10?'0'+n:''+n;
+	}
+	
+</script>
+</html>

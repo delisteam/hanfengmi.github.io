@@ -18,7 +18,7 @@
 				<a href="404.html" class="Hlist">EXCLUSIVE PRODUCT</a>
 				<a href="404.html" class="Hlist">DEALS PRODUCT</a>
 				<a href="404.html" class="Hlist">FREEBIES</a>
-				<a href="404.html" class="Hlist">BECOME SELLER</a>
+				<a href="message.html" class="Hlist">MESSAGE BOARD</a>
 			</div>
 			<div class="Hright">
 				<a href="javascript:;" class="searchBtn">Find</a>
@@ -45,12 +45,28 @@
 		</div>
 		<div class="login">
 			<div class="takeIn">
-				<a href="javascropt:;" class="close-login">X</a>
-				<h4>用户登录</h4>
-				<div class="loginD">
-					<div class="userName"><span>用户名</span><input type="text" class="v1"></div>
-					<div class="upassword"><span>邮箱</span><input type="text" class="v1"></div>
-					<div><input type="button" value="登陆" class="loginNow"></div>
+				<a href="javascript:;" class="close-login">X</a>
+				<div class="denglu">
+					<h4>用户登录</h4>
+					<div class="loginD">
+						<div class="userName"><span>用户名</span><input type="text" class="v1" id="login_user"></div>
+						<div class="upassword"><span>密码</span><input type="password" class="v1" id="login_pass"></div>
+						<div><input type="button" value="登陆" class="loginNow" id="login_btn"></div>
+					</div>
+					<a href="javascript:;" class="addUser">立即注册</a>
+					<span>登录注册请在服务器环境下执行</span>
+				</div>
+				<div class="zhuce">
+					<div class="loginD">
+						<div class="userName"><span>用户名</span><input type="text" class="v1" id="add_user"></div>
+						<div class="upassword"><span>密码</span><input type="text" class="v1" id="add_pass"></div>
+						<div><input type="button" value="注册" class="loginNow" id="add_btn"></div>
+						<a href="javascript:;" class="addfh">返回登陆</a>
+					</div>
+				</div>
+				<div class="take-in">
+					<p>欢迎登陆<span>hanshuai</span></p>
+					<p><a href="javascript:;" class="take-out">退出登录</a></p>
 				</div>
 			</div>
 		</div>
@@ -312,6 +328,7 @@
 </body>
 <script type="text/javascript" src="js/miaov.js"></script>
 <script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+<script src="js/ajax2.js" type="text/javascript" charset="utf-8"></script>
 <script>
 	(function(){
 		var wrap = document.getElementById('wrap');
@@ -332,6 +349,7 @@
 		reset();
 		console.log(document.documentElement.clientWidth);
 		$('.Hlogin').click(function(){
+			$('.Hcont').hide();
 			var seeW = document.documentElement.clientWidth;
 			$('.login').show();
 			setTimeout(function(){
@@ -340,9 +358,13 @@
 			},50)
 		})
 		
-		
+		if(document.cookie){
+			weIn();
+		}
 		$('.close-login').click(function(){
 			//==============================================关闭动画
+			$('.v1').val('').blur();
+			$('.Hcont').show();
 			takeIn.style.left =-400 + 'px';
 			takeIn.style.opacity = 0;
 			setTimeout(function(){
@@ -601,7 +623,6 @@
 			$('.cont-four').css('top',-(nH-1)*972+"px");
 			$('.HpartF').eq(nH-1).css('opacity',1).siblings().css('opacity',0);
 			$('.yema-num').children().eq(nH-1).addClass('active').siblings().removeClass('active');
-			//$('.H-reol').css('background',baImg[nH]);
 			$('#svg-unlock').css('fill',cc[nH-1]);
 			//$('.animation-to-section').eq(nH-1).show().siblings().hide();
 			$('.animation-to-section').eq(0).attr('values',animateC[nH-1]);
@@ -713,12 +734,135 @@
 			$(this).css('borderColor','red');
 		});
 		$('.v1').blur(function(){
-			$(this).prev().css({
-				bottom:0,
-				fontSize:26
-			});
-			$(this).css('borderColor','pink');
+			if(this.value === ''){
+				$(this).prev().css({
+					bottom:0,
+					fontSize:26
+				});
+				$(this).css('borderColor','pink');
+			}
+			
 		});
-	})();
+
+	$(".addUser").click(function(){
+		$('.v1').val('');
+		$('.v1').blur();
+		$(".denglu").css('left',-600);
+		$('.zhuce').css('left',0);
+	})
+	$(".addfh").click(function(){
+		$('.v1').val('');
+		$('.v1').blur();
+		$(".denglu").css('left',0);
+		$('.zhuce').css('left',600);
+	})
+	//登陆注册
+	var $adduser = $('#add_user');
+	var $addpass = $('#add_pass');
+	
+	$adduser.on('blur',function(){
+		var val = $(this).val();
+		$.ajax({
+			url:'php/user_view.php',
+			dataType:'xml',
+			success:function(str){
+				var name = $(str).find('.name');
+				name.onOff = true;
+				name.each(function(i,e){
+					if($(e).text() === val){
+						alert('用户名已被注册');
+						$adduser.css('color','red');
+						name.onOff = false;
+						return;
+					}
+				});
+				
+				if(name.onOff){
+					$adduser.css('color','green');
+				}
+			}
+		});
+	});
+	
+	
+	$('#add_btn').click(function(){
+		var userVal = $adduser.val();
+		var passVal = $addpass.val();
+		
+		if(userVal && passVal){
+			ajax({
+				url:'php/user.php',
+				data:{
+					act:'add',
+					user:userVal,
+					pass:passVal
+				},
+				succ:function(json){
+					if(json.error){
+						alert('不能注册！！！！！！！！')
+					}else{
+						//alert(json.desc);
+						$(".denglu").css('left',0);
+						$('.zhuce').css('left',600);
+					}
+				}
+			});
+		}else{
+			alert('请填写完整!!!');
+		}
+	});
+	$('#login_btn').click(function(){
+		var $login_user = $('#login_user').val();
+		var $login_pass = $('#login_pass').val(); 
+		
+		if($login_user && $login_pass){
+			ajax({
+				url:'php/user.php',
+				data:{
+					act:'login',
+					user:$login_user,
+					pass:$login_pass
+				},
+				succ:function(json){
+					if(json.error){
+						alert(json.desc);
+					}else{
+						alert('登陆成功!!!');
+						setCookie('name',$login_user,1);
+						weIn();
+					}
+				}
+			});
+		}else{
+			alert('请填写完整!!!');
+		}
+	});
+	$('.take-out').click(function(){
+		var c = document.cookie;
+		removeCookie(c.split('=')[0],c.split('=')[1]);
+		console.log(c.split('=')[0],c.split('=')[1]);
+		$('.v1').val('');
+		$('.v1').blur();
+		$('.take-in').hide();
+		$('.denglu').show();
+	});
+	document.onclick = function(){
+		console.log(document.cookie);
+	}
+	function setCookie(key,val,time){
+		time = time?time:0;
+		var day = new Date();
+		day.setDate(day.getDate()+time);
+		document.cookie = key+'='+val+';expires='+day;
+	}
+	function removeCookie(key,value){
+		setCookie(key,value,-1);
+	}
+	function weIn(){
+		$('.take-in').show();
+		$('.take-in').children().eq(0).children().html(document.cookie.split('=')[1]);
+		$('.denglu').hide();
+	}
+})();
 </script>
 </html>

@@ -20,6 +20,7 @@ body {
 	background-image:linear-gradient(136deg, #ff9e7f 0%, #ffc86d 100%);
 	perspective:1600px;
 	font-size:20px;
+	transition:.5s;
 }
 a {
 	text-decoration: none;
@@ -82,11 +83,15 @@ i {
 	position:absolute;
 	width:600px;
 	height:400px;
-	top:200px;
+	top:100px;
 	left:-500px;
 	opacity:0;
 	transition:.5s;
 	background: #fff;
+	overflow: hidden;
+}
+.takeIn .addUser {
+	color:red;
 }
 .takeIn h4 {
 	margin: 49px auto;
@@ -121,7 +126,7 @@ i {
 }
 .Hright {
 	position:absolute;
-	right:0;
+	right:25px;
 	top:0;
 	height:100%;
 }
@@ -159,6 +164,7 @@ i {
 	background:#fff;
 	color:#000;
 }
+
 .Hbuy {
 	float:left;
 	cursor: pointer;
@@ -618,6 +624,19 @@ i {
 	left:60px;
 	top:150px;
 }
+.denglu {
+	width:600px;
+	position:relative;
+	transition: .6s;
+	left:0;
+}
+.zhuce {
+	width:600px;
+	position:absolute;
+	transition: .6s;
+	left:600px;
+	top:120px;
+}
 .loginD {
 	width:250px;
 	margin:0 auto;
@@ -636,6 +655,19 @@ i {
 	height:30px;
 	font:24px/26px arial;
 	font-family:f-sfr;
+	position:relative;
+	z-index:6;
+	background: none;
+}
+.take-in {
+	display: none;
+}
+.take-in p{
+	margin:120px auto;
+	text-align: center;
+}
+.take-in a {
+	color:blue;
 }
 .loginD span {
 	position: absolute;
@@ -654,4 +686,7 @@ i {
 	font:30px/80px arial;
 	color:#fff;
 	font-family:f-sfr;
+}
+.addfh {
+	color:#000;
 }
