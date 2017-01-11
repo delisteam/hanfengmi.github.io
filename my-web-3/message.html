@@ -236,7 +236,6 @@
 			},
 			success:function(arr){
 				arr = eval('('+arr+')');
-				console.log(arr[0]);
 				$.each(arr,function(i,e){
 					$box.append(createDiv(e.content,cDate(e.time),e.id,e.acc,e.ref));
 				});
@@ -247,17 +246,9 @@
 	
 	//
 	function createDiv(val,time,id,acc,ref){
-		var u = '';
 		var $div = $('<div class="limessage" pid="'+id+'">');
-		console.log(document.cookie);
-		if(document.cookie){
-			u = document.cookie.split('=')[1];
-			console.log(u);
-		}else{
-			u = '游客'+parseInt(Math.random()*1000000);
-		}
 		$div.html(`
-			<p class="user">${u}</p>
+			<p class="user">asd：</p>
 			<p class="mySay">${val}</p>
             <p class="replyTime">
             	<span class="now">${time}</span>
@@ -265,6 +256,7 @@
 				<a href="javascript:;" class="top">${acc}</a>
             </p>
 		`);
+		console.log($div);
 		$div.on('click',function(ev){
 			//说明点赞
 			/*
