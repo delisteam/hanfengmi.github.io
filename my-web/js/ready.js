@@ -1,3 +1,4 @@
+window.onload = function(){
 (function(){
 	var wrap = document.getElementById('wrap');
 	var box = document.getElementById('box');
@@ -173,3 +174,4 @@
 		cMove.style.top = seeH/2 - ($(cMove).height()/2) + 'px';
 	}
 })();
+}

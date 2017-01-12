@@ -57,7 +57,8 @@
 			background: #fff;
 			overflow: hidden;
 			text-align: left;
-			margin-top:10px;
+			margin-top:50px;
+			border-radius: 10px;
 		}
 		.limessage {
 			width:100%;
@@ -71,9 +72,11 @@
 			font-family:f-gb;
 		}
 		.mySay {
-			text-indent:2rem;
+			text-indent:1rem;
 			margin-bottom:10px;
-			margin-top:5px;
+			padding-top:5px;
+			height:45px;
+			font: bold 16px/20px f-gb;
 		}
 		.write-message {
 			position:absolute;
@@ -99,6 +102,8 @@
 			width:200px;
 			height:60px;
 			margin:30px auto;
+			border-radius: 10px;
+			outline: none;
 		}
 		.now {
 			float:left;
@@ -111,10 +116,31 @@
     		margin-right: 5px;
     		padding-left:20px;
 		}
+		.top {
+			background: url('img/icons.png') 0 0 no-repeat;
+		}
+		.down_icon {
+			background: url('img/icons.png') 0 -17px no-repeat;
+		}
+		.return {
+			position:absolute;
+			width:50px;
+			height:30px;
+			color:#fff;
+			font:20px/30px "微软雅黑";
+		}
+		.header {
+			height:40px;
+			width:100%;
+			border-bottom:1px solid rgba(255,255,255,0.3);
+			  
+			position:absolute;
+		}
 	</style>
 </head>
 <body>
 	<div id="wrap">
+		<header class="header"></header>
 		<div id="see-message">
 			<div class='message-cont'>
 				<!--<div class="limessage">
@@ -133,6 +159,7 @@
 			<textarea class="message-take" placeholder="想说啥。。。。"></textarea>
 			<input type="button" value="确定留言" class="write"/>
 		</div>
+		<a href="index1.html" class="return">首页</a>
 	</div>
 </body>
 <script src="js/mypages-1.0.js" type="text/javascript"></script>
@@ -193,6 +220,7 @@
 			}
 		});
 	}
+	
 	//点击留言
 	$btn.on('click.add',function(){
 		var val = $text.val();
@@ -213,7 +241,6 @@
 						}else{
 							window.location.hash = 'page=1';
 						}
-						
 						$text.val('');
 					}
 				}
@@ -221,8 +248,13 @@
 		}else{
 			alert('请输入内容!');
 		}
+		
+		
 	});
-	
+	function odd(){
+		$('.mySay:even').css('color','#7e7bd3');
+		$('.mySay:odd').css('color','#ffc66e');
+	}
 	
 	//渲染数据
 	getPage(hash);
@@ -236,28 +268,28 @@
 			},
 			success:function(arr){
 				arr = eval('('+arr+')');
-				console.log(arr[0]);
+				console.log(arr);
 				$.each(arr,function(i,e){
 					$box.append(createDiv(e.content,cDate(e.time),e.id,e.acc,e.ref));
 				});
-				
+				odd();
 			}
 		});
+		
 	}
 	
 	//
 	function createDiv(val,time,id,acc,ref){
-		var u = '';
-		var $div = $('<div class="limessage" pid="'+id+'">');
-		console.log(document.cookie);
+		var na = '';
 		if(document.cookie){
-			u = document.cookie.split('=')[1];
-			console.log(u);
+			na = document.cookie.split('=')[1];
 		}else{
-			u = '游客'+parseInt(Math.random()*1000000);
+			na = parseInt(Math.random()*1000000);
 		}
+		//var <p class="user">${na}:</p>
+		var $div = $('<div class="limessage" pid="'+id+'">');
 		$div.html(`
-			<p class="user">${u}</p>
+			
 			<p class="mySay">${val}</p>
             <p class="replyTime">
             	<span class="now">${time}</span>
@@ -265,6 +297,7 @@
 				<a href="javascript:;" class="top">${acc}</a>
             </p>
 		`);
+		
 		$div.on('click',function(ev){
 			//说明点赞
 			/*

@@ -123,6 +123,10 @@ i {
 	padding-right: 5px;
 	cursor: pointer;
 	font-size: 14px;
+	transition:.25s;
+}
+.Hlist:hover {
+	color:#7e7bd3;
 }
 .Hright {
 	position:absolute;
@@ -592,6 +596,7 @@ i {
 	transform-style: preserve-3d;
 	position:absolute;
 	left:60px;
+	
 }
 .all-list li {
 	width:154px;
@@ -600,6 +605,9 @@ i {
 	background: #fff;
 	padding-left:5px;
 	font-family: cursive;
+}
+.list-ul {
+	display: none;
 }
 #svg-unlock {
 	height: 29%;
