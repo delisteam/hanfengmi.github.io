@@ -36,9 +36,9 @@
 			margin-right:15px;
 			text-align: center;
 			color:#fff;
+			transition:1s;
 		}
 		a:hover {
-			transition:1s;
 			color:blue;
 		}
 		.active{
@@ -76,7 +76,9 @@
 			margin-bottom:10px;
 			padding-top:5px;
 			height:45px;
-			font: bold 16px/20px f-gb;
+			font: bold 16px/25px f-gb;
+			overflow: hidden;
+			word-break: break-all;
 		}
 		.write-message {
 			position:absolute;
@@ -99,11 +101,14 @@
 		}
 		.write {
 			display: block;
-			width:200px;
+			width:125px;
 			height:60px;
 			margin:30px auto;
 			border-radius: 10px;
 			outline: none;
+			background:peru;
+			font:bold 20px/24px arial;
+			color:#fff;
 		}
 		.now {
 			float:left;
@@ -125,16 +130,37 @@
 		.return {
 			position:absolute;
 			width:50px;
-			height:30px;
+			height:40px;
 			color:#fff;
-			font:20px/30px "微软雅黑";
+			font:20px/40px "微软雅黑";
+			font-family:f-gb;
+		}
+		.return:hover{
+			background: #fff;
+			color:gold;
 		}
 		.header {
 			height:40px;
 			width:100%;
 			border-bottom:1px solid rgba(255,255,255,0.3);
-			  
 			position:absolute;
+		}
+		.turn-log {
+			width:70px;
+			margin:0;
+			font:16px/20px "微软雅黑";
+			transition:.4s;
+			display: none;
+		}
+		.write-message .turn-log:hover {
+			color:lightskyblue;
+		}
+		.pTitle {
+			position:absolute;
+			font:20px/40px arial;
+			left:50%;
+			font-family:f-gb;
+			margin-left:-74px;
 		}
 	</style>
 </head>
@@ -158,8 +184,10 @@
 		<div class="write-message">
 			<textarea class="message-take" placeholder="想说啥。。。。"></textarea>
 			<input type="button" value="确定留言" class="write"/>
+			<a href="index1.html" class="turn-log">返回登陆</a>
 		</div>
-		<a href="index1.html" class="return">首页</a>
+		<a href="index1.html" class="return">M</a>
+		<p class="pTitle">say something...</p>
 	</div>
 </body>
 <script src="js/mypages-1.0.js" type="text/javascript"></script>
@@ -224,7 +252,21 @@
 	//点击留言
 	$btn.on('click.add',function(){
 		var val = $text.val();
+		var na = '';
+		if(document.cookie){
+			na = document.cookie.split('=')[1];
+		}
+		if(!na){
+			alert('留言请登陆');
+			$('.turn-log').show();
+			return;
+		}
+		console.log(na);
 		if(val){
+			if(val.length>=50){
+				alert('内容超出');
+				return;
+			}
 			$.ajax({
 				url:'php/weibo.php',
 				data:{
@@ -280,16 +322,10 @@
 	
 	//
 	function createDiv(val,time,id,acc,ref){
-		var na = '';
-		if(document.cookie){
-			na = document.cookie.split('=')[1];
-		}else{
-			na = parseInt(Math.random()*1000000);
-		}
+		
 		//var <p class="user">${na}:</p>
 		var $div = $('<div class="limessage" pid="'+id+'">');
 		$div.html(`
-			
 			<p class="mySay">${val}</p>
             <p class="replyTime">
             	<span class="now">${time}</span>
