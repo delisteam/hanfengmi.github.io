@@ -575,6 +575,86 @@ i {
 .threePart {
 	width:426px;
 	height:320px;
+	background: #ee3a4c;
+	border-radius: 20px;
+	position: relative;
+}
+.see-eyes {
+	width:280px;
+	height:110px;
+	position:absolute;
+	top:50px;
+	left:50%;
+	margin-left:-140px;
+}
+.left-eye {
+	width:100px;
+	height:100px;
+	border-radius: 50%;
+	border:5px solid #fff;
+	position:absolute;
+	left:0;
+	top:0;
+}
+.eye-ball {
+	width:20px;
+	height:20px;
+	position:absolute;
+	left:50%;
+	top:50%;
+	margin:-10px 0 0 -10px;
+	background: #fff;
+	border-radius: 50%;
+}
+.right-eye {
+	width:100px;
+	height:100px;
+	border-radius: 50%;
+	border:5px solid #fff;
+	position:absolute;
+	right:0;
+	top:0;
+}
+.mouth {
+	position: absolute;
+	width:240px;
+	height:110px;
+	background:#770f1a;
+	left:50%;
+	margin-left:-120px;
+	bottom:30px;
+	border-radius: 0 0 200px 200px;
+	overflow: hidden;
+	transition:.5s;
+	z-index: 6;
+}
+.mouth:hover {
+	border-radius:200px 200px 0 0 ;
+}
+.tooth {
+	position:absolute;
+	top:0;
+	left:70px;
+	width:40px;
+	height:40px;
+	background: #fff;
+}
+.r2 {
+	left:130px;
+}
+.tongue {
+	float:left;
+	width:80px;
+	height:40px;
+	background: pink;
+	margin-top:82px;
+	border-radius: 50px 50px 0px 0px;
+	margin-left:47px;
+}
+.t2 {
+	width:88px;
+	border-radius: 50px 50px 0px 0px;
+	margin-left:-30px;
 }
 .mnanimate {
 	float:left;

@@ -253,15 +253,20 @@
 				</div>
 				<div class="HpartF">
 					<div class="two-inner threePart">
-						<div class="mnanimate"></div>
-						<div class="mnanimate p2"></div>
-						<div class="mnanimate p3"></div>
-						<div class="mnanimate p4"></div>
-						<div class="mnanimate p5"></div>
-						<div class="mnanimate p6"></div>
-						<div class="mnanimate p7"></div>
-						<div class="mnanimate p8"></div>
-						<div class="mnanimate p9"></div>
+						<div class="see-eyes">
+							<div class="left-eye">
+								<div class="eye-ball"></div>
+							</div>
+							<div class="right-eye">
+								<div class="eye-ball"></div>
+							</div>
+						</div>
+						<div class="mouth">
+							<div class="tooth"></div>
+							<div class="tooth r2"></div>
+							<div class="tongue"></div>
+							<div class="tongue t2"></div>
+						</div>
 					</div>
 				</div>
 				<div class="HpartF">
@@ -484,6 +489,7 @@
 			this.HReol = document.getElementsByClassName('H-reol')[0];
 			this.yemaNum = document.getElementsByClassName('yema-num')[0];
 			this.innerBtn = document.getElementsByClassName('inner-btn')[0];
+			this.eyeBall = document.getElementsByClassName('eye-ball');
 			this.isTab = true;
 		}
 		
@@ -493,6 +499,7 @@
 				window.addEventListener('mousemove',Fnmove);
 				function Fnmove(e){
 					_this.Lmove(e);
+					_this.EyeMove(e);
 				}
 				this.yemaNum.addEventListener('click',Yclick);
 				function Yclick(e){
@@ -506,10 +513,7 @@
 				function HRover(){
 					_this.HRmover();
 				}
-				this.Hcont.addEventListener('mouseover',HCover);
-				function HCover(){
-					_this.HCoverr();
-				}
+				
 				//console.log(this.seeW/2 - (this.HDown.offsetWidth/2));
 				if(window.navigator.userAgent.toLowerCase().indexOf('firefox')!=-1){
 					document.addEventListener('DOMMouseScroll',Fns);
@@ -530,7 +534,6 @@
 				var L = e.pageX/(this.seeW/2)-1;
 				var T = 1-e.pageY/(this.seeH/2);
 				this.Hcont.style.transform = 'rotateY('+L*MaxD+'deg) rotateX('+T*MaxT+'deg)';
-				
 			},
 			ymmove:function(e){
 				window.location.hash = e.target.innerHTML;
@@ -596,8 +599,14 @@
 					transform:'rotateY(300deg)'
 				})
 			},
-			HCoverr:function(){
-				
+			EyeMove:function(e){
+				var Max = 30;
+				var L = e.pageX/(this.seeW/2)-1;
+				var T = e.pageY/(this.seeH/2)-1;
+				this.eyeBall[0].style.left = Max*L + 48 +'px';
+				this.eyeBall[1].style.left = Max*L + 48 +'px';
+				this.eyeBall[0].style.top = Max*T + 48 +'px';
+				this.eyeBall[1].style.top = Max*T + 48 +'px';
 			}
 		}
 		
@@ -859,6 +868,11 @@
 		$('.take-in').show();
 		$('.take-in').children().eq(0).children().html(document.cookie.split('=')[1]);
 		$('.denglu').hide();
+	}
+	
+	
+	document.onmousemove = function(ev){
+		
 	}
 })();
 </script>
