@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,user-scalable=no" />
+<title>Document</title>
+<style type="text/css">
+body {
+	margin: 0;
+}	
+body,
+html {
+	height: 100%;
+	overflow: hidden;
+	position: relative;
+}
+#bg {
+	height: 100%;
+	background: url(bg/bg.jpg) no-repeat;
+	backgrund-size: 100% 100%;
+}
+#view {
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	position: absolute;
+}
+.z,
+.box {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+}
+
+.over {
+	position: absolute;
+	top: 0;
+	width: 50%;
+	height: 100%;
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	overflow: hidden;
+}
+.main {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+
+}
+.over:nth-of-type(1) {
+	left: 0;
+	-webkit-perspective-origin: 80% center;
+	perspective-origin: 80% center;
+}
+.over:nth-of-type(2) {
+	right: 0;
+	-webkit-perspective-origin: 20% center;
+	perspective-origin: 20% center;
+}
+.box span {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin: -585px 0 0 -64.5px;
+	width: 129px;
+	height: 1170px;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+</style>
+<script type="text/javascript" src="js/data.js"></script>
+<script type="text/javascript" src="js/m.Tween.js"></script>
+<script type="text/javascript">
+document.addEventListener('touchmove', function(e) {
+	e.preventDefault();
+});
+window.onload = function(){
+	setView();
+	var box = document.querySelectorAll('.box');
+	var z = document.querySelectorAll('.z');
+	css(z[0], 'translateZ', -500);
+	css(z[1], 'translateZ', -500);
+	createBg(box[0]);
+	createBg(box[1]);
+	setRotate(box[0]);
+	setRotate(box[1]);
+};
+function setView(){
+	set();
+	window.addEventListener('resize', set);
+	function set(){
+		var view = document.querySelector('#view');
+		var height = view.clientHeight;
+		var over = document.querySelectorAll('.over');
+		var main = document.querySelectorAll('.main');
+		var deg = 52.5;
+		var R = Math.round(Math.tan(deg/180*Math.PI)*height/2);
+		over[0].style.WebkitPerspective = over[0].style.perspective = R + "px";
+		css(main[0],"translateZ",R);
+		over[1].style.WebkitPerspective = over[1].style.perspective = R + "px";
+		css(main[1],"translateZ",R);
+	}
+	 
+}
+function createBg(box){
+	var deg = 360/imgData["bg"].length;
+	var R = Math.round(Math.tan((180 - deg)/2*Math.PI/180) * 64.5) - 1;
+	var startDeg = 180;
+	css(box, 'rotateX', 0);
+	css(box, 'rotateY', 25);
+	for(var i = 0; i < imgData["bg"].length; i++){
+		var span = document.createElement("span");
+		css(span,"rotateY", startDeg);
+		css(span,"translateZ", -R);
+		span.style.backgroundImage = "url("+imgData["bg"][i]+")";
+		box.appendChild(span);
+		startDeg -= deg;
+	}
+	// MTween({
+	// 	el: box,
+	// 	target: {rotateY:720},
+	// 	type: "linear",
+	// 	time: 10000
+	// });
+}
+function setRotate(box) {
+	var startDeg = {x:0,y:0};
+	var startDevice = {x:0,y:0};
+	var isStart = true;
+	var dir = window.orientation;
+	var lastTime = Date.now();
+	window.addEventListener('orientationchange', function(e) {
+		dir = window.orientation;
+		isStart = true;
+	});
+	window.addEventListener('deviceorientation', function(e) {
+		var nowTime = Date.now();
+		if(nowTime - lastTime < 30){
+			return;
+		}
+		lastTime = nowTime;
+		var nowDevice = {x:0,y:0}
+		var beta = Math.round(e.beta);
+		var gamma = Math.round(e.gamma);
+		var alpha = Math.round(e.alpha);
+		switch(dir){
+			case 0:
+				var x = beta;
+				var y = gamma + alpha;
+				break;
+			case 90:
+				var x = -gamma;
+				var y = beta + alpha;
+				break;
+			case -90:
+				var x = gamma;
+				var y = -(beta + alpha) ;
+				break;
+			case 180:
+				var x = -beta;
+				var y = -(gamma + alpha);
+				break;			
+		}
+		y = y%360;
+		y = y < 0 ? y + 360: y;
+		if(isStart){
+			isStart = false;
+			startDevice.x = x;
+			startDevice.y = y;
+			startDeg.x = css(box,"rotateX");
+			startDeg.y = css(box,"rotateY");
+		} else {
+			nowDevice.x = x;
+			nowDevice.y = y;
+			var disDevice = {};
+			disDevice.x = nowDevice.x - startDevice.x;
+			disDevice.y = nowDevice.y - startDevice.y;
+			var deg = {};
+			deg.x = startDeg.x + disDevice.x;
+			deg.y = startDeg.y + disDevice.y;
+			if(deg.x > 40){
+				deg.x = 40;
+			} else if(deg.x < -40) {
+				deg.x = -40;
+			}
+			var disY = css(box,"rotateY") - deg.y;
+			var oldDeg = deg.y;
+			if(Math.abs(disY) > 200){
+				var now = css(box,"rotateY");
+				disY<0 ? css(box,"rotateY",now + 360):css(box,"rotateY",-now);		
+			}
+			MTween({
+				el:box,
+				target: {rotateX:deg.x,rotateY:deg.y},
+				time: 200,
+				type: "easeOut"
+			});
+		}
+
+	});
+}
+/*
+	350  10
+*/
+</script>
+</head>
+<body>
+<div id="bg"></div>
+<div id="view">
+	<div class="over">
+		<div class="main">
+			<div class="z">
+				<div class="box"></div>
+			</div>
+		</div>
+	</div>
+
+	<div class="over">	
+		<div class="main">
+			<div class="z">
+				<div class="box"></div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

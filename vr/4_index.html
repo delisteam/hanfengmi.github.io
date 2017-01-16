@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width,user-scalable=no" />
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		#box {
+			font-size: 30px;
+		}
+	</style>
+</head>
+<body>
+<div id="box"></div>
+<script type="text/javascript">
+	var box = document.querySelector('#box');
+	var dir = window.orientation;
+	window.addEventListener('orientationchange', function(e) {
+		dir = window.orientation;
+	});
+	window.addEventListener('deviceorientation', function(e) {
+		var beta = Math.round(e.beta);
+		var gamma = Math.round(e.gamma);
+		var alpha = Math.round(e.alpha);
+		switch(dir){
+			case 0:
+				var x = beta;
+				var y = gamma;
+				break;
+			case 90:
+				var x = -gamma;
+				var y = beta;
+				break;
+			case -90:
+				var x = gamma;
+				var y = -beta;
+				break;
+			case 180:
+				var x = beta;
+				var y = gamma;
+				break;			
+		}
+		box.innerHTML = "x:" +x;
+		box.innerHTML += "<br/>y:" +y;
+		//box.innerHTML = beta + "|" + gamma +"|" + alpha;
+	});
+</script>
+</body>
+</html>
