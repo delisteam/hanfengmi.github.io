@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../css/public.css"/>
+	<link rel="stylesheet" type="text/css" href="../css/certification.css"/>
+	<script src="../js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/certification.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+	<div class="wrapper">
+		<!--头部导航-->
+		<header class="page-head shadow clear">
+			<div class="page-head-bg"></div>
+			<div class="page-head-wrap">
+				<div class="logo fl"><span>E</span>quity <span>F</span>unding</div>
+				<div class="know-nav fl">
+					<a href="index.html">首页<span class="line"></span></a>
+					<a href="#">股权众筹<span class="line"></span></a>
+					<a href="question.html">了解股权众筹</a>
+				</div>
+				<div class="head-user fr">
+					<div class="no-login-wrap">
+						<div class="no-login clear">
+							<a class="head-login fl" href="login.html">登陆</a>
+								<a class="head-register fl" href="register.html">注册</a>
+						</div>
+					</div>
+					<div class="user-nav clear">
+						<a class="user-pic fl" href="#"><img src="../images/grzx.png"/></a>
+						<div class="go-personal fl">
+							<a class="personal-info" href="#">Vangogh<span>个人中心</span></a>
+							<p>上次登录时间：2015年6约30日</p>
+						</div>
+						<a class="head-cancel fl" href="#">注销</a>
+					</div>
+				</div>	
+			</div>
+		</header>
+		<!--主体-->	
+		<div class="cer-container">	
+			<span class="cer-line"></span>
+			<h3 class="cer-tit shadow"><p>认证成为合格投资人</p></h3>
+			<div class="cer-wrap shadow">
+				<h4 class="cer-wrap-tit"><span class="dot-arrow"><em></em>1</span>成功注册账号</h4>
+				<div class="iam">
+					<span class="dot-arrow"><em></em>2</span>
+					<span class="dot fl"></span>
+					<p class="fl">我是：</p>
+					<div class="per fl">
+						<div class="per-check fl">
+							<span class="check-bg active"><em></em></span>
+							<input type="radio" name="check" id="per-check" class="check" checked/>
+						</div>
+						<label class="fl" for="per-check">个人投资者</label>						
+					</div>
+					<div class="ins fl">
+						<div class="ins-check fl">
+							<span class="check-bg"><em></em></span>
+							<input type="radio" name="check" id="ins-check" class="check"/>
+						</div>
+						<label class="fl" for="ins-check">机构投资者</label>	
+					</div>
+				</div>
+				<!--认证-->
+				<div class="cer-tab">
+					<!--个人认证-->
+					<div class="per-tab">
+						<div class="per-fill-wrap">
+							<h4 class="tab-tit clear">
+								<span class="dot fl"></span>
+								<p class="fl">填写合格投资人认证</p>
+								<p class="tab-intro fl"><span>（以下均是必填项）</span>完成投资人认证可以查看更多翔实的项目信息</p>
+							</h4>
+							<div class="cer-fill clear">
+								<div class="user-head fl">
+									<div class="head-pic">
+										<img class="now-pic" src="../images/明星项目4.jpg">
+										<img class="no-pic" src="../images/head-pic.png">
+										<p>（请提供给我描述）</p>
+									</div>
+									<a class="update-pic" href="javascript:;">上传头像</a>
+								</div>
+								<ul class="per-input-wrap fl">
+									<li class="clear">
+										<div class="input-wrap per-name-wrap">
+											<input class="per-name test" type="text" placeholder="真实姓名" />
+											<p class="error">姓名不能为空</p>
+										</div>
+										<div class="input-wrap per-mail-wrap">
+											<input class="per-mail vali-mail" type="text" placeholder="电子邮件" />
+											<p class="error"></p>
+										</div>
+										<div class="input-wrap per-job-wrap">
+											<input class="per-job test" type="text" placeholder="公司职位" />
+											<p class="error">职位不能为空</p>
+										</div>
+									</li>
+									<li class="clear">
+										<p class="select-code fl">身份证</p>
+										<div class="input-wrap fl">
+											<input class="per-code vali-code" type="text" placeholder="证件号码" />
+											<p class="error"></p>
+										</div>
+									</li>
+									<li class="clear">
+										<div class="select-wrap">
+											<div class="select-box clear">
+												<input class="provinceText" name="province" type="text" value="选择省" readonly="readonly">
+												<span class="select-bg fl"></span>
+											</div>
+											<p class="error">请选择省份</p>
+											<ul class="provinceList">
+												<li order="0">北京</li>
+												<li order="1">天津</li>
+												<li order="2">上海</li>
+												<li order="3">重庆</li>
+												<li order="4">河北</li>
+												<li order="5">山西</li>
+												<li order="6">内蒙古</li>
+												<li order="7">辽宁</li>		
+												<li order="8">沈阳</li>
+												<li order="9">黑龙江</li>
+												<li order="10">江苏</li>
+												<li order="11">浙江</li>
+												<li order="12">安徽</li>
+												<li order="13">福建</li>
+												<li order="14">江西</li>
+												<li order="15">山东</li>
+												<li order="16">河南</li>
+												<li order="17">湖北</li>
+												<li order="18">湖南</li>
+												<li order="19">广东</li>
+												<li order="20">广西</li>
+												<li order="21">海南</li>
+												<li order="22">四川</li>
+												<li order="23">贵州</li>
+												<li order="24">云南</li>
+												<li order="25">西藏</li>
+												<li order="26">陕西</li>
+												<li order="27">甘肃</li>
+												<li order="28">青海</li>
+												<li order="29">宁夏</li>
+												<li order="30">新疆</li>
+												<li order="31">香港</li>
+												<li order="32">澳门</li>
+												<li order="33">台湾</li>
+											</ul>
+										</div>
+										<div class="select-wrap">
+											<div class="select-box clear">
+												<input class="cityText" name="city" type="text" value="选择市" readonly="readonly">
+												<span class="select-bg fl"></span>
+											</div>
+											<p class="error">请选择市</p>
+											<ul class="cityList"></ul>
+										</div>		
+									</li>
+									<li class="area-wrap">
+										<textarea id="intro-area" class="intro-area" name="" placeholder="一句话自我简介（不超过200个字）"></textarea>
+										<p class="area-tips">还可以输入<span id="intro-last">200</span>个字符</p>
+									</li>
+								</ul>
+							</div>
+							<h4 class="tab-tit clear">
+								<span class="dot fl"></span>
+								<p class="fl">填写合格投资人认证</p>
+							</h4>
+							<div class="investor">
+								<h4 class="investor-tit">我是符合其中条件之一的投资者：</h4>
+								<ul class="investor-list">
+									<li class="clear">
+										<div class="fl">
+											<span class="check-bg active"><em></em></span>
+											<input type="radio" name="investor-radio" id="" class="radio" checked>
+										</div>
+										<p class="fl">我的金融资产超过100万元</p>
+									</li>
+									<li class="clear">
+										<div class="fl">
+											<span class="check-bg"><em></em></span>
+											<input type="radio" name="investor-radio" id="" class="radio">
+										</div>
+										<p class="fl">我的年收入超过30万元</p>
+									</li>
+									<li class="clear">
+										<div class="fl">
+											<span class="check-bg"><em></em></span>
+											<input type="radio" name="investor-radio" id="" class="radio">
+										</div>
+										<p class="fl">我是专业的风险投资人</p>
+									</li>
+									<li class="clear">
+										<div class="fl">
+											<span class="check-bg"><em></em></span>
+											<input type="radio" name="investor-radio" id="" class="radio">
+										</div>
+										<p class="fl">我不符合上述任一条件</p>
+									</li>
+								</ul>
+							</div>
+							<div class="agreement-wrap">
+								<div class="agreement">
+									<a href="#">《风险揭示书》</a>
+									<a href="#">《服务协议》</a>
+								</div>
+								<div class="agreement-input clear">
+									<div class="check-wrap fl">
+										<span class="check-bg active"></span>
+										<input type="checkbox" name="" id="" class="agree" checked>
+									</div>
+									<p class="check-word fl">已阅读并同意签署</p>
+								</div>
+							</div>
+						</div>
+						<a class="cer-sub" href="javascript:;">提交认证</a>
+					</div>
+					<!--机构认证-->
+					<div class="ins-tab">
+						<h4 class="tab-tit clear">
+							<span class="dot fl"></span>
+							<p class="fl">填写合格投资人认证</p>
+							<p class="tab-intro fl"><span>（以下均是必填项）</span>完成投资人认证可以查看更多翔实的项目信息</p>
+						</h4>
+						<div class="cer-fill clear">
+							<div class="user-head fl">
+								<div class="head-pic">
+									<img class="now-pic" src="../images/明星项目4.jpg">
+									<img class="no-pic" src="../images/head-pic.png">
+									<p>（请提供给我描述）</p>
+								</div>
+								<a class="update-pic" href="javascript:;">上传头像</a>
+							</div>
+							<ul class="per-input-wrap fl">
+								<li class="clear">
+									<div class="input-wrap all">
+										<input class="ins-name" type="text" placeholder="机构全称" />
+										<p class="error">机构全称不能为空</p>
+									</div>
+								</li>
+								<li class="clear">
+									<div class="input-wrap short fl">
+										<input class="test" type="text" placeholder="法人姓名" />
+										<p class="error">姓名不能为空</p>
+									</div>
+									<div class="input-wrap long fl">
+										<input class="vali-code" type="text" placeholder="法人身份证号" />
+										<p class="error"></p>
+									</div>
+								</li>
+								<li class="clear">
+									<div class="input-wrap short fl">
+										<input class="test" type="text" placeholder="企业联系人" />
+										<p class="error">联系人不能为空</p>
+									</div>
+									<div class="input-wrap long fl">
+										<input class="vali-mobile" type="text" placeholder="联系人手机号" />
+										<p class="error">手机号不能为空</p>
+									</div>
+								</li>
+								<li class="clear">
+									<div class="input-wrap short fl">
+										<input class="test" type="text" placeholder="营业执照编号" />
+										<p class="error">营业执照编号不能为空</p>
+									</div>
+									<div class="input-wrap long fl">
+										<input class="test" type="text" placeholder="组织机构代码" />
+										<p class="error">组织机构代码不能为空</p>
+									</div>
+								</li>
+								<li class="clear">
+									<div class="input-wrap short fl">
+										<input class="test" type="text" placeholder="税务登记证号" />
+										<p class="error">税务登记证号不能为空</p>
+									</div>
+									<div class="input-wrap long fl">
+										<input class="test" type="text" placeholder="开户银行许可证号" />
+										<p class="error">开户银行许可证号不能为空</p>
+									</div>
+								</li>
+								<li class="clear">
+									<div class="select-wrap">
+										<div class="select-box clear">
+											<input class="provinceText" name="province" type="text" value="选择省" readonly="readonly">
+											<span class="select-bg fl"></span>
+										</div>
+										<p class="error">请选择省份</p>
+										<ul class="provinceList">
+											<li order="0">北京</li>
+											<li order="1">天津</li>
+											<li order="2">上海</li>
+											<li order="3">重庆</li>
+											<li order="4">河北</li>
+											<li order="5">山西</li>
+											<li order="6">内蒙古</li>
+											<li order="7">辽宁</li>		
+											<li order="8">沈阳</li>
+											<li order="9">黑龙江</li>
+											<li order="10">江苏</li>
+											<li order="11">浙江</li>
+											<li order="12">安徽</li>
+											<li order="13">福建</li>
+											<li order="14">江西</li>
+											<li order="15">山东</li>
+											<li order="16">河南</li>
+											<li order="17">湖北</li>
+											<li order="18">湖南</li>
+											<li order="19">广东</li>
+											<li order="20">广西</li>
+											<li order="21">海南</li>
+											<li order="22">四川</li>
+											<li order="23">贵州</li>
+											<li order="24">云南</li>
+											<li order="25">西藏</li>
+											<li order="26">陕西</li>
+											<li order="27">甘肃</li>
+											<li order="28">青海</li>
+											<li order="29">宁夏</li>
+											<li order="30">新疆</li>
+											<li order="31">香港</li>
+											<li order="32">澳门</li>
+											<li order="33">台湾</li>
+										</ul>
+									</div>
+									<div class="select-wrap">
+										<div class="select-box clear">
+											<input class="cityText" name="city" type="text" value="选择市" readonly="readonly">
+											<span class="select-bg fl"></span>
+										</div>
+										<p class="error">请选择市</p>
+										<ul class="cityList"></ul>
+									</div>		
+								</li>
+							</ul>
+						</div>
+						<!--公司情况-->
+						<ul class="status-wrap">
+							<li>
+								<h4 class="status-tit">公司情况</h4>
+								<div class="text-aera">
+									<textarea id="company-intro" name="" placeholder="简介（不超过200字）"></textarea>
+									<div class="last-word">
+										<p>还可以输入<span id="company-last">200</span>个字符</p>
+									</div>
+								</div>
+							</li>
+							<li>
+								<h4 class="status-tit">投资案例</h4>
+								<div class="text-aera">
+									<textarea id="case-intro" name="" placeholder="案例（不超过200字）"></textarea>
+									<div class="last-word">
+										<p>还可以输入<span id="case-last">200</span>个字符</p>
+									</div>
+								</div>
+							</li>
+							<li>
+								<h4 class="status-tit">相关证件</h4>
+								<ul class="upload clear">
+									<li>
+										<div class="upload-img"></div>
+										<div class="upload-btn">
+											<p>上传公司营业执照</p>
+											<input type="file" name="" id=""/>
+										</div>
+									</li>
+									<li>
+										<div class="upload-img"></div>
+										<div class="upload-btn">
+											<p>上传组织机构</p>
+											<input type="file" name="" id=""/>
+										</div>
+									</li>
+									<li>
+										<div class="upload-img"></div>
+										<div class="upload-btn">
+											<p>上传税务登记</p>
+											<input type="file" name="" id=""/>
+										</div>
+									</li>
+									<li>
+										<div class="upload-img active"><p>待上传</p></div>
+										<div class="upload-btn">
+											<a href="javascript:;">删除公司营业执照</a>
+										</div>
+									</li>
+								</ul>
+							</li>
+						</ul>
+						<div class="agreement-wrap">
+							<div class="agreement">
+								<a href="#">《风险揭示书》</a>
+								<a href="#">《服务协议》</a>
+								<a href="#">《委托授权书》</a>
+							</div>
+							<div class="agreement-input clear">
+								<div class="check-wrap fl">
+									<span class="check-bg active"></span>
+									<input type="checkbox" name="" id="" class="agree" checked>
+								</div>
+								<p class="check-word fl">已阅读并同意签署</p>
+							</div>
+							<a class="cer-sub" href="javascript:;">提交认证</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--页脚-->
+		<footer class="page-foot-wrap">
+			<div class="page-foot">
+				<div class="foot-left">
+					<p class="foot-logo"><span>E</span>quity <span>F</span>unding</p>
+					<div class="foot-link">
+						<a href="#">关于摩点股权众筹</a>
+						<a href="#">联系我们</a>
+						<a href="#">免责声明</a>
+					</div>
+					<p class="copyright">Copyright © 2004-2015 modian.com 版权所有|投资有风险，购买需谨慎</p>
+				</div>
+				<div class="foot-right">
+					<h3>在线客服</h3>
+					<div class="custom">
+						<a class="qq" href="#"></a>
+						<a class="weixin" href="#"></a>
+						<a class="weibo" href="#"></a>
+					</div>
+					<p class="contact-modian">官方微信：modianwang001</p>
+				</div>
+			</div>
+		</footer>
+	</div>
+	<div class="cer-pop-wrap">
+		<div class="cer-pop">
+			<a href="javascript:;" class="close"></a>
+			<div class="cer-pop-t clear">
+				<img class="cer-img fl" src="../images/hgtzz_01.png"/>
+				<h3 class="fl">您的申请已提交，我们审核通过后会通过－－－通知您</h3>
+			</div>
+			<p class="cer-pop-word">您现在可以以<span>游客</span>身份继续访问</p>
+			<p id="pop-time" class="pop-time"><span>5</span>秒后自动关闭</p>
+			<a class="go-home" href="index.html">前往首页</a>
+		</div>
+	</div>
+	
+</body>
+</html>
+
+
+<script type="text/javascript">
+	var maxstrlen=200;
+
+	function Q(s){return document.getElementById(s);}
+
+	var introArea = Q("intro-area");
+	var introLast = Q("intro-last");
+	introArea.onkeyup = function(){
+		checkWord(this,introLast);
+	}
+	
+	var companyArea = Q("company-intro");
+	var companyLast = Q("company-last");
+	companyArea.onkeyup = function(){
+		checkWord(this,companyLast);
+	}
+	
+	var caseArea = Q("case-intro");
+	var caseLast = Q("case-last");
+	caseArea.onkeyup = function(){
+		checkWord(this,caseLast);
+	}
+
+	function checkWord(c,wck){
+	
+		var len = maxstrlen;
+		
+		var str = c.value;
+		
+		myLen=getStrleng(str);
+		
+		if(myLen>len*2){
+		
+			c.value=str.substring(0,i+1);
+		
+		}else{
+	
+			wck.innerHTML = Math.floor((len*2-myLen)/2);
+		
+		}
+	
+	}
+	
+	function getStrleng(str){
+	
+		myLen =0;
+		
+		i=0;
+		
+		for(;(i<str.length)&&(myLen<=maxstrlen*2);i++){
+		
+			if(str.charCodeAt(i)>0&&str.charCodeAt(i)<128){
+				myLen++;				
+			}else{
+				myLen+=2;				
+			}
+			
+		}
+		
+		return myLen;
+	
+	}
+</script>

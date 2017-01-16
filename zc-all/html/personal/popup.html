@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../../css/public.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/personal.css"/>
+		<script src="../../js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../js/personal.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			.btn-wrap{
+				position: relative;
+				z-index: 5;
+				width: 1000px;
+				margin: 50px auto;
+			}
+			.btn-wrap input{
+				background-color: #fff;
+				border: 1px solid #000000;
+				padding: 5px;
+				cursor: pointer;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="wrapper">
+			<!--头部导航-->
+			<header class="page-head shadow clear">
+				<div class="page-head-bg"></div>
+				<div class="page-head-wrap">
+					<div class="logo fl"><span>E</span>quity <span>F</span>unding</div>
+					<div class="know-nav fl">
+						<a href="../index.html">首页<span class="line"></span></a>
+						<a href="#">股权众筹<span class="line"></span></a>
+						<a href="../question.html">了解股权众筹</a>
+					</div>
+					<div class="head-user fr">
+						<div class="no-login-wrap">
+							<div class="no-login clear">
+								<a class="head-login fl" href="../login.html">登陆</a>
+								<a class="head-register fl" href="../register.html">注册</a>
+							</div>
+						</div>
+						<div class="user-nav clear">
+							<a class="user-pic fl" href="#"><img src="../../images/grzx_01.png"/></a>
+							<div class="go-personal fl">
+								<a class="personal-info" href="#">Vangogh<span>个人中心</span></a>
+								<p>上次登录时间：2015年6约30日</p>
+							</div>
+							<a class="head-cancel fl" href="#">注销</a>
+						</div>
+					</div>	
+				</div>
+			</header>
+			<div class="btn-wrap">
+				<input type="button" name="btn1" id="btn1" value="重置密码/手机" />
+				<input type="button" name="btn2" id="btn2" value="重置密码/邮箱" />
+				<input type="button" name="btn3" id="btn3" value="解除手机" />
+				<input type="button" name="btn4" id="btn4" value="变更手机" />
+				<input type="button" name="btn5" id="btn5" value="解除邮箱" />
+				<input type="button" name="btn6" id="btn6" value="变更邮箱" />
+			</div>
+			<!--页脚-->
+			<footer class="page-foot-wrap">
+				<div class="page-foot">
+					<div class="foot-left">
+						<p class="foot-logo"><span>E</span>quity <span>F</span>unding</p>
+						<div class="foot-link">
+							<a href="#">关于摩点股权众筹</a>
+							<a href="#">联系我们</a>
+							<a href="#">免责声明</a>
+						</div>
+						<p class="copyright">Copyright © 2004-2015 modian.com 版权所有|投资有风险，购买需谨慎</p>
+					</div>
+					<div class="foot-right">
+						<h3>在线客服</h3>
+						<div class="custom">
+							<a class="qq" href="#"></a>
+							<a class="weixin" href="#"></a>
+							<a class="weibo" href="#"></a>
+						</div>
+						<p class="contact-modian">官方微信：modianwang001</p>
+					</div>
+				</div>
+			</footer>
+		</div>
+		</div>
+		
+		<!--弹窗-->
+		<form id="popForm" action="" method="post">
+			
+
+		<!--个人用户重置登录密码-->
+		<div class="overlay">
+			<div class="over-wrap">
+				<a class="close-over" href="javascript:;"></a>
+				<h3 class="over-tit">
+					<p>个人用户重置登陆密码</p>
+				</h3>
+				<div class="over-con">
+					<div class="input-wrap">
+						<input type="text" name="" id="" value="" class="vali-mobile" placeholder="请输入手机号"/>
+						<p class="error">手机号码错误</p>
+					</div>
+					<div class="input-wrap short-input">
+						<input type="text" name="" id="" value="" placeholder="输入短信验证码"/>
+						<input type="button" class="over-code" value="获取验证码" />
+						<p class="error">错误提示</p>
+					</div>
+					<div class="input-wrap">
+						<input type="text" name="" id="" value="" placeholder="输入新密码"/>
+						<p class="error">错误提示</p>
+					</div>
+					<div class="input-wrap">
+						<input type="text" name="" id="" value="" placeholder="再次输入新密码"/>
+						<p class="error">错误提示</p>
+					</div>
+					<div class="input-wrap short-input">
+						<input type="text" name="" id="" value="" placeholder="请输入图片验证码"/>
+						<div class="validate-pic"><img src="../../images/xmjs_01.png"/></div>
+						<p class="error">错误提示</p>
+					</div>
+					<input type="submit" name="" id="" class="reset-btn" value="重置密码" />
+				</div>
+			</div>
+		</div>
+		
+		<!--机构用户重置登录密码-->
+		<div class="overlay">
+			<div class="over-wrap">
+				<a class="close-over" href="javascript:;"></a>
+				<h3 class="over-tit">
+					<p>机构用户重置登陆密码</p>
+				</h3>
+				<div class="over-con">
+					<div class="input-wrap">
+						<input type="text" name="" id="" value="" class="vali-mail" placeholder="请输入登陆邮箱"/>
+						<p class="error">邮箱错误</p>
+					</div>
+					<div class="input-wrap short-input">
+						<input type="text" name="" id="" value="" placeholder="输入邮箱验证码"/>
+						<input type="button" class="over-code" value="获取验证码" />
+						<p class="error">错误提示</p>
+					</div>
+					<div class="input-wrap">
+						<input type="text" name="" id="" value="" placeholder="输入新密码"/>
+						<p class="error">错误提示</p>
+					</div>
+					<div class="input-wrap">
+						<input type="text" name="" id="" value="" placeholder="再次输入新密码"/>
+						<p class="error">错误提示</p>
+					</div>
+					<div class="input-wrap short-input">
+						<input type="text" name="" id="" value="" placeholder="请输入图片验证码"/>
+						<div class="validate-pic"><img src="../../images/xmjs_01.png"/></div>
+						<p class="error">错误提示</p>
+					</div>
+					<input type="submit" name="" id="" class="reset-btn" value="重置密码" />
+				</div>
+			</div>
+		</div>
+		
+		
+		<!--个人投资者变更手机号码-->
+		<div class="overlay">
+			<div class="over-wrap">
+				<a class="close-over" href="javascript:;"></a>
+				<h3 class="over-tit">
+					<p class="mobile">个人投资者变更手机号码</p>
+				</h3>
+				<div class="over-con">
+					<div class="input-wrap">解除原手机号绑定</div>
+					<div class="input-wrap">
+						<input type="text" name="" id="" value="" class="vali-mobile" placeholder="请输入原手机号"/>
+						<p class="error">手机号码错误</p>
+					</div>
+					<div class="input-wrap short-input">
+						<input type="text" name="" id="" value="" placeholder="输入短信验证码"/>
+						<input type="button" class="over-code" value="获取验证码" />
+						<p class="error">错误提示</p>
+					</div>
+					<div class="input-wrap">
+						<input type="text" name="" id="" value="" placeholder="请输入账户密码"/>
+						<p class="error">错误提示</p>
+					</div>
+					<div class="input-wrap short-input">
+						<input type="text" name="" id="" value="" placeholder="请输入图片验证码"/>
+						<div class="validate-pic"><img src="../../images/xmjs_01.png"/></div>
+						<p class="error">错误提示</p>
+					</div>
+					<input type="submit" name="" id="" class="reset-btn" value="解除" />
+				</div>
+			</div>
+		</div>
+		
+		<!--个人投资者绑定新手机号码-->
+		<div class="overlay">
+			<div class="over-wrap">
+				<a class="close-over" href="javascript:;"></a>
+				<h3 class="over-tit">
+					<p class="mobile">个人投资者绑定新手机号</p>
+				</h3>
+				<div class="over-con">
+					<div class="input-wrap">绑定新手机号</div>
+					<div class="input-wrap">
+						<input type="text" name="" value="" id="vali-mobile" class="vali-mobile" placeholder="请输入新手机号"/>
+						<p class="error">手机号码错误</p>
+					</div>
+					<div class="input-wrap short-input">
+						<input type="text" name="" id="" value="" placeholder="输入短信验证码"/>
+						<input type="button" class="over-code" value="获取验证码" />
+						<p class="error">错误提示</p>
+					</div>
+					<div class="input-wrap short-input">
+						<input type="text" name="" id="" value="" placeholder="请输入图片验证码"/>
+						<div class="validate-pic"><img src="../../images/xmjs_01.png"/></div>
+						<p class="error">错误提示</p>
+					</div>
+					<input type="submit" name="" id="" class="reset-btn" value="变更" />
+				</div>
+			</div>
+		</div>
+		
+		
+		<!--解除邮箱绑定-->
+		<div class="overlay">
+			<div class="over-wrap">
+				<a class="close-over" href="javascript:;"></a>
+				<h3 class="over-tit">
+					<p class="mail">变更登陆邮箱</p>
+				</h3>
+				<div class="over-con">
+					<div class="input-wrap">解除原邮箱绑定</div>
+					<div class="input-wrap">
+						<input type="text" name="" id="" value="" class="vali-mail" placeholder="请输入原邮箱"/>
+						<p class="error">邮箱错误</p>
+					</div>
+					<div class="input-wrap short-input">
+						<input type="text" name="" id="" value="" placeholder="输入邮箱验证码"/>
+						<input type="button" class="over-code" value="获取验证码" />
+						<p class="error">错误提示</p>
+					</div>
+					<div class="input-wrap">
+						<input type="text" name="" id="" value="" placeholder="请输入账户密码"/>
+						<p class="error">错误提示</p>
+					</div>
+					<div class="input-wrap short-input">
+						<input type="text" name="" id="" value="" placeholder="请输入图片验证码"/>
+						<div class="validate-pic"><img src="../../images/xmjs_01.png"/></div>
+						<p class="error">错误提示</p>
+					</div>
+					<input type="submit" name="" id="" class="reset-btn" value="解除" />
+				</div>
+			</div>
+		</div>
+		
+		<!--新邮箱绑定-->
+		<div class="overlay">
+			<div class="over-wrap">
+				<a class="close-over" href="javascript:;"></a>
+				<h3 class="over-tit">
+					<p class="mail">变更登陆邮箱</p>
+				</h3>
+				<div class="over-con">
+					<div class="input-wrap">绑定新邮箱</div>
+					<div class="input-wrap">
+						<input type="text" name="" id="" value="" class="vali-mail" placeholder="请输入新邮箱"/>
+						<p class="error">邮箱错误</p>
+					</div>
+					<div class="input-wrap short-input">
+						<input type="text" name="" id="" value="" placeholder="输入邮箱验证码"/>
+						<input type="button" class="over-code" value="获取验证码" />
+						<p class="error">错误提示</p>
+					</div>
+					<div class="input-wrap short-input">
+						<input type="text" name="" id="" value="" placeholder="请输入图片验证码"/>
+						<div class="validate-pic"><img src="../../images/xmjs_01.png"/></div>
+						<p class="error">错误提示</p>
+					</div>
+					<input type="submit" name="" id="" class="reset-btn" value="变更" />
+				</div>
+			</div>
+		</div>
+		
+		</form>
+		
+	</body>
+</html>
+<script type="text/javascript">
+	var over = $(".overlay");
+	$(".btn-wrap>input").click(function(){
+		over.eq($(this).index()).show();
+		$("body").addClass("hidden");
+	});
+	
+	
+	
+</script>

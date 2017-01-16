@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../../css/layer.css"/>
+		<script src="../../js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			button{
+				margin-top: 100px;
+				margin-left: 100px;
+			}
+		</style>
+	</head>
+	<body>
+		<button>关于摩利码</button>
+		<button>注册成为合格投资者</button>
+		<button>请求退款</button>
+		<button>继续申购</button>
+		
+		<!--关于摩利码-->
+		<div class="layer-wrap">
+			<div class="layer-main">
+				<a class="close-layer" href="javascript:;"></a>
+				<h3 class="layer-tit">关于摩利码</h3>
+				<div class="layer-word">
+					<p>・摩利码是摩利宝股权众筹平台的为某个项目发送的指定额度的认购邀请码。</p>
+					<p>・获得摩利码的用户可以获得指定额度的免核优先认购权。</p>
+					<p>・摩利码有效期，有额度限制，仅用于指定项目的股权认购。</p>
+					<p>・摩利码限量发送，只能使用一次，不记名不挂失，可以转送给朋友。请妥善保管您获得的摩利码。</p>
+					<p>・摩利码是一串数字，会通过短信、微信等方式发送给受邀投资者。</p>
+					<p>・目前摩利码采用邀请制，符合一定标准的投资人才有资格获得摩利码。</p>
+      				<p>・如实填写个人信息的并参与股权投资的用户，有机会获赠摩利码。</p>
+				</div>
+			</div>
+		</div>
+		<!--注册成为合格投资者-->
+		<div class="layer-wrap">
+			<div class="layer">
+				<a class="close-layer" href="javascript:;"></a>
+				<div class="passtest">
+					<p>成为合格投投资者才能查看全部信息</p>
+				</div>
+				<div class="layer-btn-wrap">
+					<div class="layer-center">
+						<a class="layer-btn" href="#">注册成为合格投资者</a>		
+					</div>
+				</div>			
+			</div>
+		</div>
+		<!--请求退款-->
+		<div class="layer-wrap">
+			<div class="layer">
+				<a class="close-layer" href="javascript:;"></a>
+				<div class="giveup">
+					<p>确认放弃中标，请求退款？</p>
+					<span>放弃缴款，平台将扣除入金费用<em>999</em>元</span>
+				</div>
+				<div class="layer-btn-wrap">
+					<div class="layer-center">
+						<a class="layer-btn give-btn1" href="#">我再想想</a>		
+						<a class="layer-btn give-btn2" href="#">去意已决，请求退款</a>		
+					</div>
+				</div>			
+			</div>
+		</div>
+		<!--继续申购-->
+		<div class="layer-wrap">
+			<div class="layer">
+				<a class="close-layer" href="javascript:;"></a>
+				<div class="goon">请确认您已阅读发送到您邮箱的《风险告知函》？</div>
+				<div class="layer-btn-wrap">
+					<div class="layer-center">
+						<a class="layer-btn goon-btn1" href="#">确认已读，继续申购</a>		
+						<a class="layer-btn goon-btn2" href="#">去邮箱看看</a>		
+					</div>
+				</div>			
+			</div>
+		</div>
+		
+	</body>
+</html>
+<script type="text/javascript">
+	$(".close-layer").click(function(){
+		$(this).parent().parent().hide();
+	})
+	$("button").click(function(){
+		$(".layer-wrap").eq($(this).index()).show();
+	});
+</script>

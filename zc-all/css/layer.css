@@ -1,0 +1,233 @@
+.layer-wrap{
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.6);
+	display: none;
+	font-family:"Helvetica Neue",Helvetica,Arial,"Microsoft Yahei","Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei",sans-serif!important;
+	color: #222222;
+}
+.layer-main,.layer{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%,-50%);
+	   -moz-transform: translate(-50%,-50%);
+		-ms-transform: translate(-50%,-50%);
+			transform: translate(-50%,-50%);
+	-webkit-border-radius: 6px;
+	   -moz-border-radius: 6px;
+			border-radius: 6px;
+}
+.layer-main{
+	width: 620px;
+	height: 625px;
+	padding: 23px;
+	background: url(../images/about-code.png) 67px 497px no-repeat #fff;
+}
+.layer{
+	width: 666px;
+	height: 333px;
+	background-color: #fff;
+}
+.close-layer{
+	position: absolute;
+	top: 15px;
+	right: 15px;
+	width: 21px;
+	height: 20px;
+	background: url(../images/fa-times-circle.png) no-repeat;
+}
+.layer-tit{
+	font-size: 24px;
+	line-height: 54px;
+	text-align: center;
+	font-weight: normal;
+	background: url(../images/nav-code.png) 208px 15px no-repeat;
+	border-bottom: 1px solid #F75C1D;
+	margin: 0px;
+}
+.layer-word{
+	padding: 30px 34px;
+}
+.layer-word p{
+	margin: 0px;
+	line-height: 38px;
+	font-size: 18px;
+	text-indent: -18px;
+	padding-left: 18px;
+}
+.layer-info{
+	
+}
+.layer-btn-wrap{
+	width: 100%;
+	height: 65px;
+	text-align: center;
+}
+.layer-center{
+	display: inline-block;
+	height: 65px;
+}
+.layer-btn{
+	float: left;
+	width: 286px;
+	height: 65px;
+	line-height: 65px;
+	color: #fff;
+	text-decoration: none;
+	background-color: rgba(0,136,229,0.9);
+	-webkit-border-radius: 6px;
+	   -moz-border-radius: 6px;
+			border-radius: 6px;
+}
+.passtest{
+	height: 87px;
+	padding-left: 188px;
+	padding-top: 102px;
+	background: url(../images/passtest.png) 108px 102px no-repeat;
+}
+.passtest p{
+	height: 65px;
+	line-height: 65px;
+	margin: 0px;	
+}
+.giveup{
+	height: 87px;
+	padding-left: 158px;
+	padding-top: 50px;
+	background: url(../images/jk_01.png) 90px 50px no-repeat;
+	margin-bottom: 40px;
+}
+.giveup p{
+	height: 44px;
+	line-height: 44px;
+	font-size: 20px;
+	margin: 0px;	
+}
+.giveup span{
+	display: block;
+	font-size: 18px;
+	line-height: 28px;
+}
+.giveup span em{
+	font-style: normal;
+	color: #E0483D;
+}
+.give-btn1{
+	width: 223px;
+	margin-right: 25px;
+}
+.give-btn2{
+	width: 276px;
+}
+.goon{
+	height: 65px;
+	line-height: 65px;
+	font-size: 18px;
+	padding-top: 102px;
+	padding-left:177px;
+	background: url(../images/goon.png) 89px 102px no-repeat;
+	margin-bottom: 20px;
+}
+.goon-btn1{
+	width: 286px;
+	margin-right: 18px;
+}
+.goon-btn2{
+	width: 184px;
+}
+
+/*支付认证*/
+.pay-layer-main{
+	height: 549px;
+	background-image: none;
+}
+.pay-layer-main .layer-word p{
+	line-height: 32px;
+	font-size: 14px;
+}
+.pay-layer-tit{
+	font-size: 24px;
+    line-height: 54px;
+    text-align: center;
+    font-weight: normal;
+    border-bottom: 1px solid #F75C1D;
+    margin: 0px;
+}
+.pay-layer-tit>p{
+	display: inline-block;
+	height: 54px;
+    line-height: 54px;
+    color: #979797;
+    padding-left: 38px;
+	background: url(../images/money.png) left center no-repeat;
+	margin: 0px;
+}
+.pay-layer-img{
+	padding-top: 48px;
+	background: url(../images/yibazhifu.png) left top no-repeat;
+}
+.pay-layer-img>p{
+	font-size: 12px;
+	line-height: 28px;
+	margin-bottom: 30px;
+}
+
+.pay-layer-btn{
+	display: block;
+	width: 323px;
+	height: 65px;
+	line-height: 65px;
+	text-align: center;
+	color: #fff;
+	font-size: 24px;
+	text-decoration: none;
+	background-color: #0088E5;
+	border-radius: 6px;
+	margin: 0px auto;
+	margin-top: 5px;
+}
+.layer-word>img{
+	display: block;
+	margin: 0px auto;
+}
+.layer-word>img.yibao{
+	margin-top: 54px;
+}
+.layer-word>img.zhiyibao{
+	margin-top: 48px;
+}
+
+.fail-layer-word{
+	text-align: center;	
+}
+.fail-word{
+	display: inline-block;
+	min-width: 154px;
+	min-height: 114px;
+	padding-left: 66px;	
+	background: url(../images/yibaohuman.png) left center no-repeat,
+	url(../images/yibazhifu.png) 66px bottom no-repeat;
+	margin-top: 84px;
+	margin-bottom: 75px;
+}
+.fail-word>h3{
+	font-weight: normal;
+	line-height: 34px;
+	font-size: 18px;
+	text-align: left;
+	margin: 0px;
+}
+.pay-layer-main .fail-word>p{
+	color: #0088E5;
+	font-size: 18px;
+	
+	
+}
+
+
+
+

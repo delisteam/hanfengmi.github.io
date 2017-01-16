@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../../css/public.css"/>
+	<link rel="stylesheet" type="text/css" href="../../css/buy.css"/>
+	<script src="../../js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../js/buy.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+	<div class="wrapper">
+		<!--头部导航-->
+		<header class="page-head shadow clear">
+			<div class="page-head-bg"></div>
+			<div class="page-head-wrap">
+				<div class="logo fl"><span>E</span>quity <span>F</span>unding</div>
+				<div class="know-nav fl">
+					<a href="#">首页<span class="line"></span></a>
+					<a href="#">股权众筹<span class="line"></span></a>
+					<a href="#">了解股权众筹</a>
+				</div>
+				<div class="head-user fr">
+					<div class="no-login-wrap">
+						<div class="no-login clear">
+							<a class="head-login fl" href="#">登陆</a>
+							<a class="head-register fl" href="#">注册</a>
+						</div>
+					</div>
+					<div class="user-nav clear">
+						<a class="user-pic fl" href="#"><img src="../../images/grzx.png"/></a>
+						<div class="go-personal fl">
+							<a class="personal-info" href="#">Vangogh<span>个人中心</span></a>
+							<p>上次登录时间：2015年6约30日</p>
+						</div>
+						<a class="head-cancel fl" href="#">注销</a>
+					</div>
+				</div>	
+			</div>
+		</header>
+		<!--主体-->	
+		<div class="buy-container">
+			<nav class="buy-nav shadow"><p>缴款购买<span>距离结束：155天10小时</span></p></nav>
+			<div class="apply-main-wrap buy-wrap shadow">
+				<h3 class="buy-tit">以下是您要购买的项目</h3>
+				<div class="buy-pro clear">
+					<div class="buy-pro-l fl">
+						<img class="fl" src="../../images/cer-tit.png"/>
+						<div class="buy-pro-intro fl">
+							<h3>郁金香运动APP</h3>
+							<span>融资方：上海基坦网络有限公司</span>
+							<p>靠谱投-精益餐饮股权众筹解决方案。做中国中小微餐饮企业的纳斯达克!</p>
+						</div>
+					</div>
+					<div class="buy-pro-r fl">
+						<h3 class="tit clear">
+							<strong class="fl">已筹&nbsp;&nbsp;&nbsp;￥1500万</strong>
+							<span class="fr">15份</span>							
+						</h3>
+						<div class="progress">
+							<span class="progress-now"></span>
+						</div>
+						<div class="prodet-num clear">
+							<div class="first fl">
+								<p>起投：10万/份</p>
+								<p>目标：50/份</p>
+							</div>
+							<div class="second fl">
+								<p>最高：750万</p>
+								<p>进度：50%</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<h3 class="buy-tit">填写申购订单</h3>
+				<div class="apply-wrap clear">
+					<h4 class="apply-tit fl">申购总额</h4>
+					<div class="apply fl">
+						<div class="apply-num clear">
+							<div class="apply-num-l fl">
+								<div class="select-box clear">
+									<input type="hidden" id="applyOrder" name="applyOrder"/>
+									<input id="apply-inp" class="apply-inp" name="apply-inp" type="text" placeholder="10万元起步，递增步长1000元">
+								</div>
+							</div>
+							<div class="apply-num-r fl">
+								<div class="check-wrap fl">
+									<span class="check-bg"></span>
+									<input type="checkbox" name="use-code" id="use-code" class="agree">
+								</div>
+								<p class="fl">使用摩利码</p>
+							</div>
+						</div>
+						<div class="code-wrap">
+							<ul id="code-list" class="code-list">
+								<li class="clear">
+									<div class="input-wrap clear">
+										<input type="text" name="" id="" value="" placeholder="12位码"/>
+										<p>免审核额度增加10万</p>
+									</div>
+									<a class="cancel" href="javascirpt:;">取消使用此摩利码</a>
+								</li>
+							</ul>
+							<a id="add-code" class="add-code" href="javascript:;">添加摩利码</a>
+							<div class="code-img-wrap">
+								<div class="clear">
+									<input type="text" class="short fl" placeholder="请输入图片验证码">
+									<div class="code-img fl"><img src="../../images/banner-item1.png"></div>
+								</div>
+								<p class="error">图片验证码错误</p>
+							</div>
+							<p class="code-word">使用摩利码需要填写验证码提交申请</p>
+						</div>
+						<p class="code-intro">提示：平台会根据您的情况核准中标额度</br>申购资金会被冻结，筹集结束后，中标部分继续冻结，未中标资金会解冻</br>如用户中标后选择取消订单，将扣除融资方垫付的充值手续费</br>项目筹集结束不能退款</p>
+					</div>
+				</div>
+				
+				<div class="buy-btn-wrap apply-btn-wrap">
+					<a class="deal" href="#">阅读用户框架协议</a>
+					<div class="agree-wrap clear">
+						<div class="check-wrap fl">
+							<span class="check-bg active"></span>
+							<input type="checkbox" name="" id="" class="agree" checked>
+						</div>
+						<p class="fl">已阅读并同意签署</p>
+					</div>
+					<div class="buy-btn">
+						<a class="sub-order apply-next" href="javascript:;">下一步</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--页脚-->
+		<footer class="page-foot-wrap">
+			<div class="page-foot">
+				<div class="foot-left">
+					<p class="foot-logo"><span>E</span>quity <span>F</span>unding</p>
+					<div class="foot-link">
+						<a href="#">关于摩点股权众筹</a>
+						<a href="#">联系我们</a>
+						<a href="#">免责声明</a>
+					</div>
+					<p class="copyright">Copyright © 2004-2015 modian.com 版权所有|投资有风险，购买需谨慎</p>
+				</div>
+				<div class="foot-right">
+					<h3>在线客服</h3>
+					<div class="custom">
+						<a class="qq" href="#"></a>
+						<a class="weixin" href="#"></a>
+						<a class="weibo" href="#"></a>
+					</div>
+					<p class="contact-modian">官方微信：modianwang001</p>
+				</div>
+			</div>
+		</footer>
+	</div>
+</body>
+</html>

@@ -1,0 +1,245 @@
+html,body{
+	height: 100%;
+}
+.wrapper{
+	position: relative;
+	min-height: 100%;	
+	height: auto;
+}
+.page-foot-wrap{
+	position: absolute;
+    bottom: 0px;
+    left: 0px;
+}
+.login-container{
+	position: relative;
+	width: 1000px;
+	margin: 0px auto;
+	margin-top: 10px;
+    padding-bottom: 249px;
+    
+}
+.login-tit{
+	height: 60px;
+	background-color: #FAFAFA;
+	padding-top: 60px;
+	padding-left: 95px;
+}
+.login-tit p{
+	height: 34px;
+	font-size: 18px;
+	line-height: 34px;
+}
+.login-tit .tit-border{
+	height: 4px;
+}
+.login-tit .tit-border span{
+	float: left;
+	width: 18px;
+	height: 4px;
+}
+.login-tit .tit-border span.first{
+	background-color: #FDC602;
+}
+.login-tit .tit-border span.second{
+	background-color: #F48C06;
+}
+.login-tit .tit-border span.third{
+	background-color: #AFD109;
+}
+.login-tit .tit-border span.fourth{
+	background-color: #63BC9E;
+}
+.login-tit .tit-border span.fifth{
+	background-color: #3C72A4;
+}
+.login-wrap{
+	height: 560px;
+	padding-left: 94px;
+	background-color: #fff;
+}
+.login{
+	height: 530px;
+	padding-left: 32px;
+	padding-top: 30px;
+	border-left: 1px solid #E5E5E5;
+}
+.login-img{
+	margin-top: 112px;
+}
+.login-input{
+	padding-left: 30px;
+}
+.login-input .input-wrap{
+	margin-bottom: 20px;
+}
+.login-input .input-wrap input{
+	width: 302px;
+	height: 48px;
+	font-size: 18px;
+	border: 1px solid #EAEAEA;
+	padding:0px 10px;
+}
+.login-input .input-wrap .check{
+	position: relative;
+}
+.login-input .input-wrap .check .check-bg{
+	display: block;
+	width: 18px;
+	height: 18px;
+	border: 1px solid rgba(0,0,0,0.15);
+	-webkit-border-radius: 3px;
+	   -moz-border-radius: 3px;
+			border-radius: 3px;
+}
+.login-input .input-wrap .check .check-bg.active{
+	background: url(../images/checked.png) center center no-repeat;
+}
+.login-input .input-wrap .check input[type="checkbox"]{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	filter:alpha(opacity=0);
+}
+.login-input .input-wrap .check-word{
+	height: 20px;
+	line-height: 20px;
+	font-size: 18px;	
+	margin-left: 10px;
+}
+.login-input .forget-pass{
+	display: block;
+	width: 70px;
+	height: 30px;
+	line-height: 30px;
+	color: #888888;
+	margin-top: 40px;
+	margin-left: 240px;
+}
+.login-input .login-btn{
+	display: block;
+	width: 324px;
+	height: 66px;
+	line-height: 66px;
+	text-align: center;
+	color: #fff;
+	font-size: 24px;
+	background-color: #0088E5;
+	-webkit-border-radius: 6px;
+	   -moz-border-radius: 6px;
+			border-radius: 6px;
+	margin-top: 5px;
+}
+.error{
+	height: 26px;
+	line-height: 26px;
+	color: #fff;
+	font-size: 12px;
+	padding-left: 10px;
+	background-color: #ea5a4e;
+	-webkit-border-radius: 4px;
+	   -moz-border-radius: 4px;
+			border-radius: 4px;
+	margin-top: 3px;
+	clear: both;
+	display: none;
+}
+
+/*注册*/
+.register-wrap{
+	padding-left: 94px;
+    background-color: #fff;
+}
+.register{
+	padding-top: 30px;
+    border-left: 1px solid #E5E5E5;
+    padding-bottom: 40px;
+}
+.register-tab{
+
+}
+.register-bg{
+	margin-top: 136px;
+	margin-right: 80px;
+}
+.register-input{
+	display: none;
+}
+.register-input.active{
+	display: block;	
+}
+.login-tit .personal{
+	margin-right: 50px;
+}
+.login-tit .personal p,
+.login-tit .institutions p{
+	cursor: pointer;
+}
+.login-tit .personal .tit-border span,
+.login-tit .institutions .tit-border span{
+    width: 22px;
+}
+.login-tit .personal.active .tit-border span,
+.login-tit .institutions.active .tit-border span{
+    /*width: 22px;*/
+   background-color: #0088E5;
+}
+.login-input .code-img-wrap{
+	margin-bottom: 0px;
+}
+.login-input .input-wrap input.short{
+    width: 164px;
+}
+.login-input .input-wrap .code-btn{
+	width: 126px;
+	height: 50px;
+	line-height: 50px;
+	color: #fff;
+	background-color: rgba(247,92,29,0.7);
+	margin-left: 11px;
+	cursor: pointer;
+}
+.login-input .input-wrap .code-btn.active{
+	background-color: #888888;
+}
+.login-input .input-wrap .code-img{
+	width: 124px;
+	height: 48px;
+	border: 1px solid #EAEAEA;
+	margin-left: 11px;
+}
+.login-input .input-wrap .code-img img{
+	width: 100%;
+	height: 100%;
+}
+.refresh{
+	height: 20px;
+	line-height: 20px;
+	text-align: right;
+	margin-top: 5px;
+}
+
+.refresh a{
+	color: #888888;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
