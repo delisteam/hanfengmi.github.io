@@ -542,6 +542,7 @@ i {
 	width:85px;
 	height:85px;
 	margin:10px;
+	padding-top:10px;
 	box-sizing: border-box;
 	cursor: pointer;
 	transition:.25s;
@@ -563,6 +564,12 @@ i {
 	border-radius: 20px;
 	color:#000;
 	box-shadow: -4px 4px 5px 3px rgba(0,0,0,.3);
+}
+.inner-btn li:nth-of-type(9) svg{
+	padding-left:20px;
+}
+.inner-btn li:nth-of-type(10) svg{
+	padding-left:20px;
 }
 .down-hide {
 	position:absolute;
