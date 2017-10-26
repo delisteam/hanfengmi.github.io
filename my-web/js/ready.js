@@ -7,7 +7,7 @@ window.onload = function(){
 	cMove.style.display = "none";
 	reset();
 	window.onresize = reset;
-	
+
 	function SeeWrong(){
 		this.wrap = document.getElementById('wrap');
 		this.box = document.getElementById('box');
@@ -22,7 +22,7 @@ window.onload = function(){
 		this.Cn = 0;
 		this.timer = 0;
 	}
-	
+
 	SeeWrong.prototype.init = function(){
 		var _this = this;
 		document.addEventListener('mousemove',function(e){
@@ -38,10 +38,10 @@ window.onload = function(){
 		this.yMove.addEventListener('mouseover',function(){
 			_this.mOver();
 		});
-		
+
 	};
-	
-	
+
+
 	SeeWrong.prototype.mDown = function(e){
 		var _this = this;
 		this.disX = e.pageX - this.yMove.offsetLeft;
@@ -53,7 +53,7 @@ window.onload = function(){
 		function upFn(){
 			_this.mUp(moveFn,upFn);
 		}
-		
+
 		$('.y-wait').animate({
 			opacity:.3
 		})
@@ -63,7 +63,7 @@ window.onload = function(){
 		$(this.yMove).css('background','#fff');
 		e.preventDefault();
 	}
-	
+
 	SeeWrong.prototype.mOver= function(){
 		//console.log(this.tipMove );
 		var _this = this;
@@ -89,6 +89,7 @@ window.onload = function(){
 		clearInterval(this.timer);
 	}
 	SeeWrong.prototype.mMove = function(e){
+		e.preventDefault();
 		var l = e.pageX - this.disX;
 		if(l<0){
 			l = 0;
@@ -99,8 +100,9 @@ window.onload = function(){
 		//console.log(cMove.offsetWidth - this.yMove.offsetWidth);
 		this.yMove.style.left = l + "px";
 	}
-	
-	SeeWrong.prototype.mUp = function(moveFn,upFn){ 
+
+	SeeWrong.prototype.mUp = function(moveFn,upFn){
+		// e.preventDefault();
 		window.removeEventListener('mousemove',moveFn);
 		window.removeEventListener('mouseup',upFn);
 		$('.y-wait').animate({
@@ -117,7 +119,7 @@ window.onload = function(){
 			window.location.href = 'index1.html';
 		};
 	}
-	
+
 	SeeWrong.prototype.duang = function(obj1,obj2){
 		var r1 = obj1.offsetLeft + obj1.offsetWidth;
 		var l2 = obj2.offsetLeft;
@@ -128,22 +130,22 @@ window.onload = function(){
 			return true;
 		}
 	}
-	
-	
+
+
 	SeeWrong.prototype.move = function(e){
 //		背景颜色(e.pageX/this.seeW)----(0-1).3-.8
 		var Cr = parseInt((e.pageX/this.seeW+0.2)*180);
 		var Cg = parseInt((e.pageY/this.seeH+0.2)*150);
 		this.wrap.style.background = 'rgba('+Cr+','+Cg+','+this.Cn+',.7)';
 	}
-		
+
 	SeeWrong.prototype.dian = function(e){
 		this.Cn = parseInt((e.pageX/this.seeW+0.2)*200);
 	}
-	
-	
-		
-		
+
+
+
+
 	var see = new SeeWrong;
 	see.init();
 	var n = 0;
@@ -159,7 +161,7 @@ window.onload = function(){
 			temp();
 		}
 	},20);
-	
+
 	function temp(){
 		$('#box').fadeOut(400);
 		$('.cMove').fadeIn(1000);
