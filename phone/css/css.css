@@ -27,6 +27,14 @@ ul {
   margin: 0;
   list-style: none;
 }
+.clearfix::after {
+  content:'';
+  display: block;
+  clear:both;
+  width:0;
+  height:0;
+  visibility: hidden;
+}
 #header {
   position: relative;
   height: 1.8rem;
@@ -774,6 +782,7 @@ ul {
 }
 .piclist a {
   float: left;
+  width:100%;
   margin-bottom: .26rem;
 }
 .piclist img {
