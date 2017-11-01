@@ -8,14 +8,38 @@
   </head>
   <body>
     <div class="wrap">
-      <header class="inner-header"><!--col-lg大(>1200)col-md中(>992)col-sm小(>768)col-xs超小(<768)        -->
-        <div class="header-left col-lg-2 col-md-4 col-sm-6 col-xs-12">
-          黄色网站
+      <header class="inner-header clearfix"><!--col-lg大(>1200)col-md中(>992)col-sm小(>768)col-xs超小(<768)-->
+        <div class="header-right">
+          <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-9" aria-expanded="false">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Han</a>
+              </div>
+              <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-9">
+                <div class="nav navbar-nav header-center hidden-xs">
+                  12345555
+                </div>
+                <ul class="nav navbar-nav header-right-ul">
+                  <li class="active"><a href="#">看看我</a></li>
+                  <li><a href="#">我要炫酷</a></li>
+                  <li><a href="#">瞎写瞎画</a></li>
+                  <li><a href="#">关于我</a></li>
+                </ul>
+              </div>
+            </div>
+          </nav>
         </div>
       </header>
-      <div id="root">
-        
-      </div>
+      <div id="container">
+        <div id="sprite"></div>
+        <!-- <div id="footer"></div> -->
+    </div>
     </div>
     <!-- <ul class="nav nav-pills">
       <li role="presentation" class="active"><a href="#">Home</a></li>

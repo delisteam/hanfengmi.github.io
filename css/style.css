@@ -1,29 +1,13 @@
-body {
+.body {
   margin:0;
   padding:0;
-  background: yellow
 }
 h1,h2,h3,h4,h5,h6 {
   margin:0;
   padding:0;
 }
-.wrap {
-  padding:0;
-  margin:0;
+.clearfix {
+  content: '';
+  display:block;
+  clear:both;
 }
-/*head*/
-.inner-header {
-  height:50px;
-  line-height:50px;
-  color:#fff;
-  background: gray;
-}
-.header-left {
-  background: red;
-}
-#root {
-  font-size: 90px;
-  text-align: center;
-  color:pink;
-}
-/*end head*/
