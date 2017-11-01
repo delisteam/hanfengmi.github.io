@@ -18,7 +18,7 @@ module.exports = {
       { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: "file-loader" },
       { test: /\.(woff|woff2)$/, loader:"url-loader?prefix=font/&limit=5000" },
       { test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: "url-loader?limit=10000&mimetype=application/octet-stream" },
-      { test: /\.(svg|png|jpg)(\?v=\d+\.\d+\.\d+)?$/, loader: "url-loader?limit=10000&mimetype=image/svg+xml" },
+      { test: /\.(svg|png|jpg|ico)(\?v=\d+\.\d+\.\d+)?$/, loader: "url-loader?limit=10000&mimetype=image/svg+xml" },
       {test: /\.scss$/,loader: 'style-loader!css-loader!sass-loader'}
       // { test:require.resolve('jquery'), loader:'expose-loader?$!expose-loader?jQuery'}
     ]
