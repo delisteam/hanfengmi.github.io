@@ -1,58 +1,24 @@
 <template lang="html">
   <div class="header">
-    <a href="javascript:;" class="logo"></a>
-    <Affix :offset-top="500" class="right-button">
-      <ButtonGroup vertical>
-          <Button type="ghost" icon="social-whatsapp" @click="instance('phone')"></Button>
-          <Button type="ghost" icon="social-facebook" @click="instance('face')"></Button>
-          <Button type="ghost" icon="email" @click="instance('email')"></Button>
-          <Button type="ghost" icon="social-github" @click="instance('github')"></Button>
-      </ButtonGroup>
-    </Affix>
+    <a href="javascript:;" class="logo" ref="a"></a>
+    <div class="header-center" ref="headerCenter" >
+      <div class="avartar"><img src="../assets/img/fan-logo-hollow.png"></div>
+      <h3 class="avartar-name">{{persons.name}}</h3>
+      <h3 class="avartar-job">{{persons.job}}</h3>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-  components: {},
+  props: ['persons'],
+  components: {
+  },
   data () {
     return {}
   },
-  props: {},
   watch: {},
-  methods: {
-    instance (type) {
-      switch (type) {
-        case 'phone':
-          this.$Modal.info({
-            title: '太乐峰',
-            content: '15717671152<p>请给我打call</p>'
-          })
-          break
-        case 'email':
-          this.$Modal.info({
-            title: '益脉澳',
-            content: 'm15717671152@163.com<p>敢给我发邮件吗？</p>'
-          })
-          break
-        case 'face':
-          this.$Modal.error({
-            title: '非死不可',
-            content: '你猜我告不告诉你'
-          })
-          break
-        case 'github':
-          this.$Modal.warning({
-            title: '给特哈勃',
-            content: '不管你愿意不愿意，两秒钟以后进行跳转'
-          })
-          setTimeout(function () {
-            window.location.href = 'https://github.com/hanfengmi'
-          }, 1500)
-          break
-      }
-    }
-  },
+  methods: {},
   filters: {},
   computed: {},
   created () {},
@@ -65,6 +31,17 @@ export default {
 .header {
   height:500px;
   width:100%;
+  top:0;
+  position: fixed;
+  .header-center {
+    position: absolute;
+    width:300px;
+    height:200px;
+    top:50%;
+    left:50%;
+    margin-left:-150px;
+    margin-top:-100px;
+  }
 }
 .logo {
   position:fixed;
@@ -74,10 +51,28 @@ export default {
   height:50px;
   background:url('../assets/img/fan-logo-hollow.png') repeat-x;
   background-size:50px 50px;
+  z-index: 9;
 }
-.right-button {
-  position: absolute;
-  top:700px;
-  left:30px;
+
+.avartar {
+  width:100%;
+  height:80px;
+  img {
+    width:70px;
+    height:70px;
+  }
+}
+.avartar-name {
+  color:#fff;
+  font-size:30px;
+  font-weight: 300;
+  letter-spacing: 10px;
+}
+.avartar-job {
+  margin-top:15px;
+  color:#9a9d9b;
+  font-size:16px;
+  font-weight: 300;
+  letter-spacing: 1em;
 }
 </style>

@@ -1,18 +1,117 @@
 <template lang="html">
   <div class="body">
-    这是内容
+    <Affix :offset-top="300" class="right-button">
+      <ButtonGroup vertical>
+          <Button type="ghost" icon="social-whatsapp" @click="instance('phone')"></Button>
+          <Button type="ghost" icon="social-facebook" @click="instance('face')"></Button>
+          <Button type="ghost" icon="email" @click="instance('email')"></Button>
+          <Button type="ghost" icon="social-github" @click="instance('github')"></Button>
+      </ButtonGroup>
+    </Affix>
+    <Row class="item-list">
+        <Col class="item-box" :xs="24" :sm="12" :md="8" :lg="8">
+          <ul class="web-work">
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </Col>
+        <Col class="item-box2" :xs="24" :sm="12" :md="8" :lg="8">
+          <ul class="web-before">
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </Col>
+        <Col class="item-box3" :xs="24" :sm="12" :md="8" :lg="8">
+          <ul class="web-work">
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </Col>
+    </Row>
   </div>
 </template>
 
 <script>
 export default {
+  components: {},
+  data () {
+    return {}
+  },
+  props: ['persons'],
+  watch: {},
+  filters: {},
+  computed: {},
+  created () {},
+  mounted () {},
+  destroyed () {},
+  methods: {
+    instance (type) {
+      switch (type) {
+        case 'phone':
+          this.$Modal.info({
+            title: '太乐峰',
+            content: this.persons.tel + '<p>请给我打call</p>'
+          })
+          break
+        case 'email':
+          this.$Modal.info({
+            title: '益脉澳',
+            content: this.persons.email + '<p>敢给我发邮件吗？</p>'
+          })
+          break
+        case 'face':
+          this.$Modal.error({
+            title: '非死不可',
+            content: this.persons.face
+          })
+          break
+        case 'github':
+          this.$Modal.warning({
+            title: '给特哈勃',
+            content: '不管你愿意不愿意，两秒钟以后进行跳转'
+          })
+          setTimeout(function () {
+            window.location.href = this.person.github
+          }, 1500)
+          break
+      }
+    }
+  }
 }
 </script>
 
 <style lang="scss" scoped>
 .body {
   // margin-top:520px;
-  height:2000px;
   background: #fff;
+  position:relative;
+  color:#000;
+  margin:500px auto 0 auto;
+}
+.right-button {
+  position: absolute;
+  top:60px;
+  left:0px;
+}
+.item-list {
+  width:80%;
+  height:100%;
+  margin:0 auto;
+  padding-top:20px;
+  .item-box {
+    background: red;
+    height: 1200px;
+  }
+  .item-box2 {
+    background: blue;
+    height: 400px;
+  }
+  .item-box3 {
+    background: yellow;
+    height: 800px;
+  }
 }
 </style>
