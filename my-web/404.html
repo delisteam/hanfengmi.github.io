@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8" />
 	<title>404-sorry</title>
+	<meta name="viewport" content="width=device-width,user-scalable=no" />
 	<style>
 	@font-face {
 		font-family:f-gb;
@@ -122,12 +123,12 @@
 <script src="js/miaov.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript">
 	(function(){
-		
+
 		reset();
 		svgPosition();
-		
+
 		window.onresize = reset;
-		
+
 		var PL = $('.p').offset().left;
 		var PT = $('.p').offset().top;
 		var sL = $('.h2').offset().left;
@@ -149,7 +150,7 @@
 			sL = $('.h2').offset().left;
 			sT = $('.h2').offset().top;
 		}
-		
+
 		function svgPosition(){
 			//$('.svg').children().css();
 			$.each($('.svg').children(), function(i,e) {
@@ -159,14 +160,14 @@
 				e.style.position = "absolute";
 			});
 		}
-		
+
 		function move(ele){
 			mTween(ele,{top:-30},500,'linear',function(){
 				mTween(ele,{top:20},500,'linear',function(){
 					move(ele);
 				});
 			});
-			
+
 		}
 		var len = $('.svg').children().length;
 		$('.svg').mouseenter(function(){
@@ -174,18 +175,18 @@
 				move($('.svg').children()[i]);
 			}
 		})
-		
-		
+
+
 		$('.svg').mouseleave(function(){
 			for(var i=0;i<len;i++) {
 				clearInterval($('.svg').children()[i].timer)
 			}
 			$('.svg').children().css('top',0);
 		})
-		
+
 		const MX = 30;//定义常量
 		const MY = 10;
-		
+
 		$(document).mousemove(function(ev){
 			var sH = document.documentElement.clientHeight;
 			var sW = document.documentElement.clientWidth;
@@ -200,7 +201,7 @@
 				'transform':'translateZ('+(1-Math.abs((ev.pageX - sW/2)/(sW/2)))*40+'px)'
 			});
 		})
-		
+
 	})();
 </script>
 </html>

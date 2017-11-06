@@ -1,12 +1,44 @@
 window.onload = function(){
 (function(){
+	var os = function(){
+		var ua = navigator.userAgent,
+		isWindowsPhone = /(?:Mobile)/.test(ua);
+		isSymbian = /(?:SymbianOS)/.test(ua) || isWindowsPhone,
+		isAndroid = /(?:Android)/.test(ua),
+    isFireFox = /(?:Firefox)/.test(ua),
+		isChrome = /(?:Chrome|CriOS)/.test(ua),
+		isTablet = /(?:iPad|PlayBook)/.test(ua) || (isAndroid && !/(?:Mobile)/.test(ua)) || (isFireFox && /(?:Tablet)/.test(ua)),
+		isPhone = /(?:iPhone)/.test(ua) && !isTablet,
+		isPc = !isPhone && !isAndroid && !isSymbian;
+		// console.log('win==='+isWindowsPhone,'Sym==='+isSymbian,'iphone='+isPhone,'andro==='+isAndroid,'fire==='+isFireFox,'chrome==='+isChrome,'pc==='+isPc)
+		return {
+			isPhone: isPhone,
+      isAndroid : isAndroid,
+      isPc : isPc,
+			isFireFox: isFireFox,
+			isChrome: isChrome
+		}
+	}();
+
+
+
 	var wrap = document.getElementById('wrap');
 	var box = document.getElementById('box');
+	var phone = document.getElementsByClassName('phoneShow')[0];
 	var cMove = document.getElementsByClassName('cMove')[0];
 	var timer = 0;
 	cMove.style.display = "none";
 	reset();
 	window.onresize = reset;
+
+
+
+	if(!os.isPc) {
+		phone.style.display = "block";
+		// console.log(wrap.removeChild(cMove))
+		// cMove.style.display = "none";
+		return;
+	}
 
 	function SeeWrong(){
 		this.wrap = document.getElementById('wrap');
