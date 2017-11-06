@@ -8,35 +8,13 @@
           <Button type="ghost" icon="social-github" @click="instance('github')"></Button>
       </ButtonGroup>
     </Affix>
-    <Row class="item-list">
-        <Col class="item-box" :xs="24" :sm="12" :md="8" :lg="8">
-          <ul class="web-work clearfix">
-            <li>
-              <a href="https://hanfengmi.github.io/auto-change"><img src="../assets/img/auto-change.png"></a>
+    <Row class="item-list" >
+        <Col class="item-box" :xs="24" :sm="12" :md="8" :lg="8" v-for="(ele,index) in pro" :key='ele.title'>
+          <h3>{{ele.title}}</h3>
+          <ul class="web-work clearfix" >
+            <li v-for="(item,index) in ele.list" :key="item.href">
+              <a :href='item.href'><img :src='item.img'></a>
             </li>
-            <li>
-              <a href="https://hanfengmi.github.io/monilvzuan"><img src="../assets/img/monilvzuan.png"></a>
-            </li>
-            <li>
-              <a href="https://hanfengmi.github.io/my-web"><img src="../assets/img/my-web.png"></a>
-            </li>
-            <li>
-              <a href="https://hanfengmi.github.io/phone"><img src="../assets/img/phone.png"></a>
-            </li>
-          </ul>
-        </Col>
-        <Col class="item-box2" :xs="24" :sm="12" :md="8" :lg="8">
-          <ul class="web-before clearfix">
-            <li></li>
-            <li></li>
-            <li></li>
-          </ul>
-        </Col>
-        <Col class="item-box3" :xs="24" :sm="12" :md="8" :lg="8">
-          <ul class="web-work clearfix">
-            <li></li>
-            <li></li>
-            <li></li>
           </ul>
         </Col>
     </Row>
@@ -47,7 +25,47 @@
 export default {
   components: {},
   data () {
-    return {}
+    return {
+      pro: [{
+        title: '临摹网站',
+        list: [
+          {
+            img: require('@/assets/img/auto-change.png'),
+            href: 'https://hanfengmi.github.io/auto-change'
+          },
+          {
+            img: require('@/assets/img/my-web.png'),
+            href: 'https://hanfengmi.github.io/my-web'
+          },
+          {
+            img: require('@/assets/img/monilvzuan.png'),
+            href: 'https://hanfengmi.github.io/monilvzuan'
+          },
+          {
+            img: require('@/assets/img/phone.png'),
+            href: 'https://hanfengmi.github.io/phone'
+          }
+        ]
+      },
+      {
+        title: '工作项目',
+        list: [
+          {
+            img: require('@/assets/img/work-back.png'),
+            href: 'https://hanfengmi.github.io/auto-change'
+          }
+        ]
+      },
+      {
+        title: '一顿咸鱼',
+        list: [
+          {
+            img: require('@/assets/img/my-web.png'),
+            href: 'https://hanfengmi.github.io/my-web'
+          }
+        ]
+      }
+      ]}
   },
   props: ['persons'],
   watch: {},
@@ -115,6 +133,11 @@ export default {
   height:100%;
   margin:0 auto;
   padding-top:20px;
+  h3 {
+    height:30px;
+    font-weight: 400;
+    line-height: 30px;
+  }
   .item-box {
     ul {
       li {
@@ -122,19 +145,13 @@ export default {
         box-sizing: border-box;
         padding: 5px;
         margin-bottom:40px;
+        border-bottom:1px solid #c7c7c7;
         float: left;
         img {
           width:100%;
         }
       }
     }
-  }
-  .item-box2 {
-    background: blue;
-  }
-  .item-box3 {
-    background: yellow;
-    height: 800px;
   }
 }
 </style>
