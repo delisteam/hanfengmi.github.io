@@ -10,21 +10,30 @@
     </Affix>
     <Row class="item-list">
         <Col class="item-box" :xs="24" :sm="12" :md="8" :lg="8">
-          <ul class="web-work">
-            <li></li>
-            <li></li>
-            <li></li>
+          <ul class="web-work clearfix">
+            <li>
+              <a href="https://hanfengmi.github.io/auto-change"><img src="../assets/img/auto-change.png"></a>
+            </li>
+            <li>
+              <a href="https://hanfengmi.github.io/monilvzuan"><img src="../assets/img/monilvzuan.png"></a>
+            </li>
+            <li>
+              <a href="https://hanfengmi.github.io/my-web"><img src="../assets/img/my-web.png"></a>
+            </li>
+            <li>
+              <a href="https://hanfengmi.github.io/phone"><img src="../assets/img/phone.png"></a>
+            </li>
           </ul>
         </Col>
         <Col class="item-box2" :xs="24" :sm="12" :md="8" :lg="8">
-          <ul class="web-before">
+          <ul class="web-before clearfix">
             <li></li>
             <li></li>
             <li></li>
           </ul>
         </Col>
         <Col class="item-box3" :xs="24" :sm="12" :md="8" :lg="8">
-          <ul class="web-work">
+          <ul class="web-work clearfix">
             <li></li>
             <li></li>
             <li></li>
@@ -91,6 +100,11 @@ export default {
   color:#000;
   margin:500px auto 0 auto;
 }
+.clearfix {
+  content: '';
+  display: block;
+  clear:both;
+}
 .right-button {
   position: absolute;
   top:60px;
@@ -102,12 +116,21 @@ export default {
   margin:0 auto;
   padding-top:20px;
   .item-box {
-    background: red;
-    height: 1200px;
+    ul {
+      li {
+        width:100%;
+        box-sizing: border-box;
+        padding: 5px;
+        margin-bottom:40px;
+        float: left;
+        img {
+          width:100%;
+        }
+      }
+    }
   }
   .item-box2 {
     background: blue;
-    height: 400px;
   }
   .item-box3 {
     background: yellow;

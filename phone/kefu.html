@@ -14,8 +14,10 @@
              document.head.appendChild(meta);
                 }();
             var html = document.querySelector("html");
-            var width = html.getBoundingClientRect().width;
-            html.style.fontSize = width/15 + "px"
+            window.onresize = window.onload = function(){
+              var width = html.getBoundingClientRect().width;
+              html.style.fontSize = width/15 + "px"
+            }
 </script>
 </head>
     <body>

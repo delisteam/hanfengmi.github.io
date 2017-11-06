@@ -4,18 +4,23 @@
 <meta charset="utf-8">
 <link href="css/css.css" rel="stylesheet"/>
 <script>
-        !function() {
-              var scale = 1;
-              var ratio = window.devicePixelRatio;
-                  scale = scale / window.devicePixelRatio;
-              var meta = document.createElement("meta");
-              meta.setAttribute("name","viewport");
-              meta.setAttribute("content","width=device-width,initial-scale = "+scale+",minimum-scale = "+scale+", maximum-scale = "+scale+", user-scalable = no");
-             document.head.appendChild(meta);
-                }();
-            var html = document.querySelector("html");
-            var width = html.getBoundingClientRect().width;
-            html.style.fontSize = width/15 + "px"
+// window.onresize = function(){
+  !function() {
+        var scale = 1;
+        var ratio = window.devicePixelRatio;
+            scale = scale / window.devicePixelRatio;
+        var meta = document.createElement("meta");
+        meta.setAttribute("name","viewport");
+        meta.setAttribute("content","width=device-width,initial-scale = "+scale+",minimum-scale = "+scale+", maximum-scale = "+scale+", user-scalable = no");
+       document.head.appendChild(meta);
+          }();
+      var html = document.querySelector("html");
+      window.onresize = window.onload = function(){
+        var width = html.getBoundingClientRect().width;
+        html.style.fontSize = width/15 + "px"
+      }
+// }
+
 </script>
 </head>
     <body>
