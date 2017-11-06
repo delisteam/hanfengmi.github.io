@@ -76,6 +76,7 @@ export default {
   destroyed () {},
   methods: {
     instance (type) {
+      var that = this
       switch (type) {
         case 'phone':
           this.$Modal.info({
@@ -98,11 +99,12 @@ export default {
         case 'github':
           this.$Modal.warning({
             title: '给特哈勃',
-            content: '不管你愿意不愿意，两秒钟以后进行跳转'
+            content: '想带你去浪漫的github'
           })
+
           setTimeout(function () {
-            window.location.href = this.person.github
-          }, 1500)
+            window.location.href = that.persons.github
+          }, 1000)
           break
       }
     }
