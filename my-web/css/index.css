@@ -281,7 +281,7 @@ i {
 .Hcont {
 	font-family: f-gb;
 	position: relative;
-	top:212px;
+	top:35%;
     width: 284px;
     height: 212px;
     margin:0 auto;
@@ -485,7 +485,7 @@ i {
 	border-radius: 50%;
 	margin-top:2px;
 	background:rgba(0,0,0,.5);
-	
+
 }
 .y-li {
 	position: absolute;
@@ -683,7 +683,7 @@ i {
 	transform-style: preserve-3d;
 	position:absolute;
 	left:60px;
-	
+
 }
 .all-list li {
 	width:154px;
@@ -736,7 +736,7 @@ i {
 	width:250px;
 	margin:0 auto;
 	text-align: center;
-	
+
 }
 .loginD div {
 	margin-bottom:20px;

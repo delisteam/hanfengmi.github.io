@@ -334,7 +334,7 @@
 							$('.mnbaid').val('');
 						}
 					});
-					$('#ul').css('height',json.s.length*38);
+					$('#ul').css('height',json.s.length*30);
 				}
 			})
 		})
