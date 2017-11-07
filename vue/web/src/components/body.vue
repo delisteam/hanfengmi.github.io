@@ -17,7 +17,8 @@
                 <img :src='item.img'>
                 <div class="shadow" :class="{'show': item.noShow}">
                   <div class="discript">
-
+                    <h2>{{item.intru.title}}</h2>
+                    <p>{{item.intru.content}}</p>
                   </div>
                 </div>
                 <span class="small-tip" @mouseenter="toggleShow(indexP,indexC)" @mouseleave="toggleShow(indexP,indexC)">
@@ -36,49 +37,78 @@ export default {
   components: {},
   data () {
     return {
-      pro: [{
-        title: '临摹网站',
-        list: [
-          {
-            img: require('@/assets/img/auto-change.png'),
-            href: 'https://hanfengmi.github.io/auto-change'
-          },
-          {
-            img: require('@/assets/img/my-web.png'),
-            href: 'https://hanfengmi.github.io/my-web'
-          },
-          {
-            img: require('@/assets/img/monilvzuan.png'),
-            href: 'https://hanfengmi.github.io/monilvzuan'
-          },
-          {
-            img: require('@/assets/img/phone.png'),
-            href: 'https://hanfengmi.github.io/phone'
-          }
-        ]
-      },
-      {
-        title: '工作项目',
-        list: [
-          {
-            img: require('@/assets/img/work-back.png'),
-            href: 'https://hanfengmi.github.io/auto-change'
-          },
-          {
-            img: require('@/assets/img/xcc.png'),
-            href: 'https://hanfengmi.github.io/auto-change'
-          }
-        ]
-      },
-      {
-        title: '一顿咸鱼',
-        list: [
-          {
-            img: require('@/assets/img/my-web.png'),
-            href: 'https://hanfengmi.github.io/my-web'
-          }
-        ]
-      }
+      pro: [
+        {
+          title: '工作项目',
+          list: [
+            {
+              img: require('@/assets/img/work-back.png'),
+              href: 'https://hanfengmi.github.io/auto-change',
+              intru: {
+                title: 'iptv后台管理系统',
+                content: '啥啥啥'
+              }
+            },
+            {
+              img: require('@/assets/img/xcc.png'),
+              href: 'https://hanfengmi.github.io/auto-change',
+              intru: {
+                title: '社交小程序',
+                content: '啥啥啥'
+              }
+            }
+          ]
+        },
+        {
+          title: '临摹网站',
+          list: [
+            {
+              img: require('@/assets/img/auto-change.png'),
+              href: 'https://hanfengmi.github.io/auto-change',
+              intru: {
+                title: '自适应网站',
+                content: '啥啥啥'
+              }
+            },
+            {
+              img: require('@/assets/img/my-web.png'),
+              href: 'https://hanfengmi.github.io/my-web',
+              intru: {
+                title: '特效网站',
+                content: '啥啥啥'
+              }
+            },
+            {
+              img: require('@/assets/img/monilvzuan.png'),
+              href: 'https://hanfengmi.github.io/monilvzuan',
+              intru: {
+                title: '模拟绿钻官网',
+                content: '啥啥啥'
+              }
+            },
+            {
+              img: require('@/assets/img/phone.png'),
+              href: 'https://hanfengmi.github.io/phone',
+              intru: {
+                title: '模拟携程app',
+                content: '啥啥啥'
+              }
+            }
+          ]
+        },
+        {
+          title: '一顿咸鱼',
+          list: [
+            {
+              img: require('@/assets/img/my-web.png'),
+              href: 'https://hanfengmi.github.io/my-web',
+              intru: {
+                title: '杂七杂八',
+                content: '啥啥啥'
+              }
+            }
+          ]
+        }
       ]}
   },
   props: ['personsIn'],
@@ -125,17 +155,9 @@ export default {
     toggleShow (indexP, indexC) {
       if (this.pro[indexP].list[indexC].noShow) {
         this.$set(this.pro[indexP].list[indexC], 'noShow', false)
-        console.log(1)
       } else {
         this.$set(this.pro[indexP].list[indexC], 'noShow', true)
-        console.log(2)
       }
-
-      // this.pro[indexP].list[indexC].noShow = true
-      // console.log(this.pro[indexP].list[indexC])
-      // if (this.show) {
-      //
-      // }
     }
   }
 }
