@@ -1,27 +1,30 @@
 <template lang="html">
-  <div class="index">
+  <div class="seeMe">
     <top-header :personsIn='persons' :hide='route'></top-header>
-    <inner-body :personsIn='persons'></inner-body>
-    <BackTop></BackTop>
   </div>
 </template>
 
 <script>
 import TopHeader from '@/components/header'
-import InnerBody from '@/components/body'
 export default {
   props: ['persons'],
+  components: {
+    TopHeader: TopHeader
+  },
   data () {
     return {
-      route: true
+      route: false
     }
   },
-  components: {
-    TopHeader,
-    InnerBody
-  }
+  watch: {},
+  methods: {},
+  filters: {},
+  computed: {},
+  created () {},
+  mounted () {},
+  destroyed () {}
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="css" scoped>
 </style>

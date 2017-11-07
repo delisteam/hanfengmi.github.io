@@ -1,13 +1,25 @@
 <template>
-  <div id="app">
+  <div id="app" >
     <!-- <img src="./assets/logo.png"> -->
-    <router-view/>
+    <router-view :persons='person' />
   </div>
 </template>
 
 <script>
 export default {
-  name: 'app'
+  name: 'app',
+  data () {
+    return {
+      person: {
+        name: '韩兆科',
+        job: '前端菜鸟',
+        tel: '15717671152',
+        email: 'm15717671152@163.com',
+        face: '你猜我告不告诉你',
+        github: 'https://github.com/hanfengmi'
+      }
+    }
+  }
 }
 </script>
 
