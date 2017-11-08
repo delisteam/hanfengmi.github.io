@@ -321,7 +321,7 @@ export default {
           right:10%;
           bottom:50%;
           border-radius:50%;
-          // cursor: url('../assets/img/sb.ico'),default;
+          cursor: help;
           i {
             position:absolute;
             border-radius: 50%;
