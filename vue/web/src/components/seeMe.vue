@@ -1,6 +1,9 @@
 <template lang="html">
   <div class="seeMe">
     <top-header :personsIn='persons' :hide='route'></top-header>
+    <div class="thisMe">
+      大吉大利，今晚吃鸡
+    </div>
   </div>
 </template>
 
@@ -26,5 +29,12 @@ export default {
 }
 </script>
 
-<style lang="css" scoped>
+<style lang="scss" scoped>
+.thisMe {
+  background: pink;
+  position:relative;
+  color:#000;
+  height:500px;
+  margin:520px auto 0 auto;
+}
 </style>

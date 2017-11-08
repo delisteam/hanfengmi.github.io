@@ -13,12 +13,27 @@
           <h3>{{ele.title}}</h3>
           <ul class="web-work clearfix" >
             <li v-for="(item,indexC) in ele.list" :key="item.href">
-              <a :href='item.href'>
+              <router-link :to="{ name: item.route}" v-show="!item.href">
+              <!-- <router-link :to="item.route" v-show="!item.href"> -->
                 <img :src='item.img'>
                 <div class="shadow" :class="{'show': item.noShow}">
                   <div class="discript">
                     <h2>{{item.intru.title}}</h2>
-                    <p>{{item.intru.content}}</p>
+                    <p class="clearfix"><span>使用技术：</span><span v-html="item.intru.content[0]"></span></p>
+                    <p class="clearfix"><span>工作内容：</span><span v-html="item.intru.content[1]"></span></p>
+                  </div>
+                </div>
+                <span class="small-tip" @mouseenter="toggleShow(indexP,indexC)" @mouseleave="toggleShow(indexP,indexC)">
+                  <i></i><i></i><i></i>
+                </span>
+              </router-link>
+              <a :href='item.href' v-show="item.href">
+                <img :src='item.img'>
+                <div class="shadow" :class="{'show': item.noShow}">
+                  <div class="discript">
+                    <h2>{{item.intru.title}}</h2>
+                    <p class="clearfix"><span>使用技术：</span><span v-html="item.intru.content[0]"></span></p>
+                    <p class="clearfix"><span>工作内容：</span><span v-html="item.intru.content[1]"></span></p>
                   </div>
                 </div>
                 <span class="small-tip" @mouseenter="toggleShow(indexP,indexC)" @mouseleave="toggleShow(indexP,indexC)">
@@ -46,7 +61,10 @@ export default {
               href: 'https://hanfengmi.github.io/auto-change',
               intru: {
                 title: 'iptv后台管理系统',
-                content: '啥啥啥'
+                content: [
+                  'bootstrap框架, echarts可视化图表,jquery,arttemplate渲染模板',
+                  '1.使用bootstrap构建响应式前端页面。</br> 2.调用后端接口请求数据，对数据进行整理后渲染到模板显示。</br> 3.封装常用函数库以及常用组件。</br> 4.使用echarts将数据可视化，根据需求修改配置，自定义显示样式'
+                ]
               }
             },
             {
@@ -54,7 +72,10 @@ export default {
               href: 'https://hanfengmi.github.io/auto-change',
               intru: {
                 title: '社交小程序',
-                content: '啥啥啥'
+                content: [
+                  '微信小程序, websocket',
+                  '1.根据设计图展示页面。</br> 2.舍弃原生操作DOM方式进行网页开发，根据数据绑定，对数据进行操作更新页面。</br> 3.封装后台接口，统一处理异常。</br> 4.封装常用组件，重复调用。 </br> 5.根据微信小程序api完成项目所需上传、tabbar切换、video播放等功能'
+                ]
               }
             }
           ]
@@ -67,7 +88,10 @@ export default {
               href: 'https://hanfengmi.github.io/auto-change',
               intru: {
                 title: '自适应网站',
-                content: '啥啥啥'
+                content: [
+                  'css3动画, @media媒询',
+                  '1.原生html布局。</br> 2.css3制作背景变化动画。</br> 3.使用media媒体查询制作自适应。</br>'
+                ]
               }
             },
             {
@@ -75,7 +99,10 @@ export default {
               href: 'https://hanfengmi.github.io/my-web',
               intru: {
                 title: '特效网站',
-                content: '啥啥啥'
+                content: [
+                  '原生html布局, 原生js, css3动画, svg画图, js面向对象编程, 封装js动画库',
+                  '1.原生html布局。</br> 2.使用hashchange对页面hash变化监测，控制页面显示。</br> 3.首页使用3D动画效果。</br>'
+                ]
               }
             },
             {
@@ -83,7 +110,10 @@ export default {
               href: 'https://hanfengmi.github.io/monilvzuan',
               intru: {
                 title: '模拟绿钻官网',
-                content: '啥啥啥'
+                content: [
+                  '原生html布局',
+                  '1.原生html布局，符合W3C页面布局标准。</br> 2.使用float与position混合布局，达到页面显示效果'
+                ]
               }
             },
             {
@@ -91,7 +121,10 @@ export default {
               href: 'https://hanfengmi.github.io/phone',
               intru: {
                 title: '模拟携程app',
-                content: '啥啥啥'
+                content: [
+                  '原生html, 原生js',
+                  '1.原生html布局，符合W3C页面布局标准。</br> 2.js控制页面标准字体大小，页面使用rem布局，适应不同尺寸设备。</br>'
+                ]
               }
             }
           ]
@@ -101,10 +134,24 @@ export default {
           list: [
             {
               img: require('@/assets/img/my-web.png'),
-              href: 'https://hanfengmi.github.io/my-web',
+              route: 'Texiao1',
               intru: {
                 title: '杂七杂八',
-                content: '啥啥啥'
+                content: [
+                  '各种效果',
+                  '嘛钱不钱的，图个开心'
+                ]
+              }
+            },
+            {
+              img: require('@/assets/img/my-web.png'),
+              route: 'Texiao2',
+              intru: {
+                title: '杂七杂八',
+                content: [
+                  '各种效果',
+                  '嘛钱不钱的，图个开心'
+                ]
               }
             }
           ]
@@ -181,7 +228,7 @@ export default {
   color:#000;
   margin:500px auto 0 auto;
 }
-.clearfix {
+.clearfix::after {
   content: '';
   display: block;
   clear:both;
@@ -230,8 +277,32 @@ export default {
             position:absolute;
             box-sizing: border-box;
             top:50%;
+            padding: 60px 20px;
             margin-top: -200px;
             border-radius: 20px;
+            h2 {
+              margin:20px 0;
+              color: #666;
+            }
+            p {
+              text-align: left;
+              font-size:14px;
+              margin-top:10px;
+              span {
+                float:left;
+                height:100%;
+              }
+              span:nth-of-type(1){
+                width:22%;
+                text-align: right;
+                color:#333;
+              }
+              span:nth-of-type(2){
+                width:78%;
+                color:#333;
+              }
+            }
+
           }
         }
         img {

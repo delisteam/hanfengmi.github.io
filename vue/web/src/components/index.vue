@@ -19,6 +19,8 @@ export default {
   components: {
     TopHeader,
     InnerBody
+  },
+  methods: {
   }
 }
 </script>
