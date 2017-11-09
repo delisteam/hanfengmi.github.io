@@ -58,7 +58,8 @@ export default {
           list: [
             {
               img: require('@/assets/img/work-back.png'),
-              href: 'https://hanfengmi.github.io/auto-change',
+              href: 'http://adadm.calli-media.com',
+              // route: 'Work1',
               intru: {
                 title: 'iptv后台管理系统',
                 content: [
@@ -69,7 +70,7 @@ export default {
             },
             {
               img: require('@/assets/img/xcc.png'),
-              href: 'https://hanfengmi.github.io/auto-change',
+              route: 'Work2',
               intru: {
                 title: '社交小程序',
                 content: [

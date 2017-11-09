@@ -19,7 +19,9 @@ export default {
         github: 'https://github.com/hanfengmi'
       }
     }
-  }
+  },
+  mounted () {},
+  watch: {}
 }
 </script>
 
