@@ -6,7 +6,7 @@
       <transition name="custom-classes-transition"
                   enter-active-class="animated bounceInLeft"
                   leave-active-class="animated bounceOutLeft">
-      <Menu :theme="theme2" accordion class="con-left" v-if="tapName"><!--:class="{'con-left-hide': tapName}"-->
+      <Menu :theme="theme2" accordion class="con-left" v-if="tapName" width='150px'><!--:class="{'con-left-hide': tapName}"-->
         <Submenu v-for="(ele,indexP) in list.ul" :key='ele.type'  :name='ele.name'>
           <template slot="title">
               <Icon :type="ele.type"></Icon>
@@ -23,7 +23,7 @@
             <div class="img-content ">
               <Row class="content-center">
                 <Col class="p" :xs="24" :sm="12" :md="12" :lg="12">
-                  <span>{{item.discript[0]}}</span>
+                  <span><Icon :type="item.icon"></Icon> &nbsp {{item.discript[0]}}</span>
                   <span>{{item.discript[1]}}</span>
                 </Col>
                 <Col :xs="24" :sm="12" :md="12" :lg="12"><img :src="item.img" alt=""></Col>
@@ -55,6 +55,7 @@ export default {
                 name: '1-1',
                 hash: '#pindao-1',
                 title: '滚动广告',
+                icon: 'ionic',
                 img: require('@/assets/img/guanggao.png'),
                 discript: [
                   '滚动块,推荐内容',
@@ -65,6 +66,7 @@ export default {
                 name: '1-2',
                 hash: '#pindao-2',
                 title: '频道列表',
+                icon: 'stats-bars',
                 img: require('@/assets/img/pindaoliebiao.png'),
                 discript: [
                   '频道列表',
@@ -75,6 +77,7 @@ export default {
                 name: '1-3',
                 hash: '#pindao-3',
                 title: '话题列表',
+                icon: 'chatboxes',
                 img: require('@/assets/img/huatiliebiao.png'),
                 discript: [
                   '话题列表,可复用组件',
@@ -85,13 +88,14 @@ export default {
           },
           {
             name: 2,
-            type: 'ios-people',
+            type: 'chatbubble-working',
             title: '消息',
             li: [
               {
                 name: '2-1',
                 hash: '#xiaoxi-1',
                 title: '频道消息',
+                icon: 'chatbox-working',
                 img: require('@/assets/img/xiaoxi1.jpg'),
                 discript: [
                   '曾进入过得直播室',
@@ -102,6 +106,7 @@ export default {
                 name: '2-2',
                 hash: '#xiaoxi-2',
                 title: '话题回复',
+                icon: 'chatbubbles',
                 img: require('@/assets/img/xiaoxi2.png'),
                 discript: [
                   '话题回复消息提示',
@@ -112,6 +117,7 @@ export default {
                 name: '2-3',
                 hash: '#xiaoxi-3',
                 title: '直播间',
+                icon: 'easel',
                 img: require('@/assets/img/zhibohuati.jpg'),
                 discript: [
                   '直播间+聊天室',
@@ -122,13 +128,14 @@ export default {
           },
           {
             name: 3,
-            type: 'ios-people',
+            type: 'fireball',
             title: '话题',
             li: [
               {
                 name: '3-1',
                 hash: '#huati-1',
                 title: '话题列表',
+                icon: 'chatboxes',
                 img: require('@/assets/img/huati.png'),
                 discript: [
                   '复用模块，与首页复用',
@@ -139,6 +146,7 @@ export default {
                 name: '3-2',
                 hash: '#huati-2',
                 title: '话题详情',
+                icon: 'ios-book',
                 img: require('@/assets/img/huatixiangqing.png'),
                 discript: [
                   '话题标题内容',
@@ -156,6 +164,7 @@ export default {
                 name: '4-1',
                 hash: '#wode-1',
                 title: '信息',
+                icon: 'person',
                 img: require('@/assets/img/wode.jpg'),
                 discript: [
                   '个人中心',
@@ -166,6 +175,7 @@ export default {
                 name: '4-2',
                 hash: '#wode-2',
                 title: '相册',
+                icon: 'image',
                 img: require('@/assets/img/xiangce.jpg'),
                 discript: [
                   '展示曾上传的照片',
@@ -176,6 +186,7 @@ export default {
                 name: '4-3',
                 hash: '#wode-3',
                 title: '反馈',
+                icon: 'ios-compose',
                 img: require('@/assets/img/fankui.png'),
                 discript: [
                   '用户反馈',
@@ -186,6 +197,7 @@ export default {
                 name: '4-4',
                 hash: '#wode-4',
                 title: '粉丝关注',
+                icon: 'andriod-favorite',
                 img: require('@/assets/img/fensi.jpg'),
                 discript: [
                   '粉丝或关注列表',
@@ -242,12 +254,10 @@ export default {
   }
   .tap {
     position: fixed;
-    left:250px;
+    left:150px;
     top:20%;
     cursor: pointer;
-    &:hover {
-      color:#000
-    }
+    transition: 1s;
     z-index: 77;
   }
   .tap-left-hide {
@@ -292,6 +302,7 @@ export default {
       }
       span:nth-of-type(1){
         color:#666;
+        text-align: left;
         padding-bottom:10px;
       }
       span:nth-of-type(2){
