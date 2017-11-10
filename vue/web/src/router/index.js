@@ -11,7 +11,7 @@ import Work2 from '@/components/work/work2'
 Vue.use(Router)
 
 const router = new Router({
-  // mode: 'history',
+  mode: 'history',
   routes: [
     {
       path: '/',
@@ -56,8 +56,6 @@ const router = new Router({
   ],
   scrollBehavior (to, from, savedPosition) {
     if (savedPosition) {
-      // console.log(11111111, savedPosition)
-      // return savedPosition
     } else {
       // console.log(22222222, savedPosition)
       return { x: 0, y: 0 }
@@ -65,13 +63,13 @@ const router = new Router({
   }
 })
 
-router.beforeEach((to, from, next) => {
-  console.log(to.matched, from)
-  if (to.matched.length === 0) {
-    next('/noFind')
-  } else {
-    next()
-  }
-})
+// router.beforeEach((to, from, next) => {
+//   console.log(to.matched, from)
+//   if (to.matched.length === 0) {
+//     next('/noFind')
+//   } else {
+//     next()
+//   }
+// })
 
 export default router

@@ -19,10 +19,15 @@
       <div class="con-right">
         <div v-for="(ele,indexP) in list.ul" :key='ele.type'>
           <div class="item" v-for="(item,indexC) in ele.li" :key='item.name' :id="item.hash.split('#')[1]">
-            <h2><a :href='item.hash'>{{item.title}}</a></h2>
-            <div class="img-content clearfix">
-              <p>qewqe</p>
-              <img :src="item.img" alt="">
+            <h2 class="item-header"><a :href='item.hash'>{{item.title}}</a></h2>
+            <div class="img-content ">
+              <Row class="content-center">
+                <Col class="p" :xs="24" :sm="12" :md="12" :lg="12">
+                  <span>{{item.discript[0]}}</span>
+                  <span>{{item.discript[1]}}</span>
+                </Col>
+                <Col :xs="24" :sm="12" :md="12" :lg="12"><img :src="item.img" alt=""></Col>
+              </Row>
             </div>
           </div>
         </div>
@@ -50,19 +55,31 @@ export default {
                 name: '1-1',
                 hash: '#pindao-1',
                 title: '滚动广告',
-                img: require('@/assets/img/xcc.png')
+                img: require('@/assets/img/guanggao.png'),
+                discript: [
+                  '滚动块,推荐内容',
+                  '点击可进入相关直播室'
+                ]
               },
               {
                 name: '1-2',
                 hash: '#pindao-2',
                 title: '频道列表',
-                img: require('@/assets/img/xcc.png')
+                img: require('@/assets/img/pindaoliebiao.png'),
+                discript: [
+                  '频道列表',
+                  '点击可进入相关频道直播，更多精彩可进入查看所有频道'
+                ]
               },
               {
                 name: '1-3',
                 hash: '#pindao-3',
                 title: '话题列表',
-                img: require('@/assets/img/xcc.png')
+                img: require('@/assets/img/huatiliebiao.png'),
+                discript: [
+                  '话题列表,可复用组件',
+                  '点击进入列表详情页查看该话题详细内容'
+                ]
               }
             ]
           },
@@ -74,20 +91,32 @@ export default {
               {
                 name: '2-1',
                 hash: '#xiaoxi-1',
-                title: '滚动广告',
-                img: require('@/assets/img/xcc.png')
+                title: '频道消息',
+                img: require('@/assets/img/xiaoxi1.jpg'),
+                discript: [
+                  '曾进入过得直播室',
+                  '会记录进入过的直播间，并且会在直播间有消息时显示提示'
+                ]
               },
               {
                 name: '2-2',
                 hash: '#xiaoxi-2',
                 title: '话题回复',
-                img: require('@/assets/img/xcc.png')
+                img: require('@/assets/img/xiaoxi2.png'),
+                discript: [
+                  '话题回复消息提示',
+                  '会提示被回复会被赞情况'
+                ]
               },
               {
                 name: '2-3',
                 hash: '#xiaoxi-3',
                 title: '直播间',
-                img: require('@/assets/img/xcc.png')
+                img: require('@/assets/img/zhibohuati.jpg'),
+                discript: [
+                  '直播间+聊天室',
+                  '上半部分是视频直播,下半部分是聊天室,点击头像可进入他人个人中心,向右滑动可查看当前频道下的话题列表以及该节目频道的播出单,在聊天室下方的多功能键可新建话题'
+                ]
               }
             ]
           },
@@ -100,13 +129,21 @@ export default {
                 name: '3-1',
                 hash: '#huati-1',
                 title: '话题列表',
-                img: require('@/assets/img/xcc.png')
+                img: require('@/assets/img/huati.png'),
+                discript: [
+                  '复用模块，与首页复用',
+                  '点击可进入话题详情页'
+                ]
               },
               {
                 name: '3-2',
                 hash: '#huati-2',
                 title: '话题详情',
-                img: require('@/assets/img/xcc.png')
+                img: require('@/assets/img/huatixiangqing.png'),
+                discript: [
+                  '话题标题内容',
+                  '可回复题主或回复他人评论'
+                ]
               }
             ]
           },
@@ -119,25 +156,41 @@ export default {
                 name: '4-1',
                 hash: '#wode-1',
                 title: '信息',
-                img: require('@/assets/img/xcc.png')
+                img: require('@/assets/img/wode.jpg'),
+                discript: [
+                  '个人中心',
+                  '显示头像、备注、粉丝数、关注数、个人话题列表等'
+                ]
               },
               {
                 name: '4-2',
                 hash: '#wode-2',
                 title: '相册',
-                img: require('@/assets/img/xcc.png')
+                img: require('@/assets/img/xiangce.jpg'),
+                discript: [
+                  '展示曾上传的照片',
+                  '点击图片放大'
+                ]
               },
               {
                 name: '4-3',
                 hash: '#wode-3',
                 title: '反馈',
-                img: require('@/assets/img/xcc.png')
+                img: require('@/assets/img/fankui.png'),
+                discript: [
+                  '用户反馈',
+                  '点击可提交意见'
+                ]
               },
               {
                 name: '4-4',
                 hash: '#wode-4',
                 title: '粉丝关注',
-                img: require('@/assets/img/xcc.png')
+                img: require('@/assets/img/fensi.jpg'),
+                discript: [
+                  '粉丝或关注列表',
+                  '可关注或取关，点击头像可进入他人个人中心页'
+                ]
               }
             ]
           }
@@ -152,7 +205,20 @@ export default {
       } else {
         this.$set(this, 'tapName', true)
       }
+    },
+    change () {
+      // this.$set(this, 'tapName', false)
+      console.log(123123)
     }
+  },
+  mounted () {
+    var that = this
+    window.onmousewheel = function () {
+      that.$set(that, 'tapName', false)
+    }
+    window.addEventListener('touchmove', function () {
+      that.$set(that, 'tapName', false)
+    })
   }
 }
 </script>
@@ -182,6 +248,7 @@ export default {
     &:hover {
       color:#000
     }
+    z-index: 77;
   }
   .tap-left-hide {
     left:20px;
@@ -206,15 +273,34 @@ export default {
   width:80%;
   margin:0 auto;
   background: #fff;
-  .item {
+  .item-header {
+    padding:10px;
   }
   .img-content {
-    p {
+    padding:20px 0;
+    border-bottom:1px solid #666;
+    .content-center {
       width:50%;
-      float:left;
+      margin:0 auto;
+    }
+    .p {
+      margin-top:20px;
+
+      span {
+        display: block;
+        font-size: 16px;
+      }
+      span:nth-of-type(1){
+        color:#333;
+      }
+      span:nth-of-type(2){
+        text-align: left;
+        text-indent: 2em;
+        color: #000;
+        // text-shadow: 5px 5px 0 #666, 7px 7px 0 #eee;
+      }
     }
     img {
-      float:left;
       width:100%;
       max-width:400px;
     }
