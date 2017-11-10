@@ -11,7 +11,7 @@ import Work2 from '@/components/work/work2'
 Vue.use(Router)
 
 const router = new Router({
-  mode: 'history',
+  // mode: 'history',
   routes: [
     {
       path: '/',
@@ -63,13 +63,12 @@ const router = new Router({
   }
 })
 
-// router.beforeEach((to, from, next) => {
-//   console.log(to.matched, from)
-//   if (to.matched.length === 0) {
-//     next('/noFind')
-//   } else {
-//     next()
-//   }
-// })
+router.beforeEach((to, from, next) => {
+  if (to.matched.length === 0) {
+    next('/noFind')
+  } else {
+    next()
+  }
+})
 
 export default router

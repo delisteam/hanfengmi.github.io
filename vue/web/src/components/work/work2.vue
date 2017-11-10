@@ -291,7 +291,8 @@ export default {
         font-size: 16px;
       }
       span:nth-of-type(1){
-        color:#333;
+        color:#666;
+        padding-bottom:10px;
       }
       span:nth-of-type(2){
         text-align: left;
