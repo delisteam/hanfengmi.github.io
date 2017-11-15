@@ -78,6 +78,17 @@ export default {
                   '1.根据设计图展示页面。</br> 2.舍弃原生操作DOM方式进行网页开发，根据数据绑定，对数据进行操作更新页面。</br> 3.封装后台接口，统一处理异常。</br> 4.封装常用组件，重复调用。 </br> 5.根据微信小程序api完成项目所需上传、tabbar切换、video播放等功能'
                 ]
               }
+            },
+            {
+              img: require('@/assets/img/www.png'),
+              href: 'http://www.calli-media.com',
+              intru: {
+                title: '尔邦官网',
+                content: [
+                  'fullpage.js, jquery, wow.js, animate.css',
+                  '1.设计图展示页面，实现动画效果。</br> 2.响应式布局，适应各尺寸PC端展示。</br> 3.主流浏览器的兼容'
+                ]
+              }
             }
           ]
         },

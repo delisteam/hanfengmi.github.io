@@ -1,9 +1,11 @@
 <template lang="html">
   <div class="seeMe">
     <top-header :personsIn='persons' :hide='route'></top-header>
-    <div class="thisMe">
-      大吉大利，今晚吃鸡
-    </div>
+    <Row class="thisMe" type="flex" justify="center">
+        <Col class="item-box" :xs="24" :sm="20" :md="16" :lg="10">
+          <img :src="img" class="my-jl">
+        </Col>
+    </Row>
   </div>
 </template>
 
@@ -16,14 +18,17 @@ export default {
   },
   data () {
     return {
-      route: false
+      route: false,
+      img: require('@/assets/img/hanfengmi.png')
     }
   },
   watch: {},
   methods: {},
   filters: {},
   computed: {},
-  created () {},
+  created () {
+    console.log(document.getElementsByTagName('img'), 123)
+  },
   mounted () {},
   destroyed () {}
 }
@@ -31,10 +36,13 @@ export default {
 
 <style lang="scss" scoped>
 .thisMe {
-  background: pink;
+  background: rgb(48,48,48);
   position:relative;
   color:#000;
-  height:500px;
-  margin:520px auto 0 auto;
+  margin:350px auto 0 auto;
+  img {
+    width:100%;
+    border-bottom:1px solid #bebebe;
+  }
 }
 </style>
