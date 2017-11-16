@@ -142,27 +142,27 @@ export default {
           ]
         },
         {
-          title: '一顿咸鱼',
+          title: '效果巴拉',
           list: [
             {
-              img: require('@/assets/img/my-web.png'),
+              img: require('@/assets/img/dh1.gif'),
               route: 'Texiao1',
               intru: {
-                title: '杂七杂八',
+                title: '火影眼睛',
                 content: [
-                  '各种效果',
-                  '嘛钱不钱的，图个开心'
+                  '火影各种眼睛',
+                  '进化进化'
                 ]
               }
             },
             {
-              img: require('@/assets/img/my-web.png'),
+              img: require('@/assets/img/dh2.gif'),
               route: 'Texiao2',
               intru: {
-                title: '杂七杂八',
+                title: '前段黑科技',
                 content: [
-                  '各种效果',
-                  '嘛钱不钱的，图个开心'
+                  '666啊',
+                  '高级了'
                 ]
               }
             }
@@ -305,12 +305,12 @@ export default {
                 height:100%;
               }
               span:nth-of-type(1){
-                width:22%;
-                text-align: right;
+                width:30%;
+                text-align: center;
                 color:#333;
               }
               span:nth-of-type(2){
-                width:78%;
+                width:70%;
                 color:#333;
               }
             }

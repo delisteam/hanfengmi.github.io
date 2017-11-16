@@ -26,9 +26,7 @@ export default {
   methods: {},
   filters: {},
   computed: {},
-  created () {
-    console.log(document.getElementsByTagName('img'), 123)
-  },
+  created () {},
   mounted () {},
   destroyed () {}
 }
