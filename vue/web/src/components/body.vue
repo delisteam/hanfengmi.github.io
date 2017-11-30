@@ -165,6 +165,17 @@ export default {
                   '高级了'
                 ]
               }
+            },
+            {
+              img: require('@/assets/img/dh2.gif'),
+              route: 'Texiao3',
+              intru: {
+                title: 'css3支付宝小鸡',
+                content: [
+                  '喂鸡',
+                  '不许抢我的粮'
+                ]
+              }
             }
           ]
         }
