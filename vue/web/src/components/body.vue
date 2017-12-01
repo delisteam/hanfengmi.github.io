@@ -167,13 +167,13 @@ export default {
               }
             },
             {
-              img: require('@/assets/img/dh2.gif'),
+              img: require('@/assets/img/dh3.gif'),
               route: 'Texiao3',
               intru: {
                 title: 'css3支付宝小鸡',
                 content: [
-                  '喂鸡',
-                  '不许抢我的粮'
+                  'css3+svg（无图片）',
+                  '支付宝小鸡...完善中'
                 ]
               }
             }

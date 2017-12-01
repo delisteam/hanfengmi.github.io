@@ -81,6 +81,32 @@
                   <div class="window window-r"></div>
                 </div>
               </div>
+              <div class="chibang">
+                <div class="l-chi"></div>
+                <div class="r-chi">
+                  <div class="fantuan"></div>
+                  <div class="shou shou1"></div>
+                  <div class="shou shou2"></div>
+                  <div class="shou shou3"></div>
+                  <div class="jishou"></div>
+                </div>
+              </div>
+              <div class="jiguan">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <div class="jifoot"></div>
+              <div class="xiaoji">
+                <div class="eye">
+                  <span class="close-eye"></span>
+                  <div class="l-eye"></div>
+                  <div class="r-eye"></div>
+                </div>
+                <div class="mouth"></div>
+                <div class="haixiu"></div>
+
+              </div>
             </div>
           </div>
         </Col>
@@ -112,6 +138,34 @@ export default {
 @keyframes rotate {
   0% {transform: rotate(0deg);}
   100% {transform: rotate(360deg);}
+}
+@keyframes danHeight {
+  0% {height:180px;}
+  50% {height:184px;}
+  100% {height:180px;}
+}
+@keyframes jiR {
+  0% {width:30px;}
+  50% {width:35px;}
+  100% {width:30px;}
+}
+@keyframes closeE {
+  0% {top:-15px;}
+  2% {top:-5px;}
+  4% {top:-15px;}
+  56% {top:-15px;}
+  58% {top:-5px;}
+  60% {top:-15px;}
+}
+@keyframes mouthR {
+  0% {border-radius:0 0 0 0;}
+  50% {border-radius:0 6px 0 6px;}
+  100% {border-radius:0 0 0 0;}
+}
+@keyframes mouthIn {
+  0% {height:1px;}
+  50% {height:3px;}
+  100% {height:1px;}
 }
 .texiao3 {
   height:100%;
@@ -375,6 +429,7 @@ export default {
     width:100%;
     height:400px;
     background: #6edbb2;
+    position: relative;
     .caocong {
       height:100px;
       width:100%;
@@ -388,10 +443,9 @@ export default {
       .room {
         position: absolute;
         top:-100px;
-        left:215px;
+        right:-25px;
         width:210px;
         height:120px;
-        position: relative;
         .room-svg {
           position: absolute;
           left:0;
@@ -491,6 +545,293 @@ export default {
           }
           .window-r {
             left:55px;
+          }
+        }
+      }
+      .jifoot {
+        position: absolute;
+        width:80px;
+        height:10px;
+        bottom:125px;
+        left:50%;
+        margin-left:-40px;
+        background: rgba(0,0,0,.2);
+        border-radius: 50%;
+        transform: rotateX(50deg);
+        font-size: 30px;
+        font-family:inherit;
+        color:#584510;
+        &:after {
+          content: '7';
+          position: absolute;
+          left:12px;
+          top:-30px;
+          transform: rotateX(180deg) ;
+        }
+        &:before {
+          content: '7';
+          position: absolute;
+          right:12px;
+          top:-30px;
+          transform: rotate(180deg) ;
+        }
+      }
+      .xiaoji {
+        position:absolute;
+        top:0;
+        left:50%;
+        margin-left:-75px;
+        width:150px;
+        height:180px;
+        background: #fffbf8;
+        border-radius: 50%;
+        animation: danHeight 2s linear infinite;
+        &:after {
+          position: absolute;
+          content:'';
+          left:-2px;
+          width:155px;
+          height:120px;
+          background: #fffbf8;
+          bottom:0px;
+          border-radius: 15px 15px 90px 90px/60px 60px 85px 85px;
+          box-shadow: inset -2px -6px 1px #f0cecc;
+        }
+        .eye {
+          width:52px;
+          height:14px;
+          margin:30px auto;
+          position: relative;
+          .close-eye {
+            position:absolute;
+            width:100%;
+            height:15px;
+            top:-15px;
+            z-index: 99;
+            left:0;
+            animation:closeE 5s linear infinite;
+            &:before {
+              position: absolute;
+              content: "";
+              width:14px;
+              height:12px;
+              left:-4px;
+              bottom:0;
+              background: #fff;
+              border-radius: 50%;
+            }
+            &:after {
+              position: absolute;
+              content: "";
+              width:14px;
+              height:12px;
+              right:-4px;
+              bottom:0;
+              background: #fff;
+              border-radius: 50%;
+            }
+          }
+          div {
+            width:6px;
+            height:100%;
+            border-radius: 50%;
+            background: #000;
+            position: relative;
+          }
+          div:after {
+            position: absolute;
+            content: '';
+            width:2px;
+            height:2px;
+            background: #fff;
+            border-radius: 50%;
+            top:3px;
+            left:2px;
+          }
+          .l-eye {
+            float:left;
+          }
+          .r-eye {
+            float:right;
+          }
+        }
+        .mouth {
+          position: absolute;
+          width:13px;
+          height:13px;
+          z-index: 99;
+          top:55px;
+          left:50%;
+          margin-left:-6px;
+          transform: rotate(50deg);
+          &:before {
+            position: absolute;
+            width:10px;
+            height:1px;
+            top:6px;
+            left:2px;
+            content:'';
+            background: #ad6a05;
+            z-index: 99;
+            transform: rotate(-50deg);
+            border-radius: 50%;
+            animation:mouthIn 1s linear infinite;
+          }
+          &:after {
+            position: absolute;
+            width:100%;
+            height:100%;
+            background: #e4b90d;
+            border:1px solid #dbb206;
+            content: "";
+            left:0;
+            top:0;
+            transform: skew(10deg);
+            animation: mouthR 1s linear infinite;
+          }
+        }
+        .haixiu {
+          position: absolute;
+          width:90px;
+          height:12px;
+          top:48px;
+          left:50%;
+          margin-left:-45px;
+          // background: red;
+          z-index:99;
+          &:before {
+            position: absolute;
+            content: '';
+            width:14px;
+            height:5px;
+            left:10px;
+            top:3px;
+            background:#f97e68;
+            box-shadow:-2px 0px 1px 4px rgba(245,118,102,.6);// rgba(245,118,102)
+            border-radius:50%;
+          }
+          &:after {
+            position: absolute;
+            content: '';
+            width:14px;
+            height:5px;
+            right:10px;
+            top:3px;
+            background:#f97e68;
+            box-shadow:2px 0px 1px 4px rgba(245,118,102,.6);// rgba(245,118,102)
+            border-radius:50%;
+          }
+        }
+      }
+      .jiguan {
+        width:35px;
+        height:30px;
+        position: absolute;
+        top:-15px;
+        left:50%;
+        margin-left:-17px;
+        span {
+          float:left;
+          width:20px;
+          height:100%;
+          background: #dc2829;
+          border-radius: 20px 15px 0 0/30px 30px 0 0;
+        }
+        span:nth-of-type(2){
+          position: absolute;
+          transform: scale(.6);
+          left:12px;
+        }
+        span:nth-of-type(3){
+          position: absolute;
+          transform: scale(.3);
+          left:20px;
+        }
+      }
+      .chibang {
+        position:absolute;
+        width:180px;
+        height:55px;
+        left:50%;
+        top:60px;
+        margin-left:-87px;
+        .l-chi {
+          width:40px;
+          height:60px;
+          background: #edcacb;
+          border-radius: 30px 0px 0px 15px/33px 0px 0px 18px;
+          &:after {
+            position: absolute;
+            width:15px;
+            height:40px;
+            left:4px;
+            top:2px;
+            background: #fff;
+            content: '';
+            border-radius:50%;
+            transform: rotate(25deg);
+          }
+        }
+        .r-chi {
+          position: absolute;
+          left:150px;
+          top:0;
+          width:30px;
+          height:60px;
+          background: linear-gradient(to right,#fff,#f1bac3);
+          border-radius: 0px 30px 15px 0;
+          animation: jiR 2s linear infinite;
+          .shou {
+            position: absolute;
+            background: #f4eae9;
+            border-radius:40%;
+            box-shadow: 0px 2px 2px rgba(0,0,0,.3);
+            z-index:98;
+          }
+          .shou1 {
+            width:50px;
+            height:16px;
+            right:16px;
+            top:18px;
+            transform: rotate(40deg);
+          }
+          .shou2 {
+            width:40px;
+            height:16px;
+            right:24px;
+            top:28px;
+            transform: rotate(24deg);
+          }
+          .shou3 {
+            width:40px;
+            height:13px;
+            right:26px;
+            top:44px;
+            transform: rotate(30deg);
+          }
+          .fantuan {
+            position: absolute;
+            width:34px;
+            height:30px;
+            right:55px;
+            top:8px;
+            background: #eec406;
+            border-radius: 20px 20px 10px 10px/30px 30px 10px 10px;
+            transform: rotate(-50deg) scaleY(1.3) ;
+            z-index:90;
+            box-shadow: inset 0px -4px 3px rgba(162,133,12,.8);
+          }
+          .jishou {
+            position: absolute;
+            width:50px;
+            height:44px;
+            background: #f4eae9;
+            z-index:99;
+            right:6px;
+            border-radius: 15px 46px 35px 40px/20px 30px 30px 40px;
+            bottom:-5px;
+            transform: rotate(20deg) skew(-10deg);
+            box-shadow: 4px 5px 1px #f0cecc;
           }
         }
       }
