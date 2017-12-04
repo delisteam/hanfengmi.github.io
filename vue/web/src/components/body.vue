@@ -161,8 +161,8 @@ export default {
               intru: {
                 title: '前段黑科技',
                 content: [
-                  '666啊',
-                  '高级了'
+                  '3D',
+                  '3D小物件'
                 ]
               }
             },

@@ -20,7 +20,8 @@
         </div>
       </div>
       <div class="tuodong" @mousedown.self="mouse_down($event)" @touchstart.self="mouse_down($event)" @mouseup.self="mouse_up($event)" @touchend.self="mouse_up($event)">
-        <h2>拖动</h2>
+        <h2>拖动<span>（小bug未完善）</span></h2>
+        <Button @click="changeXYD">{{changeXY}}</Button>
         <ul :style="role">
           <li>1</li>
           <li>2</li>
@@ -44,6 +45,12 @@
 export default {
   data () {
     return {
+      firstXP: 0,
+      firstYP: 0,
+      rotate: true,
+      changeXY: 'X轴旋转',
+      xC: 0,
+      yC: 0,
       role: 'transform: rotateY(0deg) rotateX(0deg);'
     }
   },
@@ -51,10 +58,22 @@ export default {
   filters: {},
   computed: {},
   methods: {
+    changeXYD () {
+      if (this.rotate) {
+        this.$set(this, 'changeXY', 'Y轴旋转')
+        this.$set(this, 'rotate', false)
+      } else {
+        this.$set(this, 'changeXY', 'X轴旋转')
+        this.$set(this, 'rotate', true)
+      }
+    },
     mouse_down (event) {
-      // console.log(event)
       event.target.addEventListener('mousemove', this.change_rote, false)
       event.target.addEventListener('touchmove', this.change_rote, false)
+      if (window.event.pageX) {
+        this.$set(this, 'firstXP', window.event.pageX)
+        this.$set(this, 'firstYP', window.event.pageY)
+      }
     },
     mouse_up (event) {
       // console.log(event)
@@ -66,25 +85,71 @@ export default {
     change_rote (event) {
       var xC = 0
       var yC = 0
+      // console.log(xC, yC)
       if (window.event.clientX) {
-        xC = (window.event.clientX - event.target.offsetLeft) - (document.body.clientWidth / 2)
-        yC = (window.event.clientY - event.target.offsetTop) - (document.body.clientHeight / 2)
+        if (this.rotate) {
+          if (this.firstXP > window.event.clientX) {
+            xC = -2
+          } else {
+            xC = 2
+          }
+        } else {
+          if (this.firstYP <= window.event.clientY) {
+            yC = 3
+          } else {
+            yC = -3
+          }
+        }
+        this.$set(this, 'firstXP', window.event.clientX)
+        this.$set(this, 'firstYP', window.event.clientY)
       } else {
-        xC = (window.event.changedTouches[0].clientX - event.target.offsetLeft) - (document.body.clientWidth / 2)
-        yC = (window.event.changedTouches[0].clientY - event.target.offsetTop) - (document.body.clientHeight / 2)
+        if (this.rotate) {
+          if (this.firstXP > window.event.changedTouches[0].clientX) {
+            xC = -2
+          } else {
+            xC = 2
+          }
+        } else {
+          if (this.firstXP > window.event.changedTouches[0].clientY) {
+            yC = -3
+          } else {
+            yC = 3
+          }
+        }
+        this.$set(this, 'firstXP', window.event.changedTouches[0].clientX)
+        this.$set(this, 'firstYP', window.event.changedTouches[0].clientY)
       }
-      var rotateY = 'transform: rotateY(' + xC + 'deg) rotateX(' + -yC + 'deg);'
+      var lastXP = this.xC + xC
+      var lastYP = this.yC + yC
+      var rotateY = 'transform: rotateY(' + lastXP + 'deg) rotateX(' + -lastYP + 'deg);'
+      // console.log(rotateY)
+      this.$set(this, 'xC', lastXP)
+      this.$set(this, 'yC', lastYP)
       this.$set(this, 'role', rotateY)
     }
   },
   created () {
   },
-  mounted () {
-  },
+  mounted () {},
   destroyed () {}
 }
 </script>
 
+
+// var isChoose = false;
+// $('.collection').on('mouseenter',function(){//移入加显示class
+// 	$(this).addClass('collect')
+// })
+// $('.collection').on('mouseleave',function(){//移出去掉显示class
+//   if (isChoose) {
+//     return false
+//   }
+// 	$(this).removeClass('collect');
+// })
+// $('.collection').on('click',function(){//点击加永久class
+//   isChoose = !isChoose;
+// 	$(this).addClass('collect');
+// })
 <style lang="scss" scoped>
 @keyframes role {
   0% {transform: rotateY(0deg) rotateX(0deg);}
@@ -101,6 +166,10 @@ export default {
   h2 {
     text-align: left;
     margin-top:50px;
+    span {
+      font-size: 12px;
+      color:gray;
+    }
   }
   .rewriteP {
     p {

@@ -40,7 +40,8 @@ export default {
   margin:350px auto 0 auto;
   img {
     width:100%;
-    border-bottom:1px solid #bebebe;
+    border-left:1px solid #bebebe;
+    border-right:1px solid #bebebe;
   }
 }
 </style>
