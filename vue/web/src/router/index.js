@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Index from '@/components/index'
+import Me from '@/components/me'
 import SeeMe from '@/components/seeMe'
 import NoFind from '@/components/noFind'
 import Texiao1 from '@/components/texiao/texiao1'
@@ -15,6 +16,11 @@ const router = new Router({
   routes: [
     {
       path: '/',
+      name: 'Me',
+      component: Me
+    },
+    {
+      path: '/more',
       name: 'Index',
       component: Index
     },
